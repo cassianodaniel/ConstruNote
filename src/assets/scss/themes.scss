@@ -1,0 +1,220 @@
+//Import Icon css
+@import "./icons.scss";
+
+//light mode
+@import "./bootstrap.scss";
+@import "./app.scss";
+
+//dark mode
+//@import "./bootstrap-dark.scss";
+//@import "./app-dark.scss";
+
+//rtl mode
+//@import "./bootstrap.scss";
+//@import "./app-rtl.scss";
+
+.nav-item {
+  cursor: pointer;
+}
+
+.dropdown {
+  cursor: pointer;
+}
+
+.slick-slide {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.slick-arrow {
+  display: none;
+}
+
+.emoji-mart {
+  border: none !important;
+}
+
+.emoji-mart-preview {
+  display: none !important;
+}
+
+.emoji-mart-bar {
+  border: none !important;
+}
+
+.alice-carousel__stage-item {
+  margin-left: 8px;
+  margin-right: 8px;
+  width: 71px !important;
+}
+
+.input-file {
+  label {
+    margin-bottom: 0;
+  }
+  input[type="file"] {
+    display: none;
+  }
+}
+
+.emoji-mart-light {
+  background-color: $card-bg !important;
+}
+
+.emoji-mart-search {
+  input {
+    background-color: $card-bg !important;
+    border-color: $card-border-color !important;
+  }
+}
+
+.emoji-mart-category-label {
+  span {
+    background-color: $card-bg !important;
+    color: $gray-700;
+  }
+}
+
+.emoji-mart-category {
+  .emoji-mart-emoji {
+    &:hover {
+      background-color: $gray-300 !important;
+    }
+
+    &::before {
+      background-color: $gray-300 !important;
+      border-radius: 100% !important;
+    }
+  }
+}
+.w-70 {
+  width: 73% !important;
+}
+
+.ctext-wrap-content {
+  animation: flyIn 0.6s ease-in-out;
+}
+
+.blank-div {
+  width: 36px;
+  height: 36px;
+}
+
+.profile-user-dropdown {
+  .dropdown-item {
+    &.active {
+      color: $white;
+      text-decoration: none;
+      background-color: $primary;
+    }
+  }
+}
+
+.message-chat-left {
+  margin-left: 150px;
+  max-width: calc(100% - 205px);
+}
+
+.message-chat-right {
+  margin-right: 150px;
+  width: calc(100% - 205px);
+}
+
+.sound-wave {
+  margin: 0;
+  margin-bottom: -3px;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+  height: 43px;
+  border-radius: 0.4rem;
+}
+
+.text-record {
+  color: red;
+  &:hover {
+    color: red;
+  }
+}
+
+.btn-chat-down {
+  position: absolute;
+  right: 27px;
+  bottom: 120px;
+  width: 45px;
+  height: 45px;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e6e6e6;
+  border: rgba(0, 0, 0, 0.02) solid 1px;
+
+  &:hover {
+    background-color: #d2d2d2;
+  }
+}
+
+.h7 {
+  font-size: 0.8rem;
+}
+
+.list-inline-item {
+  margin: 0;
+}
+
+.btn-head-conference {
+  width: 35px !important;
+  height: 35px !important;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 3px;
+  cursor: pointer !important;
+
+  i {
+    font-size: 17px;
+  }
+
+  &.white {
+    background-color: #ffffff;
+  }
+
+  &.red {
+    background-color: #f0485a;
+    i {
+      color: white;
+    }
+  }
+}
+
+.border-radius {
+  border-radius: 8px;
+}
+
+.btn-close-answer {
+  width: 45px;
+  height: 45px;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  i {
+    font-size: 23px;
+  }
+
+  &:hover {
+    background-color: #e6e6e6;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .message-chat-left,
+  .message-chat-right {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: calc(100% - 52px);
+  }
+}

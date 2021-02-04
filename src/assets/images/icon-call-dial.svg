@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>B94730E4-1C25-4DA3-9A9D-DF637D97E9BD</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <linearGradient x1="-1.11022302e-14%" y1="50%" x2="100%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#33EB33" offset="0%"></stop>
+            <stop stop-color="#1ACD23" offset="100%"></stop>
+        </linearGradient>
+        <path d="M25.0125,19.225 C23.475,19.225 21.9875,18.975 20.6,18.525 C20.1625,18.375 19.675,18.4875 19.3375,18.825 L17.375,21.2875 C13.8375,19.6 10.525,16.4125 8.7625,12.75 L11.2,10.675 C11.5375,10.325 11.6375,9.8375 11.5,9.4 C11.0375,8.0125 10.8,6.525 10.8,4.9875 C10.8,4.3125 10.2375,3.75 9.5625,3.75 L5.2375,3.75 C4.5625,3.75 3.75,4.05 3.75,4.9875 C3.75,16.6 13.4125,26.25 25.0125,26.25 C25.9,26.25 26.25,25.4625 26.25,24.775 L26.25,20.4625 C26.25,19.7875 25.6875,19.225 25.0125,19.225 Z" id="path-2"></path>
+    </defs>
+    <g id="💻-Authenticated-user" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="dialpad-popup" transform="translate(-186.000000, -449.000000)">
+            <g id="Group-10" transform="translate(31.000000, 36.000000)">
+                <g id="call_dial" transform="translate(155.000000, 413.000000)">
+                    <path d="M30,0 L30,0 C46.5685425,-3.04359188e-15 60,13.4314575 60,30 L60,30 C60,46.5685425 46.5685425,60 30,60 L0,60 L0,30 C-2.02906125e-15,13.4314575 13.4314575,3.04359188e-15 30,0 Z" id="Rectangle" fill="url(#linearGradient-1)"></path>
+                    <g id="ic/call" transform="translate(15.000000, 15.000000)">
+                        <g id="ic_call_24px">
+                            <mask id="mask-3" fill="white">
+                                <use xlink:href="#path-2"></use>
+                            </mask>
+                            <g id="Path"></g>
+                            <g id="c/white" mask="url(#mask-3)" fill="#FFFFFF">
+                                <rect id="Shape" x="0" y="0" width="30" height="30"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

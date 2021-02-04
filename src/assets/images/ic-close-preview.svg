@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" viewBox="0 0 15 15" version="1.1"
+     xmlns="http://www.w3.org/2000/svg">
+    <!-- Generator: sketchtool 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>1EBA2A37-E298-4A80-A2F8-693A3C66A223</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <polygon id="path-1"
+                 points="11.3333333 1.14142857 10.1919048 7.63833441e-14 5.66666667 4.5252381 1.14142857 7.63833441e-14 1.21325172e-12 1.14142857 4.5252381 5.66666667 1.21325172e-12 10.1919048 1.14142857 11.3333333 5.66666667 6.80809524 10.1919048 11.3333333 11.3333333 10.1919048 6.80809524 5.66666667"></polygon>
+    </defs>
+    <g id="💻-Screen-Sizes-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Any_Participents-white" transform="translate(-1883.000000, -255.000000)">
+            <g id="Group-21" transform="translate(1570.000000, 0.000000)">
+                <g id="Group-7-Copy-8" transform="translate(0.000000, 234.000000)">
+                    <g id="ic_close_24px" transform="translate(315.000000, 23.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Path" fill="#000000" xlink:href="#path-1"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,6 @@
+.drag{
+    background-color: transparent;
+    z-index: 10;
+    position: relative;
+    color: transparent;
+}
