@@ -1,17 +1,8 @@
-//Import Icon css
 @import "./icons.scss";
-
-//light mode
+@import "./horizontalAndVerticalBar.scss";
 @import "./bootstrap.scss";
 @import "./app.scss";
-
-//dark mode
-//@import "./bootstrap-dark.scss";
-//@import "./app-dark.scss";
-
-//rtl mode
-//@import "./bootstrap.scss";
-//@import "./app-rtl.scss";
+@import "./custom/body.scss";
 
 .nav-item {
   cursor: pointer;
@@ -89,6 +80,16 @@
 }
 .w-70 {
   width: 73% !important;
+}
+
+.body{
+  margin-top: 85px;
+  margin-left: 10px;
+  margin-right: 10px;
+  max-height: 90vh;
+  height: 90vh;
+  width: 100%;
+  overflow-y: auto;
 }
 
 .ctext-wrap-content {

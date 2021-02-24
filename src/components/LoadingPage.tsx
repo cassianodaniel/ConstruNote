@@ -20,7 +20,7 @@ const LoadingPage: React.FC = () => {
           duration: 4,
           repeat: Infinity,
         }}
-        style={{ width: 60, height: 60 }}
+        style={{ width: 140, height: 90 }}
       />
     </div>
   );

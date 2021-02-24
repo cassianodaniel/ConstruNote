@@ -1,10 +1,10 @@
 import React from "react";
-import LeftSidebarMenu from "./../components/LeftSidebarMenu";
+import NavManager from "../components/NavManager";
 
 const Dashboard: React.FC = ({ children }) => {
   return (
     <div className="layout-wrapper d-lg-flex">
-      <LeftSidebarMenu />
+      <NavManager />
       {children}
     </div>
   );

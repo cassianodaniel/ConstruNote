@@ -19,7 +19,7 @@ export const LoadingProvider: React.FC = ({ children }) => {
   const [isLoadingMedia, setIsLoadingMedia] = useState(true);
 
   const init = () => {
-    setTimeout(() => setLoadingApp(false), 1000);
+    setTimeout(() => setLoadingApp(false), 1);
   };
 
   useEffect(init, []);

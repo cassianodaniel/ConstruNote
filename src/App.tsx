@@ -5,17 +5,17 @@ import Dashboard from "./pages/Dashboard";
 import { useLoading } from "./contexts/LoadingContext";
 import Favicon from "react-favicon";
 import LoadingPage from "./components/LoadingPage";
+import './assets/scss/app.scss'
 
 function App() {
   const { isLoadingApp } = useLoading();
-  const notificacoesDeCompra = 3;
   return (
     <Router>
       {isLoadingApp ? (
         <LoadingPage />
       ) : (
         <>
-          <Favicon alertCount={notificacoesDeCompra} url="./favicon.ico"/>
+          <Favicon alertCount={0} url="./favicon.ico"/>
           <Dashboard>
             <Routes />
           </Dashboard>

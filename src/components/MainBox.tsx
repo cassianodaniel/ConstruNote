@@ -3,24 +3,20 @@ import React from "react";
 //Import Components
 import { useMainBox } from "../contexts/MainBoxContext";
 import ScreenType from "../enuns/ScreenType";
-import ChatBox from "./ChatBox";
-import Welcome from "./Welcome";
+import Header from "./Header";
+import Body from "./Body";
+
 
 const MainBox = () => {
   const { screen } = useMainBox();
-
-  function showScreen() {
-    switch (screen) {
-      case ScreenType.WELCOME:
-        return <Welcome />;
-      case ScreenType.CHAT:
-        return <ChatBox />;
-    }
-  }
-
   return (
     <React.Fragment>
-      {showScreen()}
+      {screen !== ScreenType.WELCOME && 
+      <>
+        <Header/>
+        <Body/>
+      </>
+      }
     </React.Fragment>
   );
 };
