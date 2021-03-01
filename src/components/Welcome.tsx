@@ -60,6 +60,7 @@ const Welcome: React.FC = () => {
               width: '100%',
               marginTop: 10
             }}
+              onClick={() => setScreen(ScreenType.CADASTROS)}
               color={"light"}>
               Cadastre-se
             </Button>

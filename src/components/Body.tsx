@@ -2,9 +2,12 @@ import React from 'react';
 import './../assets/scss/custom/_body.scss'
 import ScreenType from "../enuns/ScreenType";
 import Welcome from "./Welcome";
-import Teste from "./Teste";
 import FornecedoresFavoritos from "./FornecedoresFavoritos";
 import MinhasCotacoes from "./MinhasCotacoes";
+import Cadastros from './Cadastros';
+import CadastrosFisica from './CadastrosFisica';
+import CadastrosJuridica from './CadastrosJuridica';
+import CadastrosFornecedor from './CadastrosFornecedor';
 import { useMainBox } from '../contexts/MainBoxContext';
 
 const Body = () => {
@@ -13,12 +16,18 @@ const Body = () => {
         switch (screen) {
           case ScreenType.PAGINAINICIAL:
             return <Welcome />;
-          case ScreenType.TESTE:
-            return <Teste/>
           case ScreenType.FORNECEDORESFAVORITOS:
             return <FornecedoresFavoritos/>
           case ScreenType.MINHASCOTACOES:
             return <MinhasCotacoes/>
+          case ScreenType.CADASTROS:
+            return <Cadastros/>
+          case ScreenType.CADASTROSFISICA:
+            return <CadastrosFisica/>
+          case ScreenType.CADASTROSJURIDICA:
+            return <CadastrosJuridica/>
+          case ScreenType.CADASTROSFORNECEDOR:
+            return <CadastrosFornecedor/>
         }
       }
     return(

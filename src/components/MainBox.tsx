@@ -1,10 +1,10 @@
 import React from "react";
-
-//Import Components
 import { useMainBox } from "../contexts/MainBoxContext";
 import ScreenType from "../enuns/ScreenType";
-import Header from "./Header";
+
+//Import Components
 import Body from "./Body";
+import NavHorizontal from "./NavHorizontal";
 
 
 const MainBox = () => {
@@ -12,10 +12,10 @@ const MainBox = () => {
   return (
     <React.Fragment>
       {screen !== ScreenType.WELCOME && 
-      <>
-        <Header/>
-        <Body/>
-      </>
+        <>
+        <NavHorizontal/>
+          <Body/>
+        </>
       }
     </React.Fragment>
   );

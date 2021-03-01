@@ -1,7 +1,6 @@
 import React from "react";
 import { useMainBox } from "../contexts/MainBoxContext";
 import ScreenType from "../enuns/ScreenType";
-import Header from "./Header";
 import NavVertical from "./NavVertical";
 import Welcome from './Welcome';
 
@@ -9,13 +8,13 @@ const NavManager: React.FC = () => {
   const { screen } = useMainBox();
   return (
     <React.Fragment>
-      {screen !== ScreenType.WELCOME ?
+      {screen === ScreenType.WELCOME &&
         <>
-          <Header/>
-          <NavVertical/>
+          <Welcome/>
         </>
-        :
-        <Welcome/>
+      }
+      {screen !== ScreenType.WELCOME && screen !== ScreenType.CADASTROS && screen !== ScreenType.CADASTROSFISICA && screen !== ScreenType.CADASTROSJURIDICA && screen !== ScreenType.CADASTROSFORNECEDOR &&
+        <NavVertical/>
       }
     </React.Fragment>
   );
