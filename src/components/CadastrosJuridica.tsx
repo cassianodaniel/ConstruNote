@@ -1,10 +1,8 @@
 import React, { FormEvent, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { Button, Form, FormGroup, Input, InputGroup, InputGroupAddon, InputGroupText, Label, Spinner } from 'reactstrap';
 
 const CadastrosJuridica : React.FC = () => {
     const [login, setLogin] = useState("");
-    const [password, setPassword] = useState("");
     /* const { setLoginUser, loading } = useLogin(); */
     const [loading, setLoading] = useState<boolean>(false);
     const onSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -20,9 +18,9 @@ const CadastrosJuridica : React.FC = () => {
                 <div className="card card-login mr-lg-5">
                     <div className="card-body m-3 m-lg-5 has-shown-squad">
                     <div className="d-flex flex-column align-items-center">
-                        <div className="mb-3 title">Cadastro de pessoa jurídica</div>
+                        <div className="mb-3 title">Cadastro de empresa compradora</div>
                         <div className="mb-4 sub-title">
-                        Digite os seus dados para cadastrar:
+                        Digite os dados da sua empresa para cadastrar:
                         </div>
                     </div>
                     <Form onSubmit={onSubmit}>
@@ -35,7 +33,7 @@ const CadastrosJuridica : React.FC = () => {
                                     setLogin(e.target.value);
                                 }}
                                 type="email"
-                                placeholder="Nome do usuário"
+                                placeholder="Nome da empresa"
                                 bsSize="lg"
                                 className="input-login"
                                 />
@@ -56,48 +54,7 @@ const CadastrosJuridica : React.FC = () => {
                                     setLogin(e.target.value);
                                 }}
                                 type="email"
-                                placeholder="Senha"
-                                bsSize="lg"
-                                className="input-login"
-                                />
-                                <InputGroupAddon addonType="append">
-                                <InputGroupText className="input-group-text">
-                                    
-                                </InputGroupText>
-                                </InputGroupAddon>
-                            </InputGroup>
-                        </div>
-
-                        <div className="mb-4">
-                            <InputGroup>
-                                <Input
-                                value={password}
-                                onChange={(e) => {
-                                    setPassword(e.target.value);
-                                }}
-                                type="password"
-                                placeholder="Confirmar senha"
-                                bsSize="lg"
-                                className="input-login"
-                                />
-                                <InputGroupAddon addonType="append">
-                                <InputGroupText className="input-group-text">
-                                    
-                                </InputGroupText>
-                                </InputGroupAddon>
-                            </InputGroup>
-                        </div>
-
-                        <div className="mb-3">
-                            <InputGroup>
-                                <Input
-                                value={login}
-                                onChange={(e) => {
-                                    console.log(e);
-                                    setLogin(e.target.value);
-                                }}
-                                type="email"
-                                placeholder="E-mail"
+                                placeholder="CNPJ"
                                 bsSize="lg"
                                 className="input-login"
                                 />
@@ -112,13 +69,14 @@ const CadastrosJuridica : React.FC = () => {
                         <div className="mb-4">
                         <FormGroup>
                             <Input type="select" name="select" id="exampleSelect">
-                            <option>Engenheriro(a) / Tecnólogo (a)</option>
-                            <option>Arquiteto(a)/Designer de Interiores</option>
-                            <option>Técnico(a)</option>
-                            <option>Mestre/Encarregado(a)</option>
-                            <option>Profissional/Prestador de serviço</option>
-                            <option>Construtor (pessoa física)</option>
-                            <option>Construindo, reformando ou reparando imóvel próprio</option>
+                            <option selected disabled>Tipo de empresa</option>
+                            <option>Construtora</option>
+                            <option>Construtora/Incorporadora</option>
+                            <option>Incorporadora</option>
+                            <option>Autônomo</option>
+                            <option>Prestadora de serviços</option>
+                            <option>Outras Empresas privadas</option>
+                            <option>Órgão público</option>
                             </Input>
                         </FormGroup>
                         </div>
@@ -131,16 +89,7 @@ const CadastrosJuridica : React.FC = () => {
                                     <div className="form-check-input-box">
                                         <Input type="checkbox" />{" "}
                                     </div>
-                                    <span>Salvar senha</span>
-                                    </Label>
-                                </FormGroup>
-                                </div>
-                                <div className="col d-flex justify-content-end">
-                                <FormGroup check>
-                                    <Label check>
-                                    <Link to="/forgot-password" className="link-password">
-                                        Esqueceu a senha?
-                                    </Link>
+                                    <span>Não tenho empresa</span>
                                     </Label>
                                 </FormGroup>
                                 </div>
@@ -155,9 +104,7 @@ const CadastrosJuridica : React.FC = () => {
                                     <div className="form-check-input-box">
                                         <Input type="checkbox" />{" "}
                                     </div>
-                                    <span>Aceito os {" "}
-                                        <a  href="www.google.com.br">termos e condições de uso</a>
-                                    </span>
+                                        Declaro que posso cotar preços e comprar em nome desta empresa
                                     </Label>
                                 </FormGroup>
                                 </div>

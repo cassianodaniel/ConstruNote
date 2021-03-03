@@ -4,11 +4,13 @@ import ScreenType from "../enuns/ScreenType";
 import Welcome from "./Welcome";
 import FornecedoresFavoritos from "./FornecedoresFavoritos";
 import MinhasCotacoes from "./MinhasCotacoes";
-import Cadastros from './Cadastros';
+import Cadastros from './PrimeiraSessaoCadastro';
 import CadastrosFisica from './CadastrosFisica';
 import CadastrosJuridica from './CadastrosJuridica';
 import CadastrosFornecedor from './CadastrosFornecedor';
 import { useMainBox } from '../contexts/MainBoxContext';
+import SegundaSessaoCadastroComprador from './SegundaSessaoCadastroComprador';
+import PreCadastroEmpresaFornecedora from './PreCadastroEmpresaFornecedora';
 
 const Body = () => {
     const { screen } = useMainBox();
@@ -28,6 +30,10 @@ const Body = () => {
             return <CadastrosJuridica/>
           case ScreenType.CADASTROSFORNECEDOR:
             return <CadastrosFornecedor/>
+          case ScreenType.SEGUNDASESSAOCADASTROCOMPRADOR:
+            return <SegundaSessaoCadastroComprador/>
+          case ScreenType.PRECADASTROEMPRESAFORNECEDORA:
+            return <PreCadastroEmpresaFornecedora/>
         }
       }
     return(

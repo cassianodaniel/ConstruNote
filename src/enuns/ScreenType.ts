@@ -7,7 +7,9 @@ enum ScreenType {
   CADASTROS = "cadastros",
   CADASTROSJURIDICA = "cadastrosjuridica",
   CADASTROSFISICA = "cadastrosfisica",
-  CADASTROSFORNECEDOR = "cadastrosfornecedor"
+  CADASTROSFORNECEDOR = "cadastrosfornecedor",
+  SEGUNDASESSAOCADASTROCOMPRADOR = "segundasessaocadastrocomprador",
+  PRECADASTROEMPRESAFORNECEDORA = "precadastroempresafornecedora"
 }
 
 export default ScreenType;
