@@ -1,10 +1,13 @@
 import React, { FormEvent, useState } from 'react';
 import { Button, Form, FormGroup, Input, InputGroup, InputGroupAddon, InputGroupText, Label, Spinner } from 'reactstrap';
+import { useMainBox } from '../contexts/MainBoxContext';
+import ScreenType from '../enuns/ScreenType';
 
 const CadastrosJuridica : React.FC = () => {
     const [login, setLogin] = useState("");
     /* const { setLoginUser, loading } = useLogin(); */
     const [loading, setLoading] = useState<boolean>(false);
+    const { setScreen } = useMainBox();
     const onSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         /* setLoginUser({ login, password }); */
@@ -33,7 +36,7 @@ const CadastrosJuridica : React.FC = () => {
                                     setLogin(e.target.value);
                                 }}
                                 type="email"
-                                placeholder="Nome da empresa"
+                                placeholder="Nome completo"
                                 bsSize="lg"
                                 className="input-login"
                                 />
@@ -54,7 +57,7 @@ const CadastrosJuridica : React.FC = () => {
                                     setLogin(e.target.value);
                                 }}
                                 type="email"
-                                placeholder="CNPJ"
+                                placeholder="Email"
                                 bsSize="lg"
                                 className="input-login"
                                 />
@@ -69,14 +72,15 @@ const CadastrosJuridica : React.FC = () => {
                         <div className="mb-4">
                         <FormGroup>
                             <Input type="select" name="select" id="exampleSelect">
-                            <option selected disabled>Tipo de empresa</option>
-                            <option>Construtora</option>
-                            <option>Construtora/Incorporadora</option>
-                            <option>Incorporadora</option>
-                            <option>Autônomo</option>
-                            <option>Prestadora de serviços</option>
-                            <option>Outras Empresas privadas</option>
-                            <option>Órgão público</option>
+                            <option selected disabled>Função principal</option>
+                            <option>Dono/administrador</option>
+                            <option>Gerente/Coordenador de obras</option>
+                            <option>Engenheiro(a)/Tecnólogo(a)</option>
+                            <option>Arquiteto(a)/Designer de interiores</option>
+                            <option>Compras/Suprimentos</option>
+                            <option>Planejamento/Orçamento</option>
+                            <option>Estoque/Almoxarifado</option>
+                            <option>Outro</option>
                             </Input>
                         </FormGroup>
                         </div>
@@ -89,27 +93,15 @@ const CadastrosJuridica : React.FC = () => {
                                     <div className="form-check-input-box">
                                         <Input type="checkbox" />{" "}
                                     </div>
-                                    <span>Não tenho empresa</span>
+                                    <span>Aceito os {" "}
+                                        <a  href="www.google.com.br">termos e condições de uso</a>
+                                    </span>
                                     </Label>
                                 </FormGroup>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="input-options">
-                            <div className="row mb-3">
-                                <div className="col">
-                                <FormGroup check>
-                                    <Label check>
-                                    <div className="form-check-input-box">
-                                        <Input type="checkbox" />{" "}
-                                    </div>
-                                        Declaro que posso cotar preços e comprar em nome desta empresa
-                                    </Label>
-                                </FormGroup>
-                                </div>
-                            </div>
-                        </div>
                         <div>
                             <Button
                                 type="submit"
@@ -122,8 +114,11 @@ const CadastrosJuridica : React.FC = () => {
                                 justifyContent: "center",
                                 alignItems:"center"
                                 }}
+                                onClick={
+                                    () => setScreen(ScreenType.CADASTROFUNCIONARIOEMPRESACOMPRADORA)
+                                }
                             >
-                                {!loading ? "Entrar" : <Spinner size="md"></Spinner>}
+                                {!loading ? "Cadastrar" : <Spinner size="md"></Spinner>}
                             </Button>
                         </div>
                     </Form>

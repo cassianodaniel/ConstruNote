@@ -1,10 +1,13 @@
 import React, { FormEvent, useState } from 'react';
 import { Button, Form, FormGroup, Input, InputGroup, InputGroupAddon, InputGroupText, Label, Spinner } from 'reactstrap';
+import { useMainBox } from '../contexts/MainBoxContext';
+import ScreenType from '../enuns/ScreenType';
 
 const CadastrosJuridica : React.FC = () => {
     const [login, setLogin] = useState("");
     /* const { setLoginUser, loading } = useLogin(); */
     const [loading, setLoading] = useState<boolean>(false);
+    const { setScreen } = useMainBox();
     const onSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         /* setLoginUser({ login, password }); */
@@ -188,8 +191,9 @@ const CadastrosJuridica : React.FC = () => {
                                 justifyContent: "center",
                                 alignItems:"center"
                                 }}
+                                onClick={() => setScreen(ScreenType.CADASTROFUNCIONARIOEMPRESAFORNECEDORA) }
                             >
-                                {!loading ? "Entrar" : <Spinner size="md"></Spinner>}
+                                {!loading ? "Cadastrar" : <Spinner size="md"></Spinner>}
                             </Button>
                         </div>
                     </Form>

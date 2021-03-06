@@ -176,7 +176,7 @@ const CadastrosFisica : React.FC = () => {
                                 alignItems:"center"
                                 }}
                             >
-                                {!loading ? "Entrar" : <Spinner size="md"></Spinner>}
+                                {!loading ? "Cadastrar" : <Spinner size="md"></Spinner>}
                             </Button>
                         </div>
                     </Form>

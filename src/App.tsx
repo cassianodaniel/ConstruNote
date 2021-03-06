@@ -13,11 +13,11 @@ function App() {
     <Router>
       {isLoadingApp ? (
         <LoadingPage />
-      ) : (
+      ):(
         <>
           <Favicon alertCount={0} url="./favicon.ico"/>
           <Dashboard>
-            <Routes />
+            <Routes/>
           </Dashboard>
         </>
       )}

@@ -53,7 +53,7 @@ const Welcome: React.FC = () => {
             <Button color={"primary"} style={{
               width: "100%"
             }}
-            onClick={() => setScreen(ScreenType.MINHASCOTACOES)}>
+            onClick={() => setScreen(ScreenType.PAGINAINICIALCOMPRADORES)}>
               Entrar
             </Button>
             <Button style={{

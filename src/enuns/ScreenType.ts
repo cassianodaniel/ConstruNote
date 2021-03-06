@@ -9,7 +9,11 @@ enum ScreenType {
   CADASTROSFISICA = "cadastrosfisica",
   CADASTROSFORNECEDOR = "cadastrosfornecedor",
   SEGUNDASESSAOCADASTROCOMPRADOR = "segundasessaocadastrocomprador",
-  PRECADASTROEMPRESAFORNECEDORA = "precadastroempresafornecedora"
+  PRECADASTROEMPRESAFORNECEDORA = "precadastroempresafornecedora",
+  CADASTROFUNCIONARIOEMPRESACOMPRADORA = "cadastrofuncionarioempresacompradora",
+  CADASTROFUNCIONARIOEMPRESAFORNECEDORA = "cadastrofuncionarioempresafornecedora",
+  PAGINAINICIALFORNECEDORES = "paginainicialfornecedores",
+  PAGINAINICIALCOMPRADORES = "paginainicialcompradores",
 }
 
 export default ScreenType;

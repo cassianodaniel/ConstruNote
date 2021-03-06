@@ -3,7 +3,7 @@ import './../assets/scss/custom/_body.scss'
 import ScreenType from "../enuns/ScreenType";
 import Welcome from "./Welcome";
 import FornecedoresFavoritos from "./FornecedoresFavoritos";
-import MinhasCotacoes from "./MinhasCotacoes";
+import PaginaInicialFornecedores from "./PaginaInicialFornecedores";
 import Cadastros from './PrimeiraSessaoCadastro';
 import CadastrosFisica from './CadastrosFisica';
 import CadastrosJuridica from './CadastrosJuridica';
@@ -11,17 +11,22 @@ import CadastrosFornecedor from './CadastrosFornecedor';
 import { useMainBox } from '../contexts/MainBoxContext';
 import SegundaSessaoCadastroComprador from './SegundaSessaoCadastroComprador';
 import PreCadastroEmpresaFornecedora from './PreCadastroEmpresaFornecedora';
+import CadastroFuncionarioEmpresaCompradora from './CadastroFuncionarioEmpresaCompradora';
+import CadastroFuncionarioEmpresaFornecedora from './CadastroFuncionarioEmpresaFornecedora';
+import PaginaInicialCompradores from './PaginaInicialCompradores'
 
 const Body = () => {
     const { screen } = useMainBox();
     function showScreen() {
         switch (screen) {
-          case ScreenType.PAGINAINICIAL:
+          case ScreenType.WELCOME:
             return <Welcome />;
           case ScreenType.FORNECEDORESFAVORITOS:
             return <FornecedoresFavoritos/>
-          case ScreenType.MINHASCOTACOES:
-            return <MinhasCotacoes/>
+          case ScreenType.PAGINAINICIALFORNECEDORES:
+            return <PaginaInicialFornecedores/>
+          case ScreenType.PAGINAINICIALCOMPRADORES:
+            return <PaginaInicialCompradores/>
           case ScreenType.CADASTROS:
             return <Cadastros/>
           case ScreenType.CADASTROSFISICA:
@@ -34,6 +39,10 @@ const Body = () => {
             return <SegundaSessaoCadastroComprador/>
           case ScreenType.PRECADASTROEMPRESAFORNECEDORA:
             return <PreCadastroEmpresaFornecedora/>
+          case ScreenType.CADASTROFUNCIONARIOEMPRESACOMPRADORA:
+            return <CadastroFuncionarioEmpresaCompradora/>
+          case ScreenType.CADASTROFUNCIONARIOEMPRESAFORNECEDORA:
+            return <CadastroFuncionarioEmpresaFornecedora/>
         }
       }
     return(
