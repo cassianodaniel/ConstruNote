@@ -1,11 +1,7 @@
-import React from 'react';
+import React from "react";
 
-const FornecedoresFavoritos : React.FC = () => {
-    return(
-        <div>
-            Fornecedores Favoritos
-        </div>
-    )
-}
+const FornecedoresFavoritos: React.FC = () => {
+  return <div className="bg-red"></div>;
+};
 
 export default FornecedoresFavoritos;
