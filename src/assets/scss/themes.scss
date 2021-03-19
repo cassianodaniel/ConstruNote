@@ -3,6 +3,7 @@
 @import "./bootstrap.scss";
 @import "./app.scss";
 @import "./custom/body.scss";
+@import "./custom/components/cardOpcao.scss";
 
 .nav-item {
   cursor: pointer;
@@ -82,7 +83,7 @@
   width: 73% !important;
 }
 
-.body{
+.body {
   margin-top: 85px;
   margin-left: 10px;
   margin-right: 10px;

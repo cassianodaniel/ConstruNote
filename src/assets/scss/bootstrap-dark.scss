@@ -1,19 +1,7 @@
-/*
-Template Name: Chatvia - Responsive Bootstrap 4 Chat App
-Author: Themesbrand
-Version: 1.0.0
-Website: https://themesbrand.com/
-Contact: themesbrand@gmail.com
-File: Custom Bootstrap dark Css File
-*/
-
-
-//Core files
 @import "./node_modules/bootstrap/scss/functions";
 @import "./node_modules/bootstrap/scss/variables";
 @import "variables-dark";
 @import "./node_modules/bootstrap/scss/bootstrap";
-
 @import "custom/components/reboot";
 @import "custom/components/backgrounds";
 @import "custom/components/badge";
@@ -25,3 +13,4 @@ File: Custom Bootstrap dark Css File
 @import "custom/components/table";
 @import "custom/components/pagination";
 @import "custom/components/progress";
+@import "./custom/components/cardOpcao.scss";
