@@ -1,5 +1,4 @@
 import React from "react";
-import { BiTrash } from "react-icons/bi";
 import ReactImageFallback from "react-image-fallback";
 
 interface IProps {

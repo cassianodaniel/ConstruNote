@@ -1,7 +1,6 @@
 import React from "react";
 import { Collapse, CardBody, CardHeader } from "reactstrap";
 import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next";
 
 interface IProps {
   title: string;
@@ -17,8 +16,6 @@ const CustomCollapse: React.FC<IProps> = ({
   toggleCollapse,
   children,
 }) => {
-  const { t } = useTranslation();
-
   return (
     <React.Fragment>
       <Link to="#" onClick={toggleCollapse} className="text-dark">
@@ -29,7 +26,7 @@ const CustomCollapse: React.FC<IProps> = ({
                 className={iconClass + " mr-2 align-middle d-inline-block"}
               ></i>
             )}
-            {t(title)}
+            {title}
             <i
               className={
                 isOpen

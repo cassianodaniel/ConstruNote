@@ -1,6 +1,4 @@
-enum UserType {
-  ADMIN = "admin",
-  USER = "user",
+export enum UserType {
+  PESSOAJURIDICA = "Pessoa Jurídica",
+  PESSOAFISICA = "Pessoa Física",
 }
-
-export default UserType;

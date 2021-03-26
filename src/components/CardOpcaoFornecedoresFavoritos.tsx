@@ -1,6 +1,5 @@
 import React from "react";
 import { Input } from "reactstrap";
-import CharTicket from "./CharTicket";
 import ContainerFornecedoresFavoritos from "./ContainerFornecedoresFavoritos";
 import Line from "./Line";
 

@@ -34,5 +34,33 @@
 .cardsContainer {
   display: flex;
   flex-direction: row;
-  height: 100%;
+}
+
+.navigationButtons {
+  position: relative;
+  font-weight: lighter;
+  border: 0;
+  border-radius: 14;
+  background-color: transparent;
+  padding: 20px;
+}
+
+.yellow-star {
+  color: #d4d400;
+}
+
+.eye-height {
+  height: 26px !important;
+}
+
+.silver-star {
+  color: #9c9494;
+}
+
+.scroll-y-auto {
+  overflow-y: auto;
+}
+
+.scroll-x-hidden {
+  overflow-x: hidden;
 }

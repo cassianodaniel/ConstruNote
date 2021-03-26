@@ -14,13 +14,11 @@ import CustomCollapse from "./CustomCollapse";
 import avatar1 from "./../assets/images/users/avatar-1.jpg";
 
 //i18n
-import { useTranslation } from "react-i18next";
 /* import { useAuth } from "../contexts/AuthContext"; */
 
 const ProfileTab: React.FC = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(true);
-  const { t } = useTranslation();
 
   const toggleCollapse1 = () => {
     setIsOpen(!isOpen);
@@ -40,14 +38,14 @@ const ProfileTab: React.FC = () => {
                 <i className="ri-more-2-fill"></i>
               </DropdownToggle>
               <DropdownMenu right>
-                <DropdownItem>{t("Edit")}</DropdownItem>
-                <DropdownItem>{t("Action")}</DropdownItem>
+                <DropdownItem>{"Edit"}</DropdownItem>
+                <DropdownItem>{"Action"}</DropdownItem>
                 <DropdownItem divider />
-                <DropdownItem>{t("Another action")}</DropdownItem>
+                <DropdownItem>{"Another action"}</DropdownItem>
               </DropdownMenu>
             </Dropdown>
           </div>
-          <h4 className="mb-0">{t("My Profile")}</h4>
+          <h4 className="mb-0">{"My Profile"}</h4>
         </div>
 
         <div className="text-center p-4 border-bottom">
@@ -77,15 +75,15 @@ const ProfileTab: React.FC = () => {
                 toggleCollapse={toggleCollapse1}
               >
                 <div>
-                  <p className="text-muted mb-1">{t("Name")}</p>
+                  <p className="text-muted mb-1">{"Name"}</p>
                 </div>
 
                 <div className="mt-4">
-                  <p className="text-muted mb-1">{t("Email")}</p>
+                  <p className="text-muted mb-1">{"Email"}</p>
                 </div>
-                  <div className="mt-4">
-                    <p className="text-muted mb-1">{t("Number")}</p>
-                  </div>
+                <div className="mt-4">
+                  <p className="text-muted mb-1">{"Number"}</p>
+                </div>
               </CustomCollapse>
             </Card>
           </div>

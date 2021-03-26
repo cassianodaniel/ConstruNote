@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "./../assets/images/logo.png";
+import logo from "./../assets/images/emblems/logo.png";
 import { motion } from "framer-motion";
 
 const LoadingPage: React.FC = () => {

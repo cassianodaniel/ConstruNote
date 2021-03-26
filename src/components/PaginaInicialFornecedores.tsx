@@ -1,55 +1,21 @@
 import React from "react";
 import { Button, Table } from "reactstrap";
+import NavHorizontal from "./NavHorizontal";
+import NavVertical from "./NavVertical";
+import { IUser } from "../alias/IUser";
+import { IDate } from "../alias/IDate";
 
-const PaginaInicialFornecedores = () => {
+const PaginaInicialFornecedores: React.FC = () => {
   return (
     <>
-      <div></div>
-      <Table hover responsive autoCapitalize={"on"}>
+      <NavVertical />
+      <NavHorizontal title={"Fornecedores"} />
+      <Table className="margin-top-60" hover responsive autoCapitalize={"on"}>
         <thead>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-            }}
-          >
-            <button
-              onClick={() => alert("Novas")}
-              className={"p-2"}
-              style={{
-                position: "relative",
-                fontWeight: "lighter",
-                backgroundColor: "beige",
-                border: 0,
-                borderRadius: 14,
-              }}
-            >
-              Novas
-            </button>
-            <button
-              onClick={() => alert("Dec li")}
-              className={"p-2"}
-              style={{
-                position: "relative",
-                fontWeight: "lighter",
-                backgroundColor: "transparent",
-                border: 0,
-              }}
-            >
-              Respondidas
-            </button>
-            <button
-              onClick={() => alert("Não respondidas")}
-              className={"p-2"}
-              style={{
-                fontWeight: "lighter",
-                backgroundColor: "transparent",
-                border: 0,
-              }}
-            >
-              Declinadas
-            </button>
+          <div className="d-flex flex-row align-items-center">
+            <button className={"navigationButtons"}>Novas</button>
+            <button className={"navigationButtons"}>Respondidas</button>
+            <button className={"navigationButtons"}>Declinadas</button>
           </div>
           <tr>
             <th>Cliente</th>
@@ -62,40 +28,17 @@ const PaginaInicialFornecedores = () => {
         </thead>
         <tbody>
           <tr>
-            <td
-              style={{
-                display: "flex",
-                alignItems: "center",
-              }}
-            >
-              <i
-                className={"ri-star-line mr-2"}
-                style={{
-                  color: "#d4d400",
-                }}
-              />
+            <td className="d-flex align-items-center">
+              <i className={"ri-star-line mr-2 yellow-star"} />
               Pessoa jurídica
             </td>
 
             <td>
               São José da Coroa Grande
-              <i
-                style={{ marginLeft: 4, color: "primary" }}
-                className={"ri-map-pin-2-line"}
-              />
+              <i className={"ri-map-pin-2-line ml-1"} />
             </td>
-            <td
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-              }}
-            >
-              J43OIJ2{" "}
-              <i
-                style={{ marginLeft: 4, color: "primary" }}
-                className={"ri-file-list-line"}
-              />
+            <td className="d-flex flex-row align-items-center">
+              J43OIJ2 <i className={"ri-file-list-line ml-1"} />
             </td>
             <td>13/06/2021</td>
             <td>50%</td>
@@ -103,12 +46,35 @@ const PaginaInicialFornecedores = () => {
               <Button
                 type={"button"}
                 color="primary"
-                style={{
-                  height: 23,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
+                className="d-flex flex-row align-items-center eye-height"
+              >
+                <i className={"ri-eye-line mr-2"} />
+                {"Ver"}
+              </Button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div className="d-flex flex-row">
+                <i className={"ri-star-line mr-2 silver-star"} />
+                Órgão público
+              </div>
+            </td>
+            <td>
+              Bananeiras <i className={"ri-map-pin-2-line ml-1"} />{" "}
+            </td>
+            <td className="d-flex flex-row align-items-center">
+              {" "}
+              JK32LO1 <i className={"ri-shopping-cart- ml-1 line"} />{" "}
+            </td>
+            <td>04/02/2021</td>
+            <td>100%</td>
+            <td>
+              <Button
+                type={"button"}
+                color="primary"
+                className="eye-height d-flex flex-row align-items-center"
               >
                 <i className={"ri-eye-line mr-2"} />
                 {"Ver"}
@@ -124,33 +90,16 @@ const PaginaInicialFornecedores = () => {
                   flexDirection: "row",
                 }}
               >
-                <i
-                  className={"ri-star-line mr-2"}
-                  style={{ color: "#9c9494" }}
-                />
+                <i className={"ri-star-line mr-2 silver-star"} />
                 Órgão público
               </div>
             </td>
             <td>
-              Bananeiras{" "}
-              <i
-                style={{ marginLeft: 4, color: "primary" }}
-                className={"ri-map-pin-2-line"}
-              />{" "}
+              São Carlos <i className={"ri-map-pin-2-line ml-1 "} />{" "}
             </td>
-            <td
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-              }}
-            >
+            <td className="d-flex flex-row align-items-center">
               {" "}
-              JK32LO1{" "}
-              <i
-                style={{ marginLeft: 4, color: "primary" }}
-                className={"ri-shopping-cart-line"}
-              />{" "}
+              JK32LO1 <i className={"ri-file-list-line ml-1 "} />{" "}
             </td>
             <td>04/02/2021</td>
             <td>100%</td>
@@ -158,12 +107,7 @@ const PaginaInicialFornecedores = () => {
               <Button
                 type={"button"}
                 color="primary"
-                style={{
-                  height: 23,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
+                className="eye-height d-flex flex-row align-items-center"
               >
                 <i className={"ri-eye-line mr-2"} />
                 {"Ver"}
@@ -179,33 +123,16 @@ const PaginaInicialFornecedores = () => {
                   flexDirection: "row",
                 }}
               >
-                <i
-                  className={"ri-star-line mr-2"}
-                  style={{ color: "#9c9494" }}
-                />
+                <i className={"ri-star-line mr-2 silver-star"} />
                 Órgão público
               </div>
             </td>
             <td>
-              São Carlos{" "}
-              <i
-                style={{ marginLeft: 4, color: "primary" }}
-                className={"ri-map-pin-2-line"}
-              />{" "}
+              Santo Antônio <i className={"ri-map-pin-2-line ml-1 "} />{" "}
             </td>
-            <td
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-              }}
-            >
+            <td className="d-flex flex-row align-items-center">
               {" "}
-              JK32LO1{" "}
-              <i
-                style={{ marginLeft: 4, color: "primary" }}
-                className={"ri-file-list-line"}
-              />{" "}
+              JK32LO1 <i className={"ri-file-list-line ml-1 "} />{" "}
             </td>
             <td>04/02/2021</td>
             <td>100%</td>
@@ -213,67 +140,7 @@ const PaginaInicialFornecedores = () => {
               <Button
                 type={"button"}
                 color="primary"
-                style={{
-                  height: 23,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <i className={"ri-eye-line mr-2"} />
-                {"Ver"}
-              </Button>
-            </td>
-          </tr>
-
-          <tr>
-            <td>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                }}
-              >
-                <i
-                  className={"ri-star-line mr-2"}
-                  style={{ color: "#9c9494" }}
-                />
-                Órgão público
-              </div>
-            </td>
-            <td>
-              Santo Antônio{" "}
-              <i
-                style={{ marginLeft: 4, color: "primary" }}
-                className={"ri-map-pin-2-line"}
-              />{" "}
-            </td>
-            <td
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-              }}
-            >
-              {" "}
-              JK32LO1{" "}
-              <i
-                style={{ marginLeft: 4, color: "primary" }}
-                className={"ri-file-list-line"}
-              />{" "}
-            </td>
-            <td>04/02/2021</td>
-            <td>100%</td>
-            <td>
-              <Button
-                type={"button"}
-                color="primary"
-                style={{
-                  height: 23,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
+                className="eye-height d-flex flex-row align-items-center"
               >
                 <i className={"ri-eye-line mr-2"} />
                 {"Ver"}
@@ -288,34 +155,16 @@ const PaginaInicialFornecedores = () => {
                 alignItems: "center",
               }}
             >
-              <i
-                className={"ri-star-line mr-2"}
-                style={{
-                  color: "#d4d400",
-                }}
-              />
+              <i className={"ri-star-line mr-2 yellow-star"} />
               Pessoa jurídica
             </td>
 
             <td>
               Campina Grande
-              <i
-                style={{ marginLeft: 4, color: "primary" }}
-                className={"ri-map-pin-2-line"}
-              />
+              <i className={"ri-map-pin-2-line ml-1 "} />
             </td>
-            <td
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-              }}
-            >
-              J43OIJ2{" "}
-              <i
-                style={{ marginLeft: 4, color: "primary" }}
-                className={"ri-shopping-cart-line"}
-              />
+            <td className="d-flex flex-row align-items-center">
+              J43OIJ2 <i className={"ri-shopping-cart- ml-1 line"} />
             </td>
             <td>13/06/2021</td>
             <td>50%</td>
@@ -323,12 +172,7 @@ const PaginaInicialFornecedores = () => {
               <Button
                 type={"button"}
                 color="primary"
-                style={{
-                  height: 23,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
+                className="eye-height d-flex flex-row align-items-center"
               >
                 <i className={"ri-eye-line mr-2"} />
                 {"Ver"}
@@ -343,34 +187,16 @@ const PaginaInicialFornecedores = () => {
                 alignItems: "center",
               }}
             >
-              <i
-                className={"ri-star-line mr-2"}
-                style={{
-                  color: "#d4d400",
-                }}
-              />
+              <i className={"ri-star-line mr-2 yellow-star"} />
               Pessoa jurídica
             </td>
 
             <td>
               Araraquara
-              <i
-                style={{ marginLeft: 4, color: "primary" }}
-                className={"ri-map-pin-2-line"}
-              />
+              <i className={"ri-map-pin-2-line ml-1 "} />
             </td>
-            <td
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-              }}
-            >
-              J43OIJ2{" "}
-              <i
-                style={{ marginLeft: 4, color: "primary" }}
-                className={"ri-shopping-cart-line"}
-              />
+            <td className="d-flex flex-row align-items-center">
+              J43OIJ2 <i className={"ri-shopping-cart- ml-1 line"} />
             </td>
             <td>13/06/2021</td>
             <td>50%</td>
@@ -378,12 +204,7 @@ const PaginaInicialFornecedores = () => {
               <Button
                 type={"button"}
                 color="primary"
-                style={{
-                  height: 23,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
+                className="eye-height d-flex flex-row align-items-center"
               >
                 <i className={"ri-eye-line mr-2"} />
                 {"Ver"}
@@ -398,34 +219,16 @@ const PaginaInicialFornecedores = () => {
                 alignItems: "center",
               }}
             >
-              <i
-                className={"ri-star-line mr-2"}
-                style={{
-                  color: "#d4d400",
-                }}
-              />
+              <i className={"ri-star-line mr-2 yellow-star"} />
               Pessoa jurídica
             </td>
 
             <td>
               São José do Rio Preto
-              <i
-                style={{ marginLeft: 4, color: "primary" }}
-                className={"ri-map-pin-2-line"}
-              />
+              <i className={"ri-map-pin-2-line ml-1 "} />
             </td>
-            <td
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-              }}
-            >
-              J43OIJ2{" "}
-              <i
-                style={{ marginLeft: 4, color: "primary" }}
-                className={"ri-shopping-cart-line"}
-              />
+            <td className="d-flex flex-row align-items-center">
+              J43OIJ2 <i className={"ri-shopping-cart- ml-1 line"} />
             </td>
             <td>13/06/2021</td>
             <td>50%</td>
@@ -433,12 +236,7 @@ const PaginaInicialFornecedores = () => {
               <Button
                 type={"button"}
                 color="primary"
-                style={{
-                  height: 23,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
+                className="eye-height d-flex flex-row align-items-center"
               >
                 <i className={"ri-eye-line mr-2"} />
                 {"Ver"}
@@ -453,34 +251,16 @@ const PaginaInicialFornecedores = () => {
                 alignItems: "center",
               }}
             >
-              <i
-                className={"ri-star-line mr-2"}
-                style={{
-                  color: "#d4d400",
-                }}
-              />
+              <i className={"ri-star-line mr-2 yellow-star"} />
               Pessoa jurídica
             </td>
 
             <td>
               São José da Coroa Grande
-              <i
-                style={{ marginLeft: 4, color: "primary" }}
-                className={"ri-map-pin-2-line"}
-              />
+              <i className={"ri-map-pin-2-line ml-1 "} />
             </td>
-            <td
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-              }}
-            >
-              J43OIJ2{" "}
-              <i
-                style={{ marginLeft: 4, color: "primary" }}
-                className={"ri-shopping-cart-line"}
-              />
+            <td className="d-flex flex-row align-items-center">
+              J43OIJ2 <i className={"ri-shopping-cart- ml-1 line"} />
             </td>
             <td>13/06/2021</td>
             <td>50%</td>
@@ -488,12 +268,7 @@ const PaginaInicialFornecedores = () => {
               <Button
                 type={"button"}
                 color="primary"
-                style={{
-                  height: 23,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
+                className="eye-height d-flex flex-row align-items-center"
               >
                 <i className={"ri-eye-line mr-2"} />
                 {"Ver"}
@@ -509,33 +284,16 @@ const PaginaInicialFornecedores = () => {
                   flexDirection: "row",
                 }}
               >
-                <i
-                  className={"ri-star-line mr-2"}
-                  style={{ color: "#9c9494" }}
-                />
+                <i className={"ri-star-line mr-2 silver-star"} />
                 Órgão público
               </div>
             </td>
             <td>
-              Bananeiras{" "}
-              <i
-                style={{ marginLeft: 4, color: "primary" }}
-                className={"ri-map-pin-2-line"}
-              />{" "}
+              Bananeiras <i className={"ri-map-pin-2-line ml-1 "} />{" "}
             </td>
-            <td
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-              }}
-            >
+            <td className="d-flex flex-row align-items-center">
               {" "}
-              JK32LO1{" "}
-              <i
-                style={{ marginLeft: 4, color: "primary" }}
-                className={"ri-file-list-line"}
-              />{" "}
+              JK32LO1 <i className={"ri-file-list-line ml-1 "} />{" "}
             </td>
             <td>04/02/2021</td>
             <td>100%</td>
@@ -543,12 +301,7 @@ const PaginaInicialFornecedores = () => {
               <Button
                 type={"button"}
                 color="primary"
-                style={{
-                  height: 23,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
+                className="eye-height d-flex flex-row align-items-center"
               >
                 <i className={"ri-eye-line mr-2"} />
                 {"Ver"}
@@ -564,33 +317,16 @@ const PaginaInicialFornecedores = () => {
                   flexDirection: "row",
                 }}
               >
-                <i
-                  className={"ri-star-line mr-2"}
-                  style={{ color: "#9c9494" }}
-                />
+                <i className={"ri-star-line mr-2 silver-star"} />
                 Órgão público
               </div>
             </td>
             <td>
-              São Carlos{" "}
-              <i
-                style={{ marginLeft: 4, color: "primary" }}
-                className={"ri-map-pin-2-line"}
-              />{" "}
+              São Carlos <i className={"ri-map-pin-2-line ml-1 "} />{" "}
             </td>
-            <td
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-              }}
-            >
+            <td className="d-flex flex-row align-items-center">
               {" "}
-              JK32LO1{" "}
-              <i
-                style={{ marginLeft: 4, color: "primary" }}
-                className={"ri-file-list-line"}
-              />{" "}
+              JK32LO1 <i className={"ri-file-list-line ml-1 "} />{" "}
             </td>
             <td>04/02/2021</td>
             <td>100%</td>
@@ -598,12 +334,7 @@ const PaginaInicialFornecedores = () => {
               <Button
                 type={"button"}
                 color="primary"
-                style={{
-                  height: 23,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
+                className="eye-height d-flex flex-row align-items-center"
               >
                 <i className={"ri-eye-line mr-2"} />
                 {"Ver"}
@@ -619,33 +350,16 @@ const PaginaInicialFornecedores = () => {
                   flexDirection: "row",
                 }}
               >
-                <i
-                  className={"ri-star-line mr-2"}
-                  style={{ color: "#9c9494" }}
-                />
+                <i className={"ri-star-line mr-2 silver-star"} />
                 Órgão público
               </div>
             </td>
             <td>
-              Santo Antônio{" "}
-              <i
-                style={{ marginLeft: 4, color: "primary" }}
-                className={"ri-map-pin-2-line"}
-              />{" "}
+              Santo Antônio <i className={"ri-map-pin-2-line ml-1 "} />{" "}
             </td>
-            <td
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-              }}
-            >
+            <td className="d-flex flex-row align-items-center">
               {" "}
-              JK32LO1{" "}
-              <i
-                style={{ marginLeft: 4, color: "primary" }}
-                className={"ri-file-list-line"}
-              />{" "}
+              JK32LO1 <i className={"ri-file-list-line ml-1"} />{" "}
             </td>
             <td>04/02/2021</td>
             <td>100%</td>
@@ -653,12 +367,7 @@ const PaginaInicialFornecedores = () => {
               <Button
                 type={"button"}
                 color="primary"
-                style={{
-                  height: 23,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
+                className="eye-height d-flex flex-row align-items-center"
               >
                 <i className={"ri-eye-line mr-2"} />
                 {"Ver"}
@@ -673,34 +382,16 @@ const PaginaInicialFornecedores = () => {
                 alignItems: "center",
               }}
             >
-              <i
-                className={"ri-star-line mr-2"}
-                style={{
-                  color: "#d4d400",
-                }}
-              />
+              <i className={"ri-star-line mr-2 yellow-star"} />
               Pessoa jurídica
             </td>
 
             <td>
               Campina Grande
-              <i
-                style={{ marginLeft: 4, color: "primary" }}
-                className={"ri-map-pin-2-line"}
-              />
+              <i className={"ri-map-pin-2-line ml-1 "} />
             </td>
-            <td
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-              }}
-            >
-              J43OIJ2{" "}
-              <i
-                style={{ marginLeft: 4, color: "primary" }}
-                className={"ri-file-list-line"}
-              />
+            <td className="d-flex flex-row align-items-center">
+              J43OIJ2 <i className={"ri-file-list-line ml-1"} />
             </td>
             <td>13/06/2021</td>
             <td>50%</td>
@@ -708,12 +399,7 @@ const PaginaInicialFornecedores = () => {
               <Button
                 type={"button"}
                 color="primary"
-                style={{
-                  height: 23,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
+                className="eye-height d-flex flex-row align-items-center"
               >
                 <i className={"ri-eye-line mr-2"} />
                 {"Ver"}
@@ -728,34 +414,16 @@ const PaginaInicialFornecedores = () => {
                 alignItems: "center",
               }}
             >
-              <i
-                className={"ri-star-line mr-2"}
-                style={{
-                  color: "#d4d400",
-                }}
-              />
+              <i className={"ri-star-line mr-2 yellow-star"} />
               Pessoa jurídica
             </td>
 
             <td>
               Araraquara
-              <i
-                style={{ marginLeft: 4, color: "primary" }}
-                className={"ri-map-pin-2-line"}
-              />
+              <i className={"ri-map-pin-2-line ml-1 "} />
             </td>
-            <td
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-              }}
-            >
-              J43OIJ2{" "}
-              <i
-                style={{ marginLeft: 4, color: "primary" }}
-                className={"ri-file-list-line"}
-              />
+            <td className="d-flex flex-row align-items-center">
+              J43OIJ2 <i className={"ri-file-list-line ml-1 "} />
             </td>
             <td>13/06/2021</td>
             <td>50%</td>
@@ -763,12 +431,7 @@ const PaginaInicialFornecedores = () => {
               <Button
                 type={"button"}
                 color="primary"
-                style={{
-                  height: 23,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
+                className="eye-height d-flex flex-row align-items-center"
               >
                 <i className={"ri-eye-line mr-2"} />
                 {"Ver"}
@@ -783,34 +446,16 @@ const PaginaInicialFornecedores = () => {
                 alignItems: "center",
               }}
             >
-              <i
-                className={"ri-star-line mr-2"}
-                style={{
-                  color: "#d4d400",
-                }}
-              />
+              <i className={"ri-star-line mr-2 yellow-star"} />
               Pessoa jurídica
             </td>
 
             <td>
               São José do Rio Preto
-              <i
-                style={{ marginLeft: 4, color: "primary" }}
-                className={"ri-map-pin-2-line"}
-              />
+              <i className={"ri-map-pin-2-line ml-1 "} />
             </td>
-            <td
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-              }}
-            >
-              J43OIJ2{" "}
-              <i
-                style={{ marginLeft: 4, color: "primary" }}
-                className={"ri-file-list-line"}
-              />
+            <td className="d-flex flex-row align-items-center">
+              J43OIJ2 <i className={"ri-shopping-cart-line  ml-1"} />
             </td>
             <td>13/06/2021</td>
             <td>50%</td>
@@ -818,12 +463,7 @@ const PaginaInicialFornecedores = () => {
               <Button
                 type={"button"}
                 color="primary"
-                style={{
-                  height: 23,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
+                className="eye-height d-flex flex-row align-items-center"
               >
                 <i className={"ri-eye-line mr-2"} />
                 {"Ver"}
@@ -838,34 +478,16 @@ const PaginaInicialFornecedores = () => {
                 alignItems: "center",
               }}
             >
-              <i
-                className={"ri-star-line mr-2"}
-                style={{
-                  color: "#d4d400",
-                }}
-              />
+              <i className={"ri-star-line mr-2 yellow-star"} />
               Pessoa jurídica
             </td>
 
             <td>
               São José do Rio Preto
-              <i
-                style={{ marginLeft: 4, color: "primary" }}
-                className={"ri-map-pin-2-line"}
-              />
+              <i className={"ri-map-pin-2-line ml-1 "} />
             </td>
-            <td
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-              }}
-            >
-              J43OIJ2{" "}
-              <i
-                style={{ marginLeft: 4, color: "primary" }}
-                className={"ri-shopping-cart-line"}
-              />
+            <td className="d-flex flex-row align-items-center">
+              J43OIJ2 <i className={"ri-shopping-cart-line ml-1"} />
             </td>
             <td>13/06/2021</td>
             <td>50%</td>
@@ -873,12 +495,7 @@ const PaginaInicialFornecedores = () => {
               <Button
                 type={"button"}
                 color="primary"
-                style={{
-                  height: 23,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
+                className="eye-height d-flex flex-row align-items-center"
               >
                 <i className={"ri-eye-line mr-2"} />
                 {"Ver"}
@@ -893,34 +510,16 @@ const PaginaInicialFornecedores = () => {
                 alignItems: "center",
               }}
             >
-              <i
-                className={"ri-star-line mr-2"}
-                style={{
-                  color: "#d4d400",
-                }}
-              />
+              <i className={"ri-star-line mr-2 yellow-star"} />
               Pessoa jurídica
             </td>
 
             <td>
               São José do Rio Preto
-              <i
-                style={{ marginLeft: 4, color: "primary" }}
-                className={"ri-map-pin-2-line"}
-              />
+              <i className={"ri-map-pin-2-line ml-1 "} />
             </td>
-            <td
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-              }}
-            >
-              J43OIJ2{" "}
-              <i
-                style={{ marginLeft: 4, color: "primary" }}
-                className={"ri-shopping-cart-line"}
-              />
+            <td className="d-flex flex-row align-items-center">
+              J43OIJ2 <i className={"ri-shopping-cart-line ml-1"} />
             </td>
             <td>13/06/2021</td>
             <td>50%</td>
@@ -928,67 +527,7 @@ const PaginaInicialFornecedores = () => {
               <Button
                 type={"button"}
                 color="primary"
-                style={{
-                  height: 23,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <i className={"ri-eye-line mr-2"} />
-                {"Ver"}
-              </Button>
-            </td>
-          </tr>
-
-          <tr>
-            <td
-              style={{
-                display: "flex",
-                alignItems: "center",
-              }}
-            >
-              <i
-                className={"ri-star-line mr-2"}
-                style={{
-                  color: "#d4d400",
-                }}
-              />
-              Pessoa jurídica
-            </td>
-
-            <td>
-              São José do Rio Preto
-              <i
-                style={{ marginLeft: 4, color: "primary" }}
-                className={"ri-map-pin-2-line"}
-              />
-            </td>
-            <td
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-              }}
-            >
-              J43OIJ2{" "}
-              <i
-                style={{ marginLeft: 4, color: "primary" }}
-                className={"ri-shopping-cart-line"}
-              />
-            </td>
-            <td>13/06/2021</td>
-            <td>50%</td>
-            <td>
-              <Button
-                type={"button"}
-                color="primary"
-                style={{
-                  height: 23,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
+                className="eye-height d-flex flex-row align-items-center"
               >
                 <i className={"ri-eye-line mr-2"} />
                 {"Ver"}

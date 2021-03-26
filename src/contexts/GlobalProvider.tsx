@@ -6,11 +6,11 @@ import { MainBoxProvider } from "./MainBoxContext";
 const Provider: React.FC = ({ children }) => {
   return (
     <LoadingProvider>
-        <LayoutProvider>
-          <MainBoxProvider>
-            <>{children}</>
-          </MainBoxProvider>
-        </LayoutProvider>
+      <LayoutProvider>
+        <MainBoxProvider>
+          <>{children}</>
+        </MainBoxProvider>
+      </LayoutProvider>
     </LoadingProvider>
   );
 };

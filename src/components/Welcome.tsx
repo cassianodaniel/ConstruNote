@@ -1,12 +1,12 @@
 import React from "react";
 import { Button, Input } from "reactstrap";
-import { useMainBox } from "../contexts/MainBoxContext";
-import ScreenType from "../enuns/ScreenType";
-import "./../assets/scss/welcome.scss";
 import { motion } from "framer-motion";
+import { useHistory } from "react-router-dom";
+
+import ScreenType from "../enuns/ScreenType";
 
 const Welcome: React.FC = () => {
-  const { setScreen } = useMainBox();
+  const history = useHistory();
 
   return (
     <motion.div
@@ -22,7 +22,7 @@ const Welcome: React.FC = () => {
           height: "auto",
         }}
         className={"imageFromBackground"}
-        src={require("./../assets/images/negocio.png")}
+        src={require("./../assets/images/backgrounds/negocio.png")}
         alt={"decisions"}
       />
 
@@ -60,7 +60,7 @@ const Welcome: React.FC = () => {
             style={{
               width: "100%",
             }}
-            onClick={() => setScreen(ScreenType.PAGINAINICIALCOMPRADORES)}
+            onClick={() => history.push(ScreenType.PAGINAINICIALCOMPRADORES)}
           >
             Entrar
           </Button>
@@ -69,7 +69,7 @@ const Welcome: React.FC = () => {
               width: "100%",
               marginTop: 10,
             }}
-            onClick={() => setScreen(ScreenType.CADASTROS)}
+            onClick={() => history.push(ScreenType.PRIMEIRASESSAOCADASTROS)}
             color={"light"}
           >
             Cadastre-se
