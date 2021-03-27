@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState } from "react";
-import ScreenType from "../enuns/ScreenType";
+import ScreenType from "../enums/ScreenType";
 
 interface IMainBoxContext {
   screen: ScreenType;

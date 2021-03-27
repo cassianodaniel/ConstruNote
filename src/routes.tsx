@@ -3,7 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import Loading from "./components/Loading";
 import LoadingPage from "./components/LoadingPage";
 import Welcome from "./components/Welcome";
-import { ScreenType } from "./enuns/ScreenType";
+import { ScreenType } from "./enums/ScreenType";
 
 const FornecedoresFavoritos = lazy(
   () => import("./components/FornecedoresFavoritos")

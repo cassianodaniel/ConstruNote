@@ -3,7 +3,7 @@ import { Button, Input } from "reactstrap";
 import { motion } from "framer-motion";
 import { useHistory } from "react-router-dom";
 
-import ScreenType from "../enuns/ScreenType";
+import ScreenType from "../enums/ScreenType";
 
 const Welcome: React.FC = () => {
   const history = useHistory();

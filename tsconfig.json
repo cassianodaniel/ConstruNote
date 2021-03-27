@@ -15,5 +15,5 @@
     "noEmit": true,
     "jsx": "react"
   },
-  "include": ["src", "src/enuns/.ts"]
+  "include": ["src", "src/enun/.ts"]
 }

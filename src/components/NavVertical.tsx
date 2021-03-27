@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import { Nav, NavItem, NavLink } from "reactstrap";
 import emblem from "./../assets/images/emblems/emblem.png";
-import ScreenType from "../enuns/ScreenType";
+import ScreenType from "../enums/ScreenType";
 const NavVertical: React.FC = () => {
   const history = useHistory();
   return (

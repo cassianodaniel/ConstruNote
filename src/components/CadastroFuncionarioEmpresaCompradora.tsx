@@ -11,7 +11,7 @@ import {
   Label,
   Spinner,
 } from "reactstrap";
-import ScreenType from "../enuns/ScreenType";
+import ScreenType from "../enums/ScreenType";
 
 const CadastroFuncionarioEmpresaCompradora: React.FC = () => {
   const [login, setLogin] = useState("");

@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "reactstrap";
 import { NavLink } from "react-router-dom";
-import ScreenType from "../enuns/ScreenType";
+import ScreenType from "../enums/ScreenType";
 
 const PrimeiraSessaoCadastro: React.FC = () => {
   return (

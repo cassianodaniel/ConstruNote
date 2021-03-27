@@ -11,7 +11,7 @@ import {
   Spinner,
 } from "reactstrap";
 import { useHistory } from "react-router-dom";
-import ScreenType from "../enuns/ScreenType";
+import ScreenType from "../enums/ScreenType";
 
 const CadastrosJuridica: React.FC = () => {
   const [login, setLogin] = useState("");
