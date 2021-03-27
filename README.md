@@ -4,12 +4,11 @@ Web application built in React.js and Typescript that supports a construction ma
 
 ## The first download and run
 
-```
-
 Clone the project:
-```
+
+``
 git clone https://github.com/danielcassiano/ConstruNote
-```
+``
 
 Run forward to the main path:
 ```
