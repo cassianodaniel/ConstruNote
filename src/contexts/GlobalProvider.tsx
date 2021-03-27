@@ -1,15 +1,15 @@
 import React from "react";
 import { LoadingProvider } from "./LoadingContext";
 import { LayoutProvider } from "./LayoutContext";
-import { MainBoxProvider } from "./MainBoxContext";
+import { ModalProvider } from "./ModalContext";
 
 const Provider: React.FC = ({ children }) => {
   return (
     <LoadingProvider>
       <LayoutProvider>
-        <MainBoxProvider>
+        <ModalProvider>
           <>{children}</>
-        </MainBoxProvider>
+        </ModalProvider>
       </LayoutProvider>
     </LoadingProvider>
   );

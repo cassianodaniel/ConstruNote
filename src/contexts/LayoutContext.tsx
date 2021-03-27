@@ -1,10 +1,8 @@
 import React, { createContext, useContext, useState } from "react";
 
 interface ILayoutContextData {
-  activeTab: string;
-  setActiveTab(value: string): void;
-  userSidebar: boolean;
-  setUserSidebar(value: boolean): void;
+  toggle: boolean;
+  setToggle(value: boolean): void;
 }
 
 export const LayoutContext = createContext<ILayoutContextData>(
@@ -12,16 +10,13 @@ export const LayoutContext = createContext<ILayoutContextData>(
 );
 
 export const LayoutProvider: React.FC = ({ children }) => {
-  const [activeTab, setActiveTab] = useState("chats");
-  const [userSidebar, setUserSidebar] = useState(false);
+  const [toggle, setToggle] = useState<boolean>(false);
 
   return (
     <LayoutContext.Provider
       value={{
-        activeTab,
-        setActiveTab,
-        userSidebar,
-        setUserSidebar,
+        toggle,
+        setToggle,
       }}
     >
       {children}
