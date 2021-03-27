@@ -36,3 +36,15 @@ Run the project
 ```
 yarn start
 ```
+
+## Really brief explaining about the project `/src` folders environment
+
+|folder| description|
+|:---------|:---------|
+|aliases| typescript interfaces|
+|assets| media files |
+|boards| layout wrapper |
+|enums| pre-defined constants |
+|helpers| support content |
+|mock| populational data |
+
