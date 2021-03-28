@@ -1,5 +1,5 @@
 import React, { FormEvent, useState } from "react";
-import { Redirect } from "react-router";
+import { useHistory } from "react-router";
 import {
   Button,
   Form,
@@ -11,11 +11,13 @@ import {
   Label,
   Spinner,
 } from "reactstrap";
+import Swal from "sweetalert2";
 import ScreenType from "../enums/ScreenType";
 
 const CadastroFuncionarioEmpresaCompradora: React.FC = () => {
   const [login, setLogin] = useState("");
   const [loading, setLoading] = useState<boolean>(false);
+  const history = useHistory();
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setTimeout(() => {
@@ -23,17 +25,10 @@ const CadastroFuncionarioEmpresaCompradora: React.FC = () => {
     }, 3000);
   };
   return (
-    <div
-      style={{
-        height: "100%",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      <div className="col-12 col-lg-6 d-flex justify-content-center justify-content-lg-end align-items-center">
-        <div className="card card-login mr-lg-5">
-          <div className="card-body m-3 m-lg-5 has-shown-squad">
+    <div className="vh-100 vw-100 d-flex align-items-center justify-content-center">
+      <div className="form">
+        <div className="card">
+          <div className="card-body">
             <div className="d-flex flex-column align-items-center">
               <div className="mb-3 title">
                 Cadastro de funcionário empresa compradora
@@ -133,17 +128,17 @@ const CadastroFuncionarioEmpresaCompradora: React.FC = () => {
                   size="lg"
                   block
                   className="buttom-login"
-                  style={{
-                    height: "54px",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                  onClick={() => (
-                    <Redirect
-                      to={ScreenType.CADASTROFUNCIONARIOEMPRESACOMPRADORA}
-                    />
-                  )}
+                  onClick={() =>
+                    Swal.fire({
+                      position: "center",
+                      icon: "success",
+                      title: "Você foi cadastrado com sucesso!",
+                      showConfirmButton: false,
+                      timer: 1500,
+                    }).then(() => {
+                      history.push(ScreenType.FORNECEDORESFAVORITOS);
+                    })
+                  }
                 >
                   {!loading ? "Cadastrar" : <Spinner size="md"></Spinner>}
                 </Button>

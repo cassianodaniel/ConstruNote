@@ -24,30 +24,22 @@ const CadastrosJuridica: React.FC = () => {
     }, 3000);
   };
   return (
-    <div
-      style={{
-        height: "100%",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      <div className="col-12 col-lg-6 d-flex justify-content-center justify-content-lg-end align-items-center">
-        <div className="card card-login mr-lg-5">
+    <div className="vh-100 vw-100 d-flex align-items-center justify-content-center">
+      <div className="d-flex justify-content-center align-items-center">
+        <div className="form card card-login mr-lg-5">
           <div className="card-body m-3 m-lg-5 has-shown-squad">
             <div className="d-flex flex-column align-items-center">
               <div className="mb-3 title">Cadastro de empresa compradora</div>
-              <div className="mb-4 sub-title">
+              <div className="mb-4 mt-1 sub-title">
                 Digite os dados da sua empresa para cadastrar:
               </div>
             </div>
             <Form onSubmit={onSubmit}>
-              <div className="mb-3">
+              <div className="mb-3 mt-1">
                 <InputGroup>
                   <Input
                     value={login}
                     onChange={(e) => {
-                      console.log(e);
                       setLogin(e.target.value);
                     }}
                     type="email"
@@ -61,7 +53,7 @@ const CadastrosJuridica: React.FC = () => {
                 </InputGroup>
               </div>
 
-              <div className="mb-3">
+              <div className="mb-3 mt-1">
                 <InputGroup>
                   <Input
                     value={login}
@@ -80,7 +72,7 @@ const CadastrosJuridica: React.FC = () => {
                 </InputGroup>
               </div>
 
-              <div className="mb-4">
+              <div className="mb-4 mt-1">
                 <FormGroup>
                   <Input type="select" name="select" id="exampleSelect">
                     <option selected disabled>
@@ -99,7 +91,7 @@ const CadastrosJuridica: React.FC = () => {
               </div>
 
               <div className="input-options">
-                <div className="row mb-3">
+                <div className="row mb-3 mt-1">
                   <div className="col">
                     <FormGroup check>
                       <Label check>
@@ -107,10 +99,7 @@ const CadastrosJuridica: React.FC = () => {
                           <Input type="checkbox" />{" "}
                         </div>
                         <span>
-                          Aceito os{" "}
-                          <a href="www.google.com.br">
-                            termos e condições de uso
-                          </a>
+                          Aceito os <a href="/">termos e condições de uso</a>
                         </span>
                       </Label>
                     </FormGroup>
@@ -123,13 +112,7 @@ const CadastrosJuridica: React.FC = () => {
                   type="submit"
                   size="lg"
                   block
-                  className="buttom-login"
-                  style={{
-                    height: "54px",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
+                  className="buttom-login d-flex justify-content-center align-items-center"
                   onClick={() =>
                     history.push(
                       ScreenType.CADASTROFUNCIONARIOEMPRESACOMPRADORA

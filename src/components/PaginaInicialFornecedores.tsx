@@ -12,14 +12,13 @@ const PaginaInicialFornecedores: React.FC = () => {
     <>
       <NavVertical />
       <NavHorizontal title={"Fornecedores"} />
-
       <Table className="margin-top-60" hover responsive autoCapitalize={"on"}>
         <thead>
-          <div className="d-flex flex-row align-items-center">
+          {/* <div className="d-flex flex-row align-items-center">
             <button className={"navigationButtons"}>Novas</button>
             <button className={"navigationButtons"}>Respondidas</button>
             <button className={"navigationButtons"}>Declinadas</button>
-          </div>
+          </div> */}
           <tr>
             <th>Cliente</th>
             <th>Local</th>
