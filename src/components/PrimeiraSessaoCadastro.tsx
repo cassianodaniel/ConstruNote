@@ -1,30 +1,31 @@
 import React from "react";
 import { Button } from "reactstrap";
-import { NavLink } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import ScreenType from "../enums/ScreenType";
 
 const PrimeiraSessaoCadastro: React.FC = () => {
+  const history = useHistory();
   return (
-    <div className="d-flex align-items-center justify-content-center h-100">
+    <div className="d-flex flex-row align-items-center justify-content-center vh-100 vw-100">
       <div>
-        <NavLink
-          className="nav-link"
-          to={ScreenType.SEGUNDASESSAOCADASTROCOMPRADOR}
-          exact
+        <Button
+          className="ml-4"
+          type="button"
+          color="primary"
+          onClick={() =>
+            history.push(ScreenType.SEGUNDASESSAOCADASTROCOMPRADOR)
+          }
         >
-          <Button className="ml-4" type="button" color="primary">
-            Sou comprador
-          </Button>
-        </NavLink>
-        <NavLink
-          className="nav-link"
-          to={ScreenType.SEGUNDASESSAOCADASTROCOMPRADOR}
-          exact
+          Sou comprador
+        </Button>
+        <Button
+          className="ml-4"
+          type="button"
+          color="primary"
+          onClick={() => history.push(ScreenType.CADASTROSFORNECEDOR)}
         >
-          <Button className="ml-4" type="button" color="primary">
-            Sou fornecedor
-          </Button>
-        </NavLink>
+          Sou fornecedor
+        </Button>
       </div>
     </div>
   );

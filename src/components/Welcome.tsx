@@ -60,7 +60,7 @@ const Welcome: React.FC = () => {
             style={{
               width: "100%",
             }}
-            onClick={() => history.push(ScreenType.PAGINAINICIALCOMPRADORES)}
+            onClick={() => history.push(ScreenType.FORNECEDORESFAVORITOS)}
           >
             Entrar
           </Button>
