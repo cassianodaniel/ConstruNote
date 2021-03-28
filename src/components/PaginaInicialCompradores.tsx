@@ -17,13 +17,7 @@ const PaginaInicialCompradores: React.FC = () => {
   return (
     <>
       <NavVertical />
-      {/*
-        NavHorizontal opening
-      */}
       <NavHorizontal title={"Página inicial de compradores"} />
-      {/*
-        NavHorizontal closing
-      */}
       <div style={{ width: "100vw", height: "100vh" }}>
         <Table responsive className="margin-top-60" hover autoCapitalize={"on"}>
           <thead>
