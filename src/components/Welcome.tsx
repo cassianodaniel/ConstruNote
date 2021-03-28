@@ -41,25 +41,14 @@ const Welcome: React.FC = () => {
             E conheça a melhor plataforma de cotações virtuais!
           </h6>
 
-          <Input
-            color="primary"
-            style={{ marginTop: 10 }}
-            placeholder="E-mail"
-          ></Input>
-          <Input style={{ marginTop: 10 }} placeholder="Senha"></Input>
+          <Input color="primary" placeholder="E-mail" className="mt-1"></Input>
+          <Input placeholder="Senha" className="mt-1"></Input>
         </div>
 
-        <div
-          style={{
-            marginTop: 20,
-          }}
-          className={"buttons"}
-        >
+        <div className={"buttons mt-4"}>
           <Button
             color={"primary"}
-            style={{
-              width: "100%",
-            }}
+            className="w-100"
             onClick={() => history.push(ScreenType.FORNECEDORESFAVORITOS)}
           >
             Entrar

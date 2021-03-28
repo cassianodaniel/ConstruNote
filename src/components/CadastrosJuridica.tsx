@@ -14,7 +14,7 @@ import { useHistory } from "react-router-dom";
 import ScreenType from "../enums/ScreenType";
 
 const CadastrosJuridica: React.FC = () => {
-  const [login, setLogin] = useState("");
+  const [login] = useState("");
   const history = useHistory();
   const [loading, setLoading] = useState<boolean>(false);
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -39,9 +39,6 @@ const CadastrosJuridica: React.FC = () => {
                 <InputGroup>
                   <Input
                     value={login}
-                    onChange={(e) => {
-                      setLogin(e.target.value);
-                    }}
                     type="email"
                     placeholder="Nome completo"
                     bsSize="lg"
@@ -57,10 +54,6 @@ const CadastrosJuridica: React.FC = () => {
                 <InputGroup>
                   <Input
                     value={login}
-                    onChange={(e) => {
-                      console.log(e);
-                      setLogin(e.target.value);
-                    }}
                     type="email"
                     placeholder="Email"
                     bsSize="lg"

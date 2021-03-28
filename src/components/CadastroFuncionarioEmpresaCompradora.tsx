@@ -15,7 +15,7 @@ import Swal from "sweetalert2";
 import ScreenType from "../enums/ScreenType";
 
 const CadastroFuncionarioEmpresaCompradora: React.FC = () => {
-  const [login, setLogin] = useState("");
+  const [login] = useState("");
   const [loading, setLoading] = useState<boolean>(false);
   const history = useHistory();
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -42,10 +42,6 @@ const CadastroFuncionarioEmpresaCompradora: React.FC = () => {
                 <InputGroup>
                   <Input
                     value={login}
-                    onChange={(e) => {
-                      console.log(e);
-                      setLogin(e.target.value);
-                    }}
                     type="email"
                     placeholder="Nome completo"
                     bsSize="lg"
@@ -61,10 +57,6 @@ const CadastroFuncionarioEmpresaCompradora: React.FC = () => {
                 <InputGroup>
                   <Input
                     value={login}
-                    onChange={(e) => {
-                      console.log(e);
-                      setLogin(e.target.value);
-                    }}
                     type="email"
                     placeholder="CPF"
                     bsSize="lg"

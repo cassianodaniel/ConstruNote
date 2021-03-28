@@ -8,7 +8,6 @@ import { ScreenType } from "./enums/ScreenType";
 const FornecedoresFavoritos = lazy(
   () => import("./components/FornecedoresFavoritos")
 );
-/* const MinhasCotacoes = lazy(() => import("./components/MinhasCotacoes")); */
 const PaginaInicialCompradores = lazy(
   () => import("./components/PaginaInicialCompradores")
 );
@@ -57,11 +56,6 @@ const Routes: React.FC = () => {
           exact
           component={FornecedoresFavoritos}
         />
-        {/* <Route
-          path={ScreenType.MINHASCOTACOES}
-          exact
-          component={MinhasCotacoes}
-        /> */}
         <Route
           path={ScreenType.PRIMEIRASESSAOCADASTROS}
           exact

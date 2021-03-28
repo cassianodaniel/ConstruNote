@@ -1,5 +1,6 @@
 import React from "react";
 import ReactImageFallback from "react-image-fallback";
+import ScreenType from "../enums/ScreenType";
 
 interface IProps {
   name: string;
@@ -23,7 +24,7 @@ const CharTicket: React.FC<IProps> = ({ name, classification, score }) => {
             <div className="ml-1 font-weight-bold text-danger">{score}</div>
           </div>
           <div>
-            <a className="font-size-13" href="www.google.com">
+            <a className="font-size-13" href={ScreenType.FORNECEDORESFAVORITOS}>
               Excluir
             </a>
           </div>

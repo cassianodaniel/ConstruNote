@@ -14,12 +14,10 @@ import {
 import ScreenType from "../enums/ScreenType";
 
 const CadastrosJuridica: React.FC = () => {
-  const [login, setLogin] = useState("");
-  /* const { setLoginUser, loading } = useLogin(); */
+  const [login] = useState("");
   const [loading, setLoading] = useState<boolean>(false);
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    /* setLoginUser({ login, password }); */
     setTimeout(() => {
       setLoading(true);
     }, 3000);
@@ -41,10 +39,6 @@ const CadastrosJuridica: React.FC = () => {
                 <InputGroup>
                   <Input
                     value={login}
-                    onChange={(e) => {
-                      console.log(e);
-                      setLogin(e.target.value);
-                    }}
                     type="email"
                     placeholder="Nome da empresa"
                     bsSize="lg"
@@ -60,10 +54,6 @@ const CadastrosJuridica: React.FC = () => {
                 <InputGroup>
                   <Input
                     value={login}
-                    onChange={(e) => {
-                      console.log(e);
-                      setLogin(e.target.value);
-                    }}
                     type="email"
                     placeholder="CNPJ"
                     bsSize="lg"
@@ -79,10 +69,6 @@ const CadastrosJuridica: React.FC = () => {
                 <InputGroup>
                   <Input
                     value={login}
-                    onChange={(e) => {
-                      console.log(e);
-                      setLogin(e.target.value);
-                    }}
                     type="email"
                     placeholder="E-mail"
                     bsSize="lg"
@@ -98,10 +84,6 @@ const CadastrosJuridica: React.FC = () => {
                 <InputGroup>
                   <Input
                     value={login}
-                    onChange={(e) => {
-                      console.log(e);
-                      setLogin(e.target.value);
-                    }}
                     type="email"
                     placeholder="Senha"
                     bsSize="lg"
@@ -117,10 +99,6 @@ const CadastrosJuridica: React.FC = () => {
                 <InputGroup>
                   <Input
                     value={login}
-                    onChange={(e) => {
-                      console.log(e);
-                      setLogin(e.target.value);
-                    }}
                     type="email"
                     placeholder="Confirmar senha"
                     bsSize="lg"
@@ -136,10 +114,6 @@ const CadastrosJuridica: React.FC = () => {
                 <InputGroup>
                   <Input
                     value={login}
-                    onChange={(e) => {
-                      console.log(e);
-                      setLogin(e.target.value);
-                    }}
                     type="email"
                     placeholder="CEP"
                     bsSize="lg"
