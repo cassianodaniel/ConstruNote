@@ -1,12 +1,8 @@
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, { createContext, useContext, useState } from "react";
 
 interface ILoadingContextData {
-  isDisconnected: boolean;
-  setDisconnected(value: boolean): void;
   isLoadingApp: boolean;
-  setLoadingApp(value: boolean): void;
-  isLoadingMedia: boolean;
-  setIsLoadingMedia(value: boolean): void;
+  setIsLoadingApp(value: boolean): void;
 }
 
 export const LoadingContext = createContext<ILoadingContextData>(
@@ -14,19 +10,14 @@ export const LoadingContext = createContext<ILoadingContextData>(
 );
 
 export const LoadingProvider: React.FC = ({ children }) => {
-  const [isDisconnected, setDisconnected] = useState(false);
-  const [isLoadingApp, setLoadingApp] = useState(true);
-  const [isLoadingMedia, setIsLoadingMedia] = useState(true);
-
-  const init = () => {
-    setTimeout(() => setLoadingApp(false), 1);
-  };
-
-  useEffect(init, []);
+  const [isLoadingApp, setIsLoadingApp] = useState(true);
 
   return (
     <LoadingContext.Provider
-      value={{ isDisconnected, setDisconnected, isLoadingApp, setLoadingApp, isLoadingMedia, setIsLoadingMedia }}
+      value={{
+        isLoadingApp,
+        setIsLoadingApp,
+      }}
     >
       {children}
     </LoadingContext.Provider>
