@@ -1,4 +1,4 @@
-import React, { FormEvent, useState } from "react";
+import React, { FormEvent, useEffect, useState } from "react";
 import {
   Button,
   Form,
@@ -13,6 +13,8 @@ import {
 import { useHistory } from "react-router-dom";
 import ScreenType from "../enums/ScreenType";
 import Swal from "sweetalert2";
+import axios from "axios";
+import { RiMailAddLine, RiPencilLine } from "react-icons/ri";
 
 const CadastrosFornecedor: React.FC = () => {
   const [login] = useState("");
@@ -24,6 +26,29 @@ const CadastrosFornecedor: React.FC = () => {
       setLoading(true);
     }, 3000);
   };
+
+  const getEstados = () => {
+    axios
+      .get("https://servicodados.ibge.gov.br/api/v1/localidades/estados")
+      .then((result) => {
+        console.log(result.data);
+      });
+  };
+
+  const getMicrorregioes = () => {
+    axios
+      .get(
+        "https://servicodados.ibge.gov.br/api/v1/localidades/estados/SP/microrregioes"
+      )
+      .then((result) => {
+        console.log(result.data);
+      });
+  };
+
+  useEffect(() => {
+    getEstados();
+    getMicrorregioes();
+  }, []);
   return (
     <div className="vh-100 vw-100 d-flex align-items-center justify-content-center">
       <div className="d-flex justify-content-center align-items-center">
@@ -46,7 +71,9 @@ const CadastrosFornecedor: React.FC = () => {
                     className="input-login"
                   />
                   <InputGroupAddon addonType="append">
-                    <InputGroupText className="input-group-text"></InputGroupText>
+                    <InputGroupText className="input-group-text">
+                      <RiPencilLine />
+                    </InputGroupText>
                   </InputGroupAddon>
                 </InputGroup>
               </div>
@@ -61,7 +88,9 @@ const CadastrosFornecedor: React.FC = () => {
                     className="input-login"
                   />
                   <InputGroupAddon addonType="append">
-                    <InputGroupText className="input-group-text"></InputGroupText>
+                    <InputGroupText className="input-group-text">
+                      <RiMailAddLine />
+                    </InputGroupText>
                   </InputGroupAddon>
                 </InputGroup>
               </div>

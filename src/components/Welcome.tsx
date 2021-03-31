@@ -5,7 +5,6 @@ import { useHistory } from "react-router-dom";
 import LoadingPage from "./LoadingPage";
 import ScreenType from "../enums/ScreenType";
 import { useLoading } from "../contexts/LoadingContext";
-import axios from "axios";
 
 const Welcome: React.FC = () => {
   const history = useHistory();
@@ -15,29 +14,6 @@ const Welcome: React.FC = () => {
       setIsLoadingApp(false);
     }, 4000);
   }, [setIsLoadingApp]);
-
-  const getEstados = () => {
-    axios
-      .get("https://servicodados.ibge.gov.br/api/v1/localidades/estados")
-      .then((result) => {
-        console.log(result.data);
-      });
-  };
-
-  const getMicrorregioes = () => {
-    axios
-      .get(
-        "https://servicodados.ibge.gov.br/api/v1/localidades/estados/PB/microrregioes"
-      )
-      .then((result) => {
-        console.log(result.data);
-      });
-  };
-
-  useEffect(() => {
-    getEstados();
-    getMicrorregioes();
-  }, []);
 
   return (
     <>

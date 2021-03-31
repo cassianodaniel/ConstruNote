@@ -12,6 +12,7 @@ import {
 } from "reactstrap";
 import { useHistory } from "react-router-dom";
 import ScreenType from "../enums/ScreenType";
+import { RiMailAddLine, RiPencilLine } from "react-icons/ri";
 
 const CadastrosJuridica: React.FC = () => {
   const [login] = useState("");
@@ -45,7 +46,9 @@ const CadastrosJuridica: React.FC = () => {
                     className="input-login"
                   />
                   <InputGroupAddon addonType="append">
-                    <InputGroupText className="input-group-text"></InputGroupText>
+                    <InputGroupText className="input-group-text">
+                      <RiPencilLine />
+                    </InputGroupText>
                   </InputGroupAddon>
                 </InputGroup>
               </div>
@@ -60,7 +63,9 @@ const CadastrosJuridica: React.FC = () => {
                     className="input-login"
                   />
                   <InputGroupAddon addonType="append">
-                    <InputGroupText className="input-group-text"></InputGroupText>
+                    <InputGroupText className="input-group-text">
+                      <RiMailAddLine />
+                    </InputGroupText>
                   </InputGroupAddon>
                 </InputGroup>
               </div>

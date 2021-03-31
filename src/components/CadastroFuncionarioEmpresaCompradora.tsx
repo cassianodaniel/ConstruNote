@@ -6,8 +6,6 @@ import {
   FormGroup,
   Input,
   InputGroup,
-  InputGroupAddon,
-  InputGroupText,
   Label,
   Spinner,
 } from "reactstrap";
@@ -47,9 +45,6 @@ const CadastroFuncionarioEmpresaCompradora: React.FC = () => {
                     bsSize="lg"
                     className="input-login"
                   />
-                  <InputGroupAddon addonType="append">
-                    <InputGroupText className="input-group-text"></InputGroupText>
-                  </InputGroupAddon>
                 </InputGroup>
               </div>
 
@@ -62,9 +57,6 @@ const CadastroFuncionarioEmpresaCompradora: React.FC = () => {
                     bsSize="lg"
                     className="input-login"
                   />
-                  <InputGroupAddon addonType="append">
-                    <InputGroupText className="input-group-text"></InputGroupText>
-                  </InputGroupAddon>
                 </InputGroup>
               </div>
 
