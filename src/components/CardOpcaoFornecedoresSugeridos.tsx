@@ -1,6 +1,6 @@
 import React from "react";
 import { Input } from "reactstrap";
-import ContainerFornecedoresFavoritos from "./ContainerFornecedoresFavoritos";
+import CharTickets from "./CharTickets";
 import Line from "./Line";
 
 const CardOpcaoFornecedoresSugeridos = () => {
@@ -21,7 +21,7 @@ const CardOpcaoFornecedoresSugeridos = () => {
           <Input placeholder="Busque aqui o seu fornecedor sugerido" />
         </div>
         <Line />
-        <ContainerFornecedoresFavoritos />
+        <CharTickets />
       </div>
     </div>
   );

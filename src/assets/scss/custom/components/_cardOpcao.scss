@@ -44,3 +44,13 @@
   width: 60px;
   border-radius: 50%;
 }
+
+.disguiseButton {
+  color: #6c63ff !important;
+  text-decoration: none !important;
+  background-color: transparent !important;
+  display: flex !important;
+  flex-direction: row !important;
+  cursor: pointer !important;
+  font-style: normal !important;
+}
