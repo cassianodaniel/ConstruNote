@@ -13,7 +13,7 @@ const CardOpcaoFornecedoresConvidados = () => {
           suas cotações para estes aqui em nossa plataforma.
         </div>
         <div className="searchFavorite">
-          <Input placeholder="Busque aqui o seu fornecedor favorito" />
+          <Input placeholder="Busque aqui o seu fornecedor convidado" />
         </div>
         <div className="font-size-15 font-weight-bold mt-3">
           Fornecedores convidados

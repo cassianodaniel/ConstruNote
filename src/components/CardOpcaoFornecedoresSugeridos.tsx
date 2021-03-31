@@ -18,7 +18,7 @@ const CardOpcaoFornecedoresSugeridos = () => {
           Fornecedores sugeridos
         </div>
         <div className="searchFavorite">
-          <Input placeholder="Busque aqui o seu fornecedor favorito" />
+          <Input placeholder="Busque aqui o seu fornecedor sugerido" />
         </div>
         <Line />
         <ContainerFornecedoresFavoritos />
