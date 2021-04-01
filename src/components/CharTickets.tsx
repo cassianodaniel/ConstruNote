@@ -2,14 +2,15 @@ import React from "react";
 import ReactImageFallback from "react-image-fallback";
 import Swal from "sweetalert2";
 import { useAuth } from "../contexts/AuthContext";
+import defaultAvatar from "./../assets/images/users/default-avatar.png";
 
 const CharTicket: React.FC = () => {
   const { users, setUsers } = useAuth();
   const deleteUser = (userId: number) => {
-    const find = users.find((fakeUser) => fakeUser.id === userId);
-    if (find) {
+    const chosenUser = users.find((fakeUser) => fakeUser.id === userId);
+    if (chosenUser) {
       Swal.fire({
-        title: "Desejas remover este fornecedor?",
+        title: `Desejas remover ${chosenUser.name}?`,
         icon: "warning",
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
@@ -30,7 +31,7 @@ const CharTicket: React.FC = () => {
         return (
           <div key={key} className="ticketContainer mt-2">
             <ReactImageFallback
-              fallbackImage={user.profilePicture}
+              fallbackImage={defaultAvatar}
               className="charPic mt-4 cursor-pointer"
               src={user.profilePicture}
             />

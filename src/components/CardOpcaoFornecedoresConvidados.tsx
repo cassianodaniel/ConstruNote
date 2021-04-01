@@ -7,7 +7,9 @@ const CardOpcaoFornecedoresConvidados = () => {
   return (
     <div className="mainContainerFavoritos shadow m-4">
       <div className="headerContainer">
-        <div className="font-size-18">Opcionalmente convide fornecedores</div>
+        <div className="font-size-18">
+          Opcionalmente convide fornecedores externos
+        </div>
         <div className="font-size-16 text-muted">
           Convide fornecedores para que você possa receber benefícios por fazer
           suas cotações para estes aqui em nossa plataforma.

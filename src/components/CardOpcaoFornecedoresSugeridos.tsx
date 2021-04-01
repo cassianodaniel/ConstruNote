@@ -12,13 +12,13 @@ const CardOpcaoFornecedoresSugeridos = () => {
         </div>
         <div className="font-size-16 text-muted">
           De acordo com a classificação de fornecedor, nós separamos alguns
-          deles para te sugerir.
-        </div>
-        <div className="font-size-15 font-weight-bold mt-3">
-          Fornecedores sugeridos
+          deles para te sugerir a favor de suas novas cotações.
         </div>
         <div className="searchFavorite">
           <Input placeholder="Busque aqui o seu fornecedor sugerido" />
+        </div>
+        <div className="font-size-15 font-weight-bold mt-3">
+          Fornecedores sugeridos
         </div>
         <Line />
         <CharTickets />
