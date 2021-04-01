@@ -17,9 +17,16 @@ import axios from "axios";
 import { RiMailAddLine, RiPencilLine } from "react-icons/ri";
 
 const CadastrosFornecedor: React.FC = () => {
-  const [login] = useState("");
   const history = useHistory();
+  const [login] = useState("");
   const [loading, setLoading] = useState<boolean>(false);
+
+  // eslint-disable-next-line
+  const [estados, setEstados] = useState<string[]>([]);
+  // eslint-disable-next-line
+  const [estadoSelecionado, setEstadoSelecionado] = useState<
+    string | undefined
+  >(undefined);
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setTimeout(() => {
@@ -30,8 +37,16 @@ const CadastrosFornecedor: React.FC = () => {
   const getEstados = () => {
     axios
       .get("https://servicodados.ibge.gov.br/api/v1/localidades/estados")
-      .then((result) => {
-        console.log(result.data);
+      .then((result: any) => {
+        Object.values(result).forEach((rst: any) => {
+          Object.values(rst).forEach((rs: any) => {
+            if (rs) {
+              if (rs.nome) {
+                estados.push(rs.nome);
+              }
+            }
+          });
+        });
       });
   };
 
@@ -40,15 +55,15 @@ const CadastrosFornecedor: React.FC = () => {
       .get(
         "https://servicodados.ibge.gov.br/api/v1/localidades/estados/SP/microrregioes"
       )
-      .then((result) => {
-        console.log(result.data);
-      });
+      .then((result) => {});
   };
 
   useEffect(() => {
     getEstados();
     getMicrorregioes();
+    // eslint-disable-next-line
   }, []);
+
   return (
     <div className="vh-100 vw-100 d-flex align-items-center justify-content-center">
       <div className="d-flex justify-content-center align-items-center">
@@ -95,7 +110,7 @@ const CadastrosFornecedor: React.FC = () => {
                 </InputGroup>
               </div>
 
-              <div className="mb-4 mt-1">
+              <div className="mb-2 mt-1">
                 <FormGroup>
                   <Input type="select" name="select" id="exampleSelect">
                     <option selected disabled>
@@ -109,6 +124,16 @@ const CadastrosFornecedor: React.FC = () => {
                     <option>Planejamento/Orçamento</option>
                     <option>Estoque/Almoxarifado</option>
                     <option>Outro</option>
+                  </Input>
+                </FormGroup>
+              </div>
+
+              <div>
+                <FormGroup>
+                  <Input type="select" name="select" id="exampleSelect">
+                    <option selected disabled>
+                      Estados
+                    </option>
                   </Input>
                 </FormGroup>
               </div>
