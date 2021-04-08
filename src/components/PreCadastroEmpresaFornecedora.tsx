@@ -14,29 +14,20 @@ import {
 import ScreenType from "../enums/ScreenType";
 
 const CadastrosJuridica: React.FC = () => {
-  const [login, setLogin] = useState("");
-  /* const { setLoginUser, loading } = useLogin(); */
+  const [login] = useState("");
   const [loading, setLoading] = useState<boolean>(false);
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    /* setLoginUser({ login, password }); */
     setTimeout(() => {
       setLoading(true);
     }, 3000);
   };
   const history = useHistory();
   return (
-    <div
-      style={{
-        height: "100%",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      <div className="col-12 col-lg-6 d-flex justify-content-center justify-content-lg-end align-items-center">
-        <div className="card card-login mr-lg-5">
-          <div className="card-body m-3 m-lg-5 has-shown-squad">
+    <div className="vh-100 vw-100 d-flex justify-content-center align-items-center">
+      <div className="form">
+        <div className="card card-login">
+          <div className="card-body m-3">
             <div className="d-flex flex-column align-items-center">
               <div className="mb-3 title">Cadastro de empresa fornecedora</div>
               <div className="mb-4 sub-title">
@@ -48,10 +39,6 @@ const CadastrosJuridica: React.FC = () => {
                 <InputGroup>
                   <Input
                     value={login}
-                    onChange={(e) => {
-                      console.log(e);
-                      setLogin(e.target.value);
-                    }}
                     type="email"
                     placeholder="Nome da empresa"
                     bsSize="lg"
@@ -67,10 +54,6 @@ const CadastrosJuridica: React.FC = () => {
                 <InputGroup>
                   <Input
                     value={login}
-                    onChange={(e) => {
-                      console.log(e);
-                      setLogin(e.target.value);
-                    }}
                     type="email"
                     placeholder="CNPJ"
                     bsSize="lg"
@@ -86,10 +69,6 @@ const CadastrosJuridica: React.FC = () => {
                 <InputGroup>
                   <Input
                     value={login}
-                    onChange={(e) => {
-                      console.log(e);
-                      setLogin(e.target.value);
-                    }}
                     type="email"
                     placeholder="E-mail"
                     bsSize="lg"
@@ -105,10 +84,6 @@ const CadastrosJuridica: React.FC = () => {
                 <InputGroup>
                   <Input
                     value={login}
-                    onChange={(e) => {
-                      console.log(e);
-                      setLogin(e.target.value);
-                    }}
                     type="email"
                     placeholder="Senha"
                     bsSize="lg"
@@ -124,10 +99,6 @@ const CadastrosJuridica: React.FC = () => {
                 <InputGroup>
                   <Input
                     value={login}
-                    onChange={(e) => {
-                      console.log(e);
-                      setLogin(e.target.value);
-                    }}
                     type="email"
                     placeholder="Confirmar senha"
                     bsSize="lg"
@@ -143,10 +114,6 @@ const CadastrosJuridica: React.FC = () => {
                 <InputGroup>
                   <Input
                     value={login}
-                    onChange={(e) => {
-                      console.log(e);
-                      setLogin(e.target.value);
-                    }}
                     type="email"
                     placeholder="CEP"
                     bsSize="lg"
@@ -199,13 +166,7 @@ const CadastrosJuridica: React.FC = () => {
                   type="submit"
                   size="lg"
                   block
-                  className="buttom-login"
-                  style={{
-                    height: "54px",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
+                  className="buttom-login d-flex flex-row justify-content-center align-items-center"
                   onClick={() =>
                     history.push(
                       ScreenType.CADASTROFUNCIONARIOEMPRESAFORNECEDORA

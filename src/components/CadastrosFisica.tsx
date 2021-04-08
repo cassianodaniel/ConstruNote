@@ -15,14 +15,12 @@ import Swal from "sweetalert2";
 import ScreenType from "../enums/ScreenType";
 
 const CadastrosFisica: React.FC = () => {
-  const [login, setLogin] = useState("");
-  const [password, setPassword] = useState("");
+  const [login] = useState("");
+  const [password] = useState("");
   const history = useHistory();
-  /* const { setLoginUser, loading } = useLogin(); */
   const [loading, setLoading] = useState<boolean>(false);
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    /* setLoginUser({ login, password }); */
     setTimeout(() => {
       setLoading(true);
     }, 3000);
@@ -43,10 +41,6 @@ const CadastrosFisica: React.FC = () => {
                 <InputGroup>
                   <Input
                     value={login}
-                    onChange={(e) => {
-                      console.log(e);
-                      setLogin(e.target.value);
-                    }}
                     type="email"
                     placeholder="Nome do usuário"
                     bsSize="lg"
@@ -62,10 +56,6 @@ const CadastrosFisica: React.FC = () => {
                 <InputGroup>
                   <Input
                     value={login}
-                    onChange={(e) => {
-                      console.log(e);
-                      setLogin(e.target.value);
-                    }}
                     type="email"
                     placeholder="Senha"
                     bsSize="lg"
@@ -81,9 +71,6 @@ const CadastrosFisica: React.FC = () => {
                 <InputGroup>
                   <Input
                     value={password}
-                    onChange={(e) => {
-                      setPassword(e.target.value);
-                    }}
                     type="password"
                     placeholder="Confirmar senha"
                     bsSize="lg"
@@ -99,10 +86,6 @@ const CadastrosFisica: React.FC = () => {
                 <InputGroup>
                   <Input
                     value={login}
-                    onChange={(e) => {
-                      console.log(e);
-                      setLogin(e.target.value);
-                    }}
                     type="email"
                     placeholder="E-mail"
                     bsSize="lg"
@@ -164,7 +147,7 @@ const CadastrosFisica: React.FC = () => {
                         </div>
                         <span>
                           Aceito os{" "}
-                          <a href="www.google.com.br">
+                          <a href={ScreenType.FORNECEDORESFAVORITOS}>
                             termos e condições de uso
                           </a>
                         </span>

@@ -6,19 +6,15 @@ import { fakeUsers } from "../mock/fakeUsers";
 import { UserType } from "../enums/UserType";
 import { ParseUserQuotationExpirationDate } from "../helpers/ParseUserQuotationExpirationDate";
 import { ParseQuotationProgress } from "../helpers/ParseQuotationProgress";
+import Swal from "sweetalert2";
 
 const PaginaInicialFornecedores: React.FC = () => {
   return (
     <>
       <NavVertical />
       <NavHorizontal title={"Fornecedores"} />
-      <Table className="margin-top-60" hover responsive autoCapitalize={"on"}>
+      <Table className="margin-top-60" hover responsive>
         <thead>
-          {/* <div className="d-flex flex-row align-items-center">
-            <button className={"navigationButtons"}>Novas</button>
-            <button className={"navigationButtons"}>Respondidas</button>
-            <button className={"navigationButtons"}>Declinadas</button>
-          </div> */}
           <tr>
             <th>Cliente</th>
             <th>Local</th>
@@ -67,6 +63,14 @@ const PaginaInicialFornecedores: React.FC = () => {
                       type={"button"}
                       color="primary"
                       className="d-flex flex-row align-items-center eye-height"
+                      onClick={() =>
+                        Swal.fire({
+                          icon: "error",
+                          title: "Oops...",
+                          text: "Alguma coisa deu errado!",
+                          footer: "Nossos serviços estão fora do ar...",
+                        })
+                      }
                     >
                       <i className={"ri-eye-line mr-2"} />
                       {"Ver"}

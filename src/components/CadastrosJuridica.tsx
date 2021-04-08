@@ -12,9 +12,10 @@ import {
 } from "reactstrap";
 import { useHistory } from "react-router-dom";
 import ScreenType from "../enums/ScreenType";
+import { RiMailAddLine, RiPencilLine } from "react-icons/ri";
 
 const CadastrosJuridica: React.FC = () => {
-  const [login, setLogin] = useState("");
+  const [login] = useState("");
   const history = useHistory();
   const [loading, setLoading] = useState<boolean>(false);
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -39,16 +40,15 @@ const CadastrosJuridica: React.FC = () => {
                 <InputGroup>
                   <Input
                     value={login}
-                    onChange={(e) => {
-                      setLogin(e.target.value);
-                    }}
                     type="email"
                     placeholder="Nome completo"
                     bsSize="lg"
                     className="input-login"
                   />
                   <InputGroupAddon addonType="append">
-                    <InputGroupText className="input-group-text"></InputGroupText>
+                    <InputGroupText className="input-group-text">
+                      <RiPencilLine />
+                    </InputGroupText>
                   </InputGroupAddon>
                 </InputGroup>
               </div>
@@ -57,17 +57,15 @@ const CadastrosJuridica: React.FC = () => {
                 <InputGroup>
                   <Input
                     value={login}
-                    onChange={(e) => {
-                      console.log(e);
-                      setLogin(e.target.value);
-                    }}
                     type="email"
                     placeholder="Email"
                     bsSize="lg"
                     className="input-login"
                   />
                   <InputGroupAddon addonType="append">
-                    <InputGroupText className="input-group-text"></InputGroupText>
+                    <InputGroupText className="input-group-text">
+                      <RiMailAddLine />
+                    </InputGroupText>
                   </InputGroupAddon>
                 </InputGroup>
               </div>

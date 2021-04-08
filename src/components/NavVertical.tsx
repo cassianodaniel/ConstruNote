@@ -21,27 +21,6 @@ const NavVertical: React.FC = () => {
           className="side-menu-nav justify-content-center"
           role="tablist"
         >
-          {/* <NavItem
-            id="PaginaInicial"
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <NavLink
-              onClick={() => {
-                history.push(ScreenType.PAGINAINICIALCOMPRADORES);
-              }}
-            >
-              <i className="ri-home-3-line hoverColorGray"></i>
-            </NavLink>
-            <span className="text-muted" style={{ fontSize: 10 }}>
-              Compradores
-            </span>
-          </NavItem> */}
-
           <NavItem
             id="PaginaInicial"
             style={{
@@ -83,35 +62,6 @@ const NavVertical: React.FC = () => {
               Favoritos
             </span>
           </NavItem>
-
-          {/* <NavItem
-            id="MinhasCotacoes"
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <NavLink onClick={() => {}}>
-              <i className="ri-file-list-line hoverColorGray"></i>
-            </NavLink>
-            <span className="text-muted text-size-10" style={{ fontSize: 10 }}>
-              Cotações
-            </span>
-          </NavItem> */}
-
-          {/* <NavItem
-            id="MinhasCotacoes"
-            className="buttonsNavBottom d-flex flex-column align-items-center justify-content-center"
-          >
-            <NavLink onClick={() => {}}>
-              <i className="ri-settings-3-line hoverColorGray"></i>
-            </NavLink>
-            <span className="text-muted" style={{ fontSize: 10 }}>
-              Meu perfil
-            </span>
-          </NavItem> */}
         </Nav>
       </div>
     </div>

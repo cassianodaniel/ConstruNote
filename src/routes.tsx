@@ -1,14 +1,13 @@
 import React, { lazy, Suspense } from "react";
 import { Switch, Route } from "react-router-dom";
-import Loading from "./components/Loading";
 import LoadingPage from "./components/LoadingPage";
-import Welcome from "./components/Welcome";
 import { ScreenType } from "./enums/ScreenType";
+import Loading from "./components/Loading";
 
+const Welcome = lazy(() => import("./components/Welcome"));
 const FornecedoresFavoritos = lazy(
   () => import("./components/FornecedoresFavoritos")
 );
-/* const MinhasCotacoes = lazy(() => import("./components/MinhasCotacoes")); */
 const PaginaInicialCompradores = lazy(
   () => import("./components/PaginaInicialCompradores")
 );
@@ -57,11 +56,6 @@ const Routes: React.FC = () => {
           exact
           component={FornecedoresFavoritos}
         />
-        {/* <Route
-          path={ScreenType.MINHASCOTACOES}
-          exact
-          component={MinhasCotacoes}
-        /> */}
         <Route
           path={ScreenType.PRIMEIRASESSAOCADASTROS}
           exact
