@@ -66,7 +66,64 @@ const CadastroFuncionarioEmpresaCompradora: React.FC = () => {
                       setLogin(e.target.value);
                     }}
                     type="email"
-                    placeholder="CPF"
+                    placeholder="CNPJ"
+                    bsSize="lg"
+                    className="input-login"
+                  />
+                  <InputGroupAddon addonType="append">
+                    <InputGroupText className="input-group-text"></InputGroupText>
+                  </InputGroupAddon>
+                </InputGroup>
+              </div>
+
+              <div className="mb-3">
+                <InputGroup>
+                  <Input
+                    value={login}
+                    onChange={(e) => {
+                      console.log(e);
+                      setLogin(e.target.value);
+                    }}
+                    type="email"
+                    placeholder="Nome de usuário"
+                    bsSize="lg"
+                    className="input-login"
+                  />
+                  <InputGroupAddon addonType="append">
+                    <InputGroupText className="input-group-text"></InputGroupText>
+                  </InputGroupAddon>
+                </InputGroup>
+              </div>
+
+              <div className="mb-3">
+                <InputGroup>
+                  <Input
+                    value={login}
+                    onChange={(e) => {
+                      console.log(e);
+                      setLogin(e.target.value);
+                    }}
+                    type="email"
+                    placeholder="Senha"
+                    bsSize="lg"
+                    className="input-login"
+                  />
+                  <InputGroupAddon addonType="append">
+                    <InputGroupText className="input-group-text"></InputGroupText>
+                  </InputGroupAddon>
+                </InputGroup>
+              </div>
+
+              <div className="mb-3">
+                <InputGroup>
+                  <Input
+                    value={login}
+                    onChange={(e) => {
+                      console.log(e);
+                      setLogin(e.target.value);
+                    }}
+                    type="email"
+                    placeholder="Confirmar senha"
                     bsSize="lg"
                     className="input-login"
                   />
