@@ -13,7 +13,7 @@ import defaultAvatar from "../assets/images/users/default-avatar.png";
 export const fakeUsers: IUser[] = [
   {
     id: 0,
-    name: "Daniel Cassiano Chaves",
+    name: "Bananeiras Cassiano Chaves",
     userType: UserType.PESSOAFISICA,
     location: "Serraria",
     quotation: "J43OIJ2",
@@ -32,7 +32,7 @@ export const fakeUsers: IUser[] = [
   },
   {
     id: 1,
-    name: "Mateus Santos Pereira",
+    name: "Solânea Santos Pereira",
     userType: UserType.PESSOAJURIDICA,
     location: "Borborema",
     quotation: "3289HJC",
@@ -51,7 +51,7 @@ export const fakeUsers: IUser[] = [
   },
   {
     id: 2,
-    name: "Danilo Martins Alves",
+    name: "Belém Martins Alves",
     userType: UserType.PESSOAFISICA,
     location: "Campina Grande",
     quotation: "309FJKS",
@@ -70,7 +70,7 @@ export const fakeUsers: IUser[] = [
   },
   {
     id: 3,
-    name: "Gabriel Santos Cunha",
+    name: "Guarabira Santos Cunha",
     userType: UserType.PESSOAFISICA,
     location: "Alagoa Grande",
     quotation: "3032JKS",
@@ -89,7 +89,7 @@ export const fakeUsers: IUser[] = [
   },
   {
     id: 4,
-    name: "João Martins",
+    name: "Casserengue Pessoa Martins",
     userType: UserType.PESSOAFISICA,
     location: "Paraíba",
     quotation: "32879JD",
@@ -108,7 +108,7 @@ export const fakeUsers: IUser[] = [
   },
   {
     id: 5,
-    name: "Emerson Broga",
+    name: "Patos Broga",
     userType: UserType.PESSOAFISICA,
     location: "Minas Gerais",
     quotation: "3290DKJ",
@@ -127,7 +127,7 @@ export const fakeUsers: IUser[] = [
   },
   {
     id: 6,
-    name: "Daniel Cassiano Chaves",
+    name: "Pirpirituba Cassiano Chaves",
     userType: UserType.PESSOAFISICA,
     location: "Serraria",
     quotation: "J43OIJ2",
@@ -146,7 +146,7 @@ export const fakeUsers: IUser[] = [
   },
   {
     id: 7,
-    name: "Mateus Santos Pereira",
+    name: "Gurinhém Santos Pereira",
     userType: UserType.PESSOAJURIDICA,
     location: "Borborema",
     quotation: "3289HJC",
@@ -165,7 +165,7 @@ export const fakeUsers: IUser[] = [
   },
   {
     id: 8,
-    name: "Danilo Martins Alves",
+    name: "Casserengue Martins Alves",
     userType: UserType.PESSOAFISICA,
     location: "Campina Grande",
     quotation: "309FJKS",
@@ -184,7 +184,7 @@ export const fakeUsers: IUser[] = [
   },
   {
     id: 9,
-    name: "Gabriel Santos Cunha",
+    name: "Arara Santos Cunha",
     userType: UserType.PESSOAFISICA,
     location: "Alagoa Grande",
     quotation: "3032JKS",
@@ -203,7 +203,7 @@ export const fakeUsers: IUser[] = [
   },
   {
     id: 10,
-    name: "João Martins",
+    name: "Areia Martins",
     userType: UserType.PESSOAFISICA,
     location: "Paraíba",
     quotation: "32879JD",

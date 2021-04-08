@@ -1,8 +1,8 @@
 import React, { lazy, Suspense } from "react";
 import { Switch, Route } from "react-router-dom";
-import Loading from "./components/Loading";
 import LoadingPage from "./components/LoadingPage";
 import { ScreenType } from "./enums/ScreenType";
+import Loading from "./components/Loading";
 
 const Welcome = lazy(() => import("./components/Welcome"));
 const FornecedoresFavoritos = lazy(
