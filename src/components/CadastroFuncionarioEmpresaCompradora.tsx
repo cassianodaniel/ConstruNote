@@ -6,6 +6,8 @@ import {
   FormGroup,
   Input,
   InputGroup,
+  InputGroupAddon,
+  InputGroupText,
   Label,
   Spinner,
 } from "reactstrap";
@@ -13,7 +15,7 @@ import Swal from "sweetalert2";
 import ScreenType from "../enums/ScreenType";
 
 const CadastroFuncionarioEmpresaCompradora: React.FC = () => {
-  const [login] = useState("");
+  const [login, setLogin] = useState("");
   const [loading, setLoading] = useState<boolean>(false);
   const history = useHistory();
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {

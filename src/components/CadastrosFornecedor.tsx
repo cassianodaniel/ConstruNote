@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import React, { FormEvent, useEffect, useState } from "react";
-=======
-import React, { FormEvent, useState } from "react";
->>>>>>> dev
 import {
   Button,
   Form,
