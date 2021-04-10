@@ -40,7 +40,6 @@ const Welcome: React.FC = () => {
           <div className={"form shadow bg-white rounded"}>
             <div className={"inputs"}>
               <h1>Entre já!</h1>
-
               <h6
                 style={{
                   fontSize: 14,
@@ -51,7 +50,6 @@ const Welcome: React.FC = () => {
               >
                 E conheça a melhor plataforma de cotações virtuais!
               </h6>
-
               <Input
                 color="primary"
                 placeholder="E-mail"

@@ -16,31 +16,26 @@ import Swal from "sweetalert2";
 import axios from "axios";
 import { RiMailAddLine, RiPencilLine } from "react-icons/ri";
 import { motion } from "framer-motion";
-
+import { setSiglaDaFederacao } from "../utils/setSiglaDaFederacao";
 import SimpleBar from "simplebar-react";
-import { fakeUsers } from "../mock/fakeUsers";
-import { IUser } from "../aliases/IUser";
 
 const CadastrosFornecedor: React.FC = () => {
   const history = useHistory();
-  const [login] = useState("");
-  const [loading, setLoading] = useState<boolean>(false);
+  //eslint-disable-next-line
+  const [login, setLogin] = useState("");
+  //eslint-disable-next-line
+  const [localizacao, setLocalizacao] = useState<string>("");
+  //eslint-disable-next-line
   const [federacao, setFederacao] = useState<string | undefined>(undefined);
-  const [checkedContacts, setCheckedContacts] = useState<IUser[]>([]);
-  // eslint-disable-next-line
+  const [loading, setLoading] = useState<boolean>(false);
+  //eslint-disable-next-line
+  const [estadosSelecionados, setEstadosSelecionados] = useState([]);
   const [estados, setEstados] = useState<any[]>([]);
-  // eslint-disable-next-line
-  const [estadoSelec, setEstadoSelec] = useState<string>("");
-  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setTimeout(() => {
-      setLoading(true);
-    }, 3000);
-  };
+  const [microrregioes, setMicrorregioes] = useState<any[]>([]);
 
   const setEstadoSelecionado = (value: string) => {
-    setEstadoSelec(value);
-    setSigla(value);
+    setLocalizacao(value);
+    setSiglaDaFederacao({ value, setMicrorregioes });
   };
 
   const getEstados = () => {
@@ -63,163 +58,11 @@ const CadastrosFornecedor: React.FC = () => {
       });
   };
 
-  const setSigla = (siglaEmMaiusculo: string) => {
-    switch (siglaEmMaiusculo) {
-      case "Rondônia": {
-        setFederacao("RO");
-        break;
-      }
-      case "Acre": {
-        setFederacao("AC");
-        break;
-      }
-      case "Amazonas": {
-        setFederacao("AM");
-        break;
-      }
-      case "Roraima": {
-        setFederacao("RR");
-        break;
-      }
-      case "Pará": {
-        setFederacao("PA");
-        break;
-      }
-      case "Amapá": {
-        setFederacao("AP");
-        break;
-      }
-      case "Tocantins": {
-        setFederacao("TO");
-        break;
-      }
-      case "Maranhão": {
-        setFederacao("MA");
-        break;
-      }
-      case "Piauí": {
-        setFederacao("PI");
-        break;
-      }
-      case "Ceará": {
-        setFederacao("CE");
-        break;
-      }
-      case "Rio Grande do Norte": {
-        setFederacao("RN");
-        break;
-      }
-      case "Paraíba": {
-        setFederacao("PB");
-        break;
-      }
-      case "Pernambuco": {
-        setFederacao("PE");
-        break;
-      }
-      case "Alagoas": {
-        setFederacao("AL");
-        break;
-      }
-      case "Sergipe": {
-        setFederacao("SE");
-        break;
-      }
-      case "Bahia": {
-        setFederacao("BA");
-        break;
-      }
-      case "Minas Gerais": {
-        setFederacao("MG");
-        break;
-      }
-      case "Espírito Santo": {
-        setFederacao("ES");
-        break;
-      }
-      case "Rio de Janeiro": {
-        setFederacao("RJ");
-        break;
-      }
-      case "São Paulo": {
-        setFederacao("SP");
-        break;
-      }
-      case "Paraná": {
-        setFederacao("PR");
-        break;
-      }
-      case "Santa Catarina": {
-        setFederacao("SC");
-        break;
-      }
-      case "Rio Grande do Sul": {
-        setFederacao("RS");
-        break;
-      }
-      case "Mato Grosso do Sul": {
-        setFederacao("MS");
-        break;
-      }
-      case "Mato Grosso": {
-        setFederacao("MT");
-        break;
-      }
-      case "Goiás": {
-        setFederacao("GO");
-        break;
-      }
-      case "Distrito Federal": {
-        setFederacao("DF");
-        break;
-      }
-    }
-    axios
-      .get(
-        `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${siglaEmMaiusculo}/microrregioes`
-      )
-      .then((result) => console.log(result));
-  };
-
-  const handleCheckContacts = (selected: boolean, customContacts: IUser[]) => {
-    if (selected === true) {
-      setCheckedContacts(
-        checkedContacts.filter((checkedContact) => {
-          if (customContacts.find((ctc) => ctc.id === checkedContact.id)) {
-            return false;
-          } else {
-            return true;
-          }
-        })
-      );
-    } else {
-      let newCheckedContacts = [...checkedContacts];
-      customContacts.forEach((ctc) => {
-        if (
-          !newCheckedContacts.find(
-            (checkedContact) => checkedContact.id === ctc.id
-          )
-        ) {
-          let doesExist = fakeUsers.find((user) => user.id === ctc.id);
-          if (doesExist) {
-            newCheckedContacts.push(doesExist);
-          }
-        }
-      });
-      setCheckedContacts(newCheckedContacts);
-    }
-  };
-
-  const checkIfHasAny = (parameterGroup: IUser[]) => {
-    let has: boolean = false;
-    if (
-      parameterGroup.every((ctc) =>
-        checkedContacts.find((checked) => ctc.id === checked.id)
-      )
-    ) {
-      has = true;
-    }
-    return has;
+  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setTimeout(() => {
+      setLoading(true);
+    }, 3000);
   };
 
   useEffect(() => {
@@ -315,50 +158,20 @@ const CadastrosFornecedor: React.FC = () => {
                 </FormGroup>
               </div>
 
-              {federacao !== undefined && (
+              {microrregioes.length > 0 && (
                 <>
-                  <motion.div
-                    style={{ maxWidth: "300px" }}
-                    className="text-danger align-items-center justify-content-center ml-1 mb-2"
-                  >
+                  <motion.div className="text-danger align-items-center justify-content-center ml-1 mb-2 mxwdt-300">
                     Por favor, selecione pelo menos 3 regiões para
                     disponibilizar os seus produtos:
                   </motion.div>
                   <SimpleBar style={{ height: "250px" }}>
-                    <div
-                      className="custom-control custom-checkbox custom-checkbox-groups d-flex flex-wrap
-                     mt-2 border"
-                    >
-                      {fakeUsers.map((user, i) => {
-                        if (i < 11) {
-                          i++;
-                          return (
-                            <InputGroup>
-                              <Input
-                                type="checkbox"
-                                className="custom-control-input mb-4"
-                                onClick={() =>
-                                  handleCheckContacts(
-                                    checkIfHasAny(fakeUsers),
-                                    fakeUsers
-                                  )
-                                }
-                                id={`"` + user.id + `"`}
-                                checked={checkIfHasAny(fakeUsers)}
-                              />
-                              <Label
-                                className="custom-control-label mb-4"
-                                htmlFor={`"` + user.id + `"`}
-                              >
-                                {user.name.split(" ")[0]}
-                              </Label>
-                            </InputGroup>
-                          );
-                        } else {
-                          return <></>;
-                        }
-                      })}
-                    </div>
+                    {microrregioes.map((estado: any) => {
+                      return (
+                        <div className="custom-control custom-checkbox custom-checkbox-groups d-flex flex-wrap mt-2 border">
+                          {estado}
+                        </div>
+                      );
+                    })}
                   </SimpleBar>
                 </>
               )}
