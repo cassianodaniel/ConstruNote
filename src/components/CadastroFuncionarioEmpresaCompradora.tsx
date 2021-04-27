@@ -15,7 +15,7 @@ import Swal from "sweetalert2";
 import ScreenType from "../enums/ScreenType";
 
 const CadastroFuncionarioEmpresaCompradora: React.FC = () => {
-  const [login, setLogin] = useState("");
+  const [login] = useState("");
   const [loading, setLoading] = useState<boolean>(false);
   const history = useHistory();
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -47,18 +47,6 @@ const CadastroFuncionarioEmpresaCompradora: React.FC = () => {
                     bsSize="lg"
                     className="input-login"
                   />
-                </InputGroup>
-              </div>
-
-              <div className="mb-3">
-                <InputGroup>
-                  <Input
-                    value={login}
-                    type="email"
-                    placeholder="CNPJ"
-                    bsSize="lg"
-                    className="input-login"
-                  />
                   <InputGroupAddon addonType="append">
                     <InputGroupText className="input-group-text"></InputGroupText>
                   </InputGroupAddon>
@@ -69,53 +57,14 @@ const CadastroFuncionarioEmpresaCompradora: React.FC = () => {
                 <InputGroup>
                   <Input
                     value={login}
-                    onChange={(e) => {
-                      console.log(e);
-                      setLogin(e.target.value);
-                    }}
                     type="email"
-                    placeholder="Nome de usuário"
+                    placeholder="CPF"
                     bsSize="lg"
                     className="input-login"
                   />
                   <InputGroupAddon addonType="append">
                     <InputGroupText className="input-group-text"></InputGroupText>
                   </InputGroupAddon>
-                </InputGroup>
-              </div>
-
-              <div className="mb-3">
-                <InputGroup>
-                  <Input
-                    value={login}
-                    onChange={(e) => {
-                      console.log(e);
-                      setLogin(e.target.value);
-                    }}
-                    type="email"
-                    placeholder="Senha"
-                    bsSize="lg"
-                    className="input-login"
-                  />
-                  <InputGroupAddon addonType="append">
-                    <InputGroupText className="input-group-text"></InputGroupText>
-                  </InputGroupAddon>
-                </InputGroup>
-              </div>
-
-              <div className="mb-3">
-                <InputGroup>
-                  <Input
-                    value={login}
-                    onChange={(e) => {
-                      console.log(e);
-                      setLogin(e.target.value);
-                    }}
-                    type="email"
-                    placeholder="Confirmar senha"
-                    bsSize="lg"
-                    className="input-login"
-                  />
                 </InputGroup>
               </div>
 

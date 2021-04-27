@@ -16,6 +16,12 @@
   background-color: green;
   color: white;
 }
+.productCard {
+  width: 100%;
+  height: 45vh;
+  overflow-y: auto;
+  color: black;
+}
 .headerContainer {
   padding: 4%;
 }
@@ -32,6 +38,16 @@
   flex-direction: row;
   align-items: center;
 }
+.ticketCardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 340px;
+  height: 100%;
+  background-color: $white;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
 .cursor-pointer {
   cursor: pointer;
 }
@@ -44,13 +60,18 @@
   width: 60px;
   border-radius: 50%;
 }
+.productCardImage {
+  width: 100%;
+  height: 100%;
+}
+.productDescription {
+  width: 100%;
 
-.disguiseButton {
-  color: #6c63ff !important;
-  text-decoration: none !important;
-  background-color: transparent !important;
-  display: flex !important;
-  flex-direction: row !important;
-  cursor: pointer !important;
-  font-style: normal !important;
+  display: flex;
+  flex-direction: column;
+}
+.productPic {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
 }

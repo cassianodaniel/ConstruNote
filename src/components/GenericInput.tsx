@@ -1,5 +1,5 @@
-import * as React from "react";
-import { Input, InputGroupAddon, InputGroupText } from "reactstrap";
+import * as React from 'react';
+import { Input } from 'reactstrap';
 
 interface IGenericInput {
   value: string;
@@ -27,7 +27,7 @@ export const GenericInput: React.FC<IGenericInput> = ({
   }, [formValues, registerField]);
   return (
     <>
-      {" "}
+      {' '}
       <Input
         innerRef={inputRef}
         value={value}

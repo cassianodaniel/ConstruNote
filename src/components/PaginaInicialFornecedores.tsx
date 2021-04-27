@@ -13,7 +13,7 @@ const PaginaInicialFornecedores: React.FC = () => {
     <>
       <NavVertical />
       <NavHorizontal title={"Fornecedores"} />
-      <Table className="margin-top-60" hover responsive>
+      <Table className="margin-top-60" hover responsive autoCapitalize={"on"}>
         <thead>
           <tr>
             <th>Cliente</th>

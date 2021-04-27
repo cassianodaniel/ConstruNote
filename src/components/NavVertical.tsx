@@ -1,8 +1,9 @@
-import React from "react";
-import { Link, useHistory } from "react-router-dom";
-import { Nav, NavItem, NavLink } from "reactstrap";
-import emblem from "./../assets/images/emblems/emblem.png";
-import ScreenType from "../enums/ScreenType";
+import React from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import { Nav, NavItem, NavLink } from 'reactstrap';
+import emblem from './../assets/images/emblems/emblem.png';
+import ScreenType from '../enums/ScreenType';
+
 const NavVertical: React.FC = () => {
   const history = useHistory();
   return (
@@ -22,12 +23,33 @@ const NavVertical: React.FC = () => {
           role="tablist"
         >
           <NavItem
+            id="SelecaoDeProdutos"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <NavLink
+              onClick={() => {
+                history.push(ScreenType.SELECAODEPRODUTOS);
+              }}
+            >
+              <i className="ri-search-2-line hoverColorGray"></i>
+            </NavLink>
+            <span className="text-center text-muted" style={{ fontSize: 10 }}>
+              Seleção de Produtos
+            </span>
+          </NavItem>
+
+          <NavItem
             id="PaginaInicial"
             style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
             }}
           >
             <NavLink
@@ -37,7 +59,7 @@ const NavVertical: React.FC = () => {
             >
               <i className="ri-home-3-line hoverColorGray"></i>
             </NavLink>
-            <span className="text-muted" style={{ fontSize: 10 }}>
+            <span className="text-center text-muted" style={{ fontSize: 10 }}>
               Fornecedores
             </span>
           </NavItem>
@@ -45,10 +67,10 @@ const NavVertical: React.FC = () => {
           <NavItem
             id="FornecedoresFavoritos"
             style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
             }}
           >
             <NavLink
@@ -58,7 +80,7 @@ const NavVertical: React.FC = () => {
             >
               <i className="ri-star-line hoverColorGray"></i>
             </NavLink>
-            <span className="text-muted" style={{ fontSize: 10 }}>
+            <span className="text-center text-muted" style={{ fontSize: 10 }}>
               Favoritos
             </span>
           </NavItem>

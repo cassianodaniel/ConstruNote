@@ -1,6 +1,6 @@
 import React from "react";
 import { Input } from "reactstrap";
-import CharTickets from "./CharTickets";
+import ContainerFornecedoresFavoritos from "./ContainerFornecedoresFavoritos";
 import Line from "./Line";
 
 const CardOpcaoFornecedoresFavoritos = () => {
@@ -21,7 +21,7 @@ const CardOpcaoFornecedoresFavoritos = () => {
           Fornecedores favoritos
         </div>
         <Line />
-        <CharTickets />
+        <ContainerFornecedoresFavoritos />
       </div>
     </div>
   );

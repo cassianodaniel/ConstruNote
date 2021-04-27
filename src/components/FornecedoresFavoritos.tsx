@@ -1,17 +1,17 @@
-import React from "react";
-import { GoLocation, GoMail, GoSync } from "react-icons/go";
-import ScreenType from "../enums/ScreenType";
-import CardOpcaoFornecedoresConvidados from "./CardOpcaoFornecedoresConvidados";
-import CardOpcaoFornecedoresFavoritos from "./CardOpcaoFornecedoresFavoritos";
-import CardOpcaoFornecedoresSugeridos from "./CardOpcaoFornecedoresSugeridos";
-import NavHorizontal from "./NavHorizontal";
-import NavVertical from "./NavVertical";
+import React from 'react';
+import { GoLocation, GoMail, GoSync } from 'react-icons/go';
+import ScreenType from '../enums/ScreenType';
+import CardOpcaoFornecedoresConvidados from './CardOpcaoFornecedoresConvidados';
+import CardOpcaoFornecedoresFavoritos from './CardOpcaoFornecedoresFavoritos';
+import CardOpcaoFornecedoresSugeridos from './CardOpcaoFornecedoresSugeridos';
+import NavHorizontal from './NavHorizontal';
+import NavVertical from './NavVertical';
 
 const FornecedoresFavoritos: React.FC = () => {
   return (
     <>
       <NavVertical />
-      <NavHorizontal title={"Fornecedores favoritos"} />
+      <NavHorizontal title={'Fornecedores favoritos'} />
       <div className="margin-top-60">
         <div className="bg-red m-4 shadow-sm">
           <div className="constructionTextContainer">
@@ -22,19 +22,19 @@ const FornecedoresFavoritos: React.FC = () => {
               </div>
             </div>
             <div className="mt-1 d-flex flex-row">
-              <GoSync />{" "}
+              <GoSync />{' '}
               <a className="ml-2" href={ScreenType.FORNECEDORESFAVORITOS}>
                 Trocar de obra
               </a>
             </div>
             <div className="mt-1 d-flex flex-row">
-              <GoMail />{" "}
+              <GoMail />{' '}
               <a className="ml-2" href={ScreenType.FORNECEDORESFAVORITOS}>
                 Convidar fornecedores
               </a>
             </div>
           </div>
-          <div className="cardsContainer ">
+          <div className="cardsContainer">
             <CardOpcaoFornecedoresFavoritos />
             <CardOpcaoFornecedoresConvidados />
             <CardOpcaoFornecedoresSugeridos />

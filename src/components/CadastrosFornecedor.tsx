@@ -1,4 +1,4 @@
-import React, { FormEvent, useEffect, useState } from "react";
+import React, { FormEvent, useState, useEffect } from 'react';
 import {
   Button,
   Form,
@@ -9,24 +9,23 @@ import {
   InputGroupText,
   Label,
   Spinner,
-} from "reactstrap";
-import { useHistory } from "react-router-dom";
-import ScreenType from "../enums/ScreenType";
-import Swal from "sweetalert2";
-import axios from "axios";
-import { RiMailAddLine, RiPencilLine } from "react-icons/ri";
-import SimpleBar from "simplebar-react";
-import { useStateContext } from "../contexts/StateContext";
-import { EstadoDeSelecaoGenerico } from "./EstadoDeSelecaoGenerico";
-import { GenericInput } from "./GenericInput";
+} from 'reactstrap';
+import { useHistory } from 'react-router-dom';
+import ScreenType from '../enums/ScreenType';
+import Swal from 'sweetalert2';
+import axios from 'axios';
+import SimpleBar from 'simplebar-react';
+import { useStateContext } from '../contexts/StateContext';
+import { EstadoDeSelecaoGenerico } from './EstadoDeSelecaoGenerico';
+import { GenericInput } from './GenericInput';
 
 const CadastrosFornecedor: React.FC = () => {
   const history = useHistory();
   //eslint-disable-next-line
-  const [login, setLogin] = useState<string>("");
-  const [email, setEmail] = useState<string>("");
+  const [login, setLogin] = useState<string>('');
+  const [email] = useState<string>('');
   //eslint-disable-next-line
-  const [localizacao, setLocalizacao] = useState<string>("");
+  const [localizacao, setLocalizacao] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
   const [estados, setEstados] = useState<any[]>([]);
   const [isSecondSection, setIsSecondSection] = useState<boolean>(false);
@@ -394,7 +393,7 @@ const CadastrosFornecedor: React.FC = () => {
   const getEstados = () => {
     let newList: any[] = [];
     axios
-      .get("https://servicodados.ibge.gov.br/api/v1/localidades/estados")
+      .get('https://servicodados.ibge.gov.br/api/v1/localidades/estados')
       .then((result: any) => {
         Object.values(result).forEach((rst: any) => {
           Object.values(rst).forEach((rs: any) => {
@@ -446,9 +445,7 @@ const CadastrosFornecedor: React.FC = () => {
                     className="input-login"
                   />
                   <InputGroupAddon addonType="append">
-                    <InputGroupText className="input-group-text">
-                      <RiPencilLine />
-                    </InputGroupText>
+                    <InputGroupText className="input-group-text"></InputGroupText>
                   </InputGroupAddon>
                 </InputGroup> */}
                 <GenericInput
@@ -456,7 +453,7 @@ const CadastrosFornecedor: React.FC = () => {
                   setValue={setLogin}
                   formValues={formValues}
                   setFormValues={setFormValues}
-                  placeholder={"Login"}
+                  placeholder={'Login'}
                 />
               </div>
 
@@ -470,14 +467,12 @@ const CadastrosFornecedor: React.FC = () => {
                     className="input-login"
                   />
                   <InputGroupAddon addonType="append">
-                    <InputGroupText className="input-group-text">
-                      <RiMailAddLine />
-                    </InputGroupText>
+                    <InputGroupText className="input-group-text"></InputGroupText>
                   </InputGroupAddon>
                 </InputGroup>
               </div>
 
-              <div className="mb-2 mt-1">
+              <div className="mb-4 mt-1">
                 <FormGroup>
                   <Input type="select" name="select" id="exampleSelect">
                     <option selected disabled>
@@ -499,7 +494,7 @@ const CadastrosFornecedor: React.FC = () => {
                 <>
                   <div
                     onClick={(e: any) => {
-                      setEstadoSelecionado("Paraíba");
+                      setEstadoSelecionado('Paraíba');
                       setIsSecondSection(!isSecondSection);
                     }}
                     className="border px-3 py-3 mt-3 text-primary"
@@ -507,15 +502,15 @@ const CadastrosFornecedor: React.FC = () => {
                     Por favor, selecione as regiões que você gostaria de
                     fornecer:
                   </div>
-                  <SimpleBar className="border" style={{ maxHeight: "300px" }}>
+                  <SimpleBar className="border" style={{ maxHeight: '300px' }}>
                     <ul className="mt-3 stateUl">
                       {estados.map((estado) => {
                         return (
                           <EstadoDeSelecaoGenerico
                             nomeDoEstado={estado}
                             microrregioes={`microrregioes${estado
-                              .normalize("NFD")
-                              .replace(/[\u0300-\u036f]/g, "")}`}
+                              .normalize('NFD')
+                              .replace(/[\u0300-\u036f]/g, '')}`}
                           />
                         );
                       })}
@@ -530,7 +525,7 @@ const CadastrosFornecedor: React.FC = () => {
                     <FormGroup check>
                       <Label check>
                         <div className="form-check-input-box">
-                          <Input type="checkbox" />{" "}
+                          <Input type="checkbox" />{' '}
                         </div>
                         <span>
                           Eu aceito os <a href="/">termos e condições de uso</a>
@@ -546,12 +541,12 @@ const CadastrosFornecedor: React.FC = () => {
                   type="submit"
                   size="lg"
                   block
-                  className="buttom-login d-flex justify-content-center align-items-center mt-2"
+                  className="buttom-login d-flex justify-content-center align-items-center"
                   onClick={() =>
                     Swal.fire({
-                      position: "center",
-                      icon: "success",
-                      title: "Você foi cadastrado com sucesso!",
+                      position: 'center',
+                      icon: 'success',
+                      title: 'Você foi cadastrado com sucesso!',
                       showConfirmButton: false,
                       timer: 1500,
                     }).then(() => {
@@ -559,7 +554,7 @@ const CadastrosFornecedor: React.FC = () => {
                     })
                   }
                 >
-                  {!loading ? "Cadastrar" : <Spinner size="md"></Spinner>}
+                  {!loading ? 'Cadastrar' : <Spinner size="md"></Spinner>}
                 </Button>
               </div>
             </Form>

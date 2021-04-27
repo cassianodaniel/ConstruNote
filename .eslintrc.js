@@ -3,19 +3,52 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ["plugin:react/recommended", "airbnb"],
-  parser: "@typescript-eslint/parser",
+  extends: [
+    'plugin:react/recommended',
+    'airbnb',
+    'plugin:prettier/recommended',
+  ],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
     },
     ecmaVersion: 12,
-    sourceType: "module",
+    sourceType: 'module',
   },
-  plugins: ["react", "@typescript-eslint"],
+
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        moduleDirectory: ['node_modules', 'src/'],
+      },
+    },
+  },
+
+  plugins: [
+    'react',
+    '@typescript-eslint',
+    '@typescript-eslint/parser',
+    'prettier/@typescript-eslint',
+  ],
   rules: {
-    indent: ["error", 4],
-    "react/jsx-indent": ["error", 4],
-    "react/jsx-indent-props": ["error", 4],
+    'react/jsx-filename-extension': [
+      1,
+      { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
+    ],
+    'react/react-in-jsx-scope': 'off',
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    'react/jsx-props-no-spreading': 'off',
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
+      },
+    ],
   },
 };
