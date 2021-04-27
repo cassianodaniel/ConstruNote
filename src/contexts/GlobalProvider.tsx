@@ -3,6 +3,7 @@ import { LoadingProvider } from "./LoadingContext";
 import { LayoutProvider } from "./LayoutContext";
 import { ModalProvider } from "./ModalContext";
 import { AuthProvider } from "./AuthContext";
+import { StateProvider } from "./StateContext";
 
 const Provider: React.FC = ({ children }) => {
   return (
@@ -10,7 +11,9 @@ const Provider: React.FC = ({ children }) => {
       <LayoutProvider>
         <AuthProvider>
           <ModalProvider>
-            <>{children}</>
+            <StateProvider>
+              <>{children}</>
+            </StateProvider>
           </ModalProvider>
         </AuthProvider>
       </LayoutProvider>

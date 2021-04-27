@@ -15,27 +15,380 @@ import ScreenType from "../enums/ScreenType";
 import Swal from "sweetalert2";
 import axios from "axios";
 import { RiMailAddLine, RiPencilLine } from "react-icons/ri";
-import { motion } from "framer-motion";
-import { setSiglaDaFederacao } from "../utils/setSiglaDaFederacao";
 import SimpleBar from "simplebar-react";
+import { useStateContext } from "../contexts/StateContext";
+import { EstadoDeSelecaoGenerico } from "./EstadoDeSelecaoGenerico";
+import { GenericInput } from "./GenericInput";
 
 const CadastrosFornecedor: React.FC = () => {
   const history = useHistory();
   //eslint-disable-next-line
-  const [login, setLogin] = useState("");
+  const [login, setLogin] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
   //eslint-disable-next-line
   const [localizacao, setLocalizacao] = useState<string>("");
-  //eslint-disable-next-line
-  const [federacao, setFederacao] = useState<string | undefined>(undefined);
   const [loading, setLoading] = useState<boolean>(false);
-  //eslint-disable-next-line
-  const [estadosSelecionados, setEstadosSelecionados] = useState([]);
   const [estados, setEstados] = useState<any[]>([]);
-  const [microrregioes, setMicrorregioes] = useState<any[]>([]);
+  const [isSecondSection, setIsSecondSection] = useState<boolean>(false);
+  const [formValues, setFormValues] = useState<string[]>([]);
 
-  const setEstadoSelecionado = (value: string) => {
+  const {
+    setMicrorregioesRondonia,
+    setMicrorregioesAcre,
+    setMicrorregioesAmazonas,
+    setMicrorregioesRoraima,
+    setMicrorregioesPara,
+    setMicrorregioesAmapa,
+    setMicrorregioesTocantins,
+    setMicrorregioesMaranhao,
+    setMicrorregioesPiaui,
+    setMicrorregioesCeara,
+    setMicrorregioesRioGrandeDoNorte,
+    setMicrorregioesParaiba,
+    setMicrorregioesPernambuco,
+    setMicrorregioesAlagoas,
+    setMicrorregioesSergipe,
+    setMicrorregioesBahia,
+    setMicrorregioesMinasGerais,
+    setMicrorregioesEspiritoSanto,
+    setMicrorregioesRioDeJaneiro,
+    setMicrorregioesSaoPaulo,
+    setMicrorregioesParana,
+    setMicrorregioesSantaCatarina,
+    setMicrorregioesRioGrandeDoSul,
+    setMicrorregioesMatoGrossoDoSul,
+    setMicrorregioesMatoGrosso,
+    setMicrorregioesGoias,
+    setMicrorregioesDistritoFederal,
+  } = useStateContext();
+
+  const getMicrorregioes = () => {
+    axios
+      .get(
+        `https://servicodados.ibge.gov.br/api/v1/localidades/estados/RO/microrregioes`
+      )
+      .then((result) => {
+        setMicrorregioesRondonia(
+          Object.values(result.data)
+            .map((rst: any) => rst?.nome)
+            .filter(Boolean)
+        );
+      });
+
+    axios
+      .get(
+        `https://servicodados.ibge.gov.br/api/v1/localidades/estados/AC/microrregioes`
+      )
+      .then((result) => {
+        setMicrorregioesAcre(
+          Object.values(result.data)
+            .map((rst: any) => rst?.nome)
+            .filter(Boolean)
+        );
+      });
+
+    axios
+      .get(
+        `https://servicodados.ibge.gov.br/api/v1/localidades/estados/AM/microrregioes`
+      )
+      .then((result) => {
+        setMicrorregioesAmazonas(
+          Object.values(result.data)
+            .map((rst: any) => rst?.nome)
+            .filter(Boolean)
+        );
+      });
+
+    axios
+      .get(
+        `https://servicodados.ibge.gov.br/api/v1/localidades/estados/RR/microrregioes`
+      )
+      .then((result) => {
+        setMicrorregioesRoraima(
+          Object.values(result.data)
+            .map((rst: any) => rst?.nome)
+            .filter(Boolean)
+        );
+      });
+
+    axios
+      .get(
+        `https://servicodados.ibge.gov.br/api/v1/localidades/estados/PA/microrregioes`
+      )
+      .then((result) => {
+        setMicrorregioesPara(
+          Object.values(result.data)
+            .map((rst: any) => rst?.nome)
+            .filter(Boolean)
+        );
+      });
+
+    axios
+      .get(
+        `https://servicodados.ibge.gov.br/api/v1/localidades/estados/AP/microrregioes`
+      )
+      .then((result) => {
+        setMicrorregioesAmapa(
+          Object.values(result.data)
+            .map((rst: any) => rst?.nome)
+            .filter(Boolean)
+        );
+      });
+
+    axios
+      .get(
+        `https://servicodados.ibge.gov.br/api/v1/localidades/estados/TO/microrregioes`
+      )
+      .then((result) => {
+        setMicrorregioesTocantins(
+          Object.values(result.data)
+            .map((rst: any) => rst?.nome)
+            .filter(Boolean)
+        );
+      });
+
+    axios
+      .get(
+        `https://servicodados.ibge.gov.br/api/v1/localidades/estados/MA/microrregioes`
+      )
+      .then((result) => {
+        setMicrorregioesMaranhao(
+          Object.values(result.data)
+            .map((rst: any) => rst?.nome)
+            .filter(Boolean)
+        );
+      });
+
+    axios
+      .get(
+        `https://servicodados.ibge.gov.br/api/v1/localidades/estados/PI/microrregioes`
+      )
+      .then((result) => {
+        setMicrorregioesPiaui(
+          Object.values(result.data)
+            .map((rst: any) => rst?.nome)
+            .filter(Boolean)
+        );
+      });
+
+    axios
+      .get(
+        `https://servicodados.ibge.gov.br/api/v1/localidades/estados/CE/microrregioes`
+      )
+      .then((result) => {
+        setMicrorregioesCeara(
+          Object.values(result.data)
+            .map((rst: any) => rst?.nome)
+            .filter(Boolean)
+        );
+      });
+
+    axios
+      .get(
+        `https://servicodados.ibge.gov.br/api/v1/localidades/estados/RN/microrregioes`
+      )
+      .then((result) => {
+        setMicrorregioesRioGrandeDoNorte(
+          Object.values(result.data)
+            .map((rst: any) => rst?.nome)
+            .filter(Boolean)
+        );
+      });
+
+    axios
+      .get(
+        `https://servicodados.ibge.gov.br/api/v1/localidades/estados/PB/microrregioes`
+      )
+      .then((result) => {
+        setMicrorregioesParaiba(
+          Object.values(result.data)
+            .map((rst: any) => rst?.nome)
+            .filter(Boolean)
+        );
+      });
+    axios
+      .get(
+        `https://servicodados.ibge.gov.br/api/v1/localidades/estados/PE/microrregioes`
+      )
+      .then((result) => {
+        setMicrorregioesPernambuco(
+          Object.values(result.data)
+            .map((rst: any) => rst?.nome)
+            .filter(Boolean)
+        );
+      });
+
+    axios
+      .get(
+        `https://servicodados.ibge.gov.br/api/v1/localidades/estados/AL/microrregioes`
+      )
+      .then((result) => {
+        setMicrorregioesAlagoas(
+          Object.values(result.data)
+            .map((rst: any) => rst?.nome)
+            .filter(Boolean)
+        );
+      });
+
+    axios
+      .get(
+        `https://servicodados.ibge.gov.br/api/v1/localidades/estados/SE/microrregioes`
+      )
+      .then((result) => {
+        setMicrorregioesSergipe(
+          Object.values(result.data)
+            .map((rst: any) => rst?.nome)
+            .filter(Boolean)
+        );
+      });
+
+    axios
+      .get(
+        `https://servicodados.ibge.gov.br/api/v1/localidades/estados/BA/microrregioes`
+      )
+      .then((result) => {
+        setMicrorregioesBahia(
+          Object.values(result.data)
+            .map((rst: any) => rst?.nome)
+            .filter(Boolean)
+        );
+      });
+
+    axios
+      .get(
+        `https://servicodados.ibge.gov.br/api/v1/localidades/estados/MG/microrregioes`
+      )
+      .then((result) => {
+        setMicrorregioesMinasGerais(
+          Object.values(result.data)
+            .map((rst: any) => rst?.nome)
+            .filter(Boolean)
+        );
+      });
+
+    axios
+      .get(
+        `https://servicodados.ibge.gov.br/api/v1/localidades/estados/ES/microrregioes`
+      )
+      .then((result) => {
+        setMicrorregioesEspiritoSanto(
+          Object.values(result.data)
+            .map((rst: any) => rst?.nome)
+            .filter(Boolean)
+        );
+      });
+
+    axios
+      .get(
+        `https://servicodados.ibge.gov.br/api/v1/localidades/estados/RJ/microrregioes`
+      )
+      .then((result) => {
+        setMicrorregioesRioDeJaneiro(
+          Object.values(result.data)
+            .map((rst: any) => rst?.nome)
+            .filter(Boolean)
+        );
+      });
+
+    axios
+      .get(
+        `https://servicodados.ibge.gov.br/api/v1/localidades/estados/SP/microrregioes`
+      )
+      .then((result) => {
+        setMicrorregioesSaoPaulo(
+          Object.values(result.data)
+            .map((rst: any) => rst?.nome)
+            .filter(Boolean)
+        );
+      });
+
+    axios
+      .get(
+        `https://servicodados.ibge.gov.br/api/v1/localidades/estados/PR/microrregioes`
+      )
+      .then((result) => {
+        setMicrorregioesParana(
+          Object.values(result.data)
+            .map((rst: any) => rst?.nome)
+            .filter(Boolean)
+        );
+      });
+
+    axios
+      .get(
+        `https://servicodados.ibge.gov.br/api/v1/localidades/estados/SC/microrregioes`
+      )
+      .then((result) => {
+        setMicrorregioesSantaCatarina(
+          Object.values(result.data)
+            .map((rst: any) => rst?.nome)
+            .filter(Boolean)
+        );
+      });
+
+    axios
+      .get(
+        `https://servicodados.ibge.gov.br/api/v1/localidades/estados/RS/microrregioes`
+      )
+      .then((result) => {
+        setMicrorregioesRioGrandeDoSul(
+          Object.values(result.data)
+            .map((rst: any) => rst?.nome)
+            .filter(Boolean)
+        );
+      });
+
+    axios
+      .get(
+        `https://servicodados.ibge.gov.br/api/v1/localidades/estados/MS/microrregioes`
+      )
+      .then((result) => {
+        setMicrorregioesMatoGrossoDoSul(
+          Object.values(result.data)
+            .map((rst: any) => rst?.nome)
+            .filter(Boolean)
+        );
+      });
+
+    axios
+      .get(
+        `https://servicodados.ibge.gov.br/api/v1/localidades/estados/MT/microrregioes`
+      )
+      .then((result) => {
+        setMicrorregioesMatoGrosso(
+          Object.values(result.data)
+            .map((rst: any) => rst?.nome)
+            .filter(Boolean)
+        );
+      });
+
+    axios
+      .get(
+        `https://servicodados.ibge.gov.br/api/v1/localidades/estados/GO/microrregioes`
+      )
+      .then((result) => {
+        setMicrorregioesGoias(
+          Object.values(result.data)
+            .map((rst: any) => rst?.nome)
+            .filter(Boolean)
+        );
+      });
+
+    axios
+      .get(
+        `https://servicodados.ibge.gov.br/api/v1/localidades/estados/DF/microrregioes`
+      )
+      .then((result) => {
+        setMicrorregioesDistritoFederal(
+          Object.values(result.data)
+            .map((rst: any) => rst?.nome)
+            .filter(Boolean)
+        );
+      });
+  };
+
+  const setEstadoSelecionado = (value: any) => {
     setLocalizacao(value);
-    setSiglaDaFederacao({ value, setMicrorregioes });
   };
 
   const getEstados = () => {
@@ -67,6 +420,7 @@ const CadastrosFornecedor: React.FC = () => {
 
   useEffect(() => {
     getEstados();
+    getMicrorregioes();
     // eslint-disable-next-line
   }, []);
 
@@ -74,7 +428,7 @@ const CadastrosFornecedor: React.FC = () => {
     <div className="vh-100 vw-100 d-flex align-items-center justify-content-center">
       <div className="d-flex justify-content-center align-items-center">
         <div className="form card card-login mr-lg-5">
-          <div className="card-body m-3 m-lg-5 has-shown-squad">
+          <div className="card-body m-3 m-lg-5">
             <div className="d-flex flex-column align-items-center">
               <div className="mb-3 title">Cadastro de fornecedor</div>
               <div className="mb-4 mt-1 sub-title">
@@ -83,7 +437,7 @@ const CadastrosFornecedor: React.FC = () => {
             </div>
             <Form onSubmit={onSubmit}>
               <div className="mb-3 mt-1">
-                <InputGroup>
+                {/* <InputGroup>
                   <Input
                     value={login}
                     type="email"
@@ -96,13 +450,20 @@ const CadastrosFornecedor: React.FC = () => {
                       <RiPencilLine />
                     </InputGroupText>
                   </InputGroupAddon>
-                </InputGroup>
+                </InputGroup> */}
+                <GenericInput
+                  value={login}
+                  setValue={setLogin}
+                  formValues={formValues}
+                  setFormValues={setFormValues}
+                  placeholder={"Login"}
+                />
               </div>
 
               <div className="mb-3 mt-1">
                 <InputGroup>
                   <Input
-                    value={login}
+                    value={email}
                     type="email"
                     placeholder="Email"
                     bsSize="lg"
@@ -134,50 +495,37 @@ const CadastrosFornecedor: React.FC = () => {
                 </FormGroup>
               </div>
 
-              <div>
-                <FormGroup>
-                  <Input
-                    onChange={(e) => {
-                      setEstadoSelecionado(e.target.value);
-                    }}
-                    type="select"
-                    name="select"
-                    id="exampleSelect"
-                  >
-                    <option selected disabled>
-                      Selecione o seu estado
-                    </option>
-                    {estados.map((estado, i) => {
-                      return (
-                        <option key={i} value={estado}>
-                          {estado}
-                        </option>
-                      );
-                    })}
-                  </Input>
-                </FormGroup>
-              </div>
-
-              {microrregioes.length > 0 && (
+              {
                 <>
-                  <motion.div className="text-danger align-items-center justify-content-center ml-1 mb-2 mxwdt-300">
-                    Por favor, selecione pelo menos 3 regiões para
-                    disponibilizar os seus produtos:
-                  </motion.div>
-                  <SimpleBar style={{ height: "250px" }}>
-                    {microrregioes.map((estado: any) => {
-                      return (
-                        <div className="custom-control custom-checkbox custom-checkbox-groups d-flex flex-wrap mt-2 border">
-                          {estado}
-                        </div>
-                      );
-                    })}
+                  <div
+                    onClick={(e: any) => {
+                      setEstadoSelecionado("Paraíba");
+                      setIsSecondSection(!isSecondSection);
+                    }}
+                    className="border px-3 py-3 mt-3 text-primary"
+                  >
+                    Por favor, selecione as regiões que você gostaria de
+                    fornecer:
+                  </div>
+                  <SimpleBar className="border" style={{ maxHeight: "300px" }}>
+                    <ul className="mt-3 stateUl">
+                      {estados.map((estado) => {
+                        return (
+                          <EstadoDeSelecaoGenerico
+                            nomeDoEstado={estado}
+                            microrregioes={`microrregioes${estado
+                              .normalize("NFD")
+                              .replace(/[\u0300-\u036f]/g, "")}`}
+                          />
+                        );
+                      })}
+                    </ul>
                   </SimpleBar>
                 </>
-              )}
+              }
 
-              <div className="input-options mt-2">
-                <div className="row mb-3 mt-1">
+              <div className="input-options mt-4 ml-2">
+                <div className="row mb-4 mt-1">
                   <div className="col">
                     <FormGroup check>
                       <Label check>
@@ -185,7 +533,7 @@ const CadastrosFornecedor: React.FC = () => {
                           <Input type="checkbox" />{" "}
                         </div>
                         <span>
-                          Aceito os <a href="/">termos e condições de uso</a>
+                          Eu aceito os <a href="/">termos e condições de uso</a>
                         </span>
                       </Label>
                     </FormGroup>

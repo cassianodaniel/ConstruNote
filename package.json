@@ -35,6 +35,7 @@
     "react-image-lightbox": "^5.1.1",
     "react-linkify": "^1.0.0-alpha",
     "react-mic": "^12.4.6",
+    "react-paypal-button-v2": "^2.6.3",
     "react-render-markup": "^3.0.0",
     "react-router-dom": "^5.2.0",
     "react-router-hash-link": "^2.2.2",

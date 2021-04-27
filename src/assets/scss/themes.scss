@@ -253,3 +253,27 @@
 .mxwdt-300 {
   max-width: 300px;
 }
+.customizedArrow {
+  position: relative;
+  right: 5px !important;
+  cursor: pointer;
+}
+.stateUl {
+  list-style-type: none;
+  margin-left: -24px;
+}
+.list-style-none {
+  list-style: none;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.fineline {
+  height: 5px;
+  color: gray;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.limitedWidth {
+  width: 400px;
+}
