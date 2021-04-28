@@ -1,27 +1,30 @@
 export enum ScreenType {
   WELCOME = '/welcome',
-  CHAT = '/chat',
-  FORNECEDORESFAVORITOS = '/fornecedoresfavoritos',
   PAGINAINICIAL = '/paginainicial',
   MINHASCOTACOES = '/minhascotacoes',
-  PRIMEIRASESSAOCADASTROS = '/primeirasessaocadastros',
+
+  // To show
+  FORNECEDORESFAVORITOS = '/fornecedoresfavoritos',
   CADASTROSJURIDICA = '/cadastrosjuridica',
   CADASTROSFISICA = '/cadastrosfisica',
   CADASTROSFORNECEDOR = '/cadastrosfornecedor',
   SEGUNDASESSAOCADASTROCOMPRADOR = '/segundasessaocadastrocomprador',
   PRECADASTROEMPRESAFORNECEDORA = '/precadastroempresafornecedora',
   CADASTROFUNCIONARIOEMPRESACOMPRADORA = '/cadastrofuncionarioempresacompradora',
-  CADASTROFUNCIONARIOEMPRESAFORNECEDORA = '/cadastrofuncionarioempresafornecedora',
   PAGINAINICIALFORNECEDORES = '/paginainicialfornecedores',
-  PAGINAINICIALCOMPRADORES = '/paginainicialcompradores',
   LOADING = '/loadingPage',
+  TIPODEPAGAMENTO = '/pagamento',
+
+  //To fix
+  RESPONDERCOTACAO = '/respondercotacao', // left side bar auto height
+  PRIMEIRASESSAOCADASTROS = '/primeirasessaocadastros',
+  CADASTROFUNCIONARIOEMPRESAFORNECEDORA = '/cadastrofuncionarioempresafornecedora',
+  PAGINAINICIALCOMPRADORES = '/paginainicialcompradores', //responsive attribute
   SELECAODEPRODUTOS = '/selecaodeprodutos',
   SELECAODEPRODUTOSLISTA = '/listaselecaodeprodutos',
-  TIPODEPAGAMENTO = '/pagamento',
   PAGAMENTOBOLETO = '/pagamentoavista',
   PAGAMENTOCARTAO = '/pagamentoaprazo',
   PAGAMENTOFRETE = '/pagamentofrete',
-  RESPONDERCOTACAO = '/respondercotacao',
   INFORMACOESADICIONAIS = '/informacoesadicionais',
   OBRAS = '/obras',
   MAPADEPRECOS = '/mapadeprecos',
