@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { Input } from 'reactstrap';
+import React, { useRef, useCallback, useEffect } from "react";
+import { Input } from "reactstrap";
 
 interface IGenericInput {
   value: string;
@@ -16,18 +16,18 @@ export const GenericInput: React.FC<IGenericInput> = ({
   value,
   setValue,
 }) => {
-  const inputRef = React.useRef(null);
+  const inputRef = useRef(null);
 
-  const registerField = React.useCallback(() => {
+  const registerField = useCallback(() => {
     setFormValues([...formValues, value]);
   }, [formValues, setFormValues, value]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     registerField();
   }, [formValues, registerField]);
   return (
     <>
-      {' '}
+      {" "}
       <Input
         innerRef={inputRef}
         value={value}

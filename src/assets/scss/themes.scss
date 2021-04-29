@@ -1,8 +1,8 @@
-@import './icons.scss';
-@import './bootstrap.scss';
-@import './app.scss';
-@import './custom/components/bars.scss';
-@import './custom/components/cardOpcao.scss';
+@import "./icons.scss";
+@import "./bootstrap.scss";
+@import "./app.scss";
+@import "./custom/components/bars.scss";
+@import "./custom/components/cardOpcao.scss";
 
 .nav-item {
   cursor: pointer;
@@ -43,7 +43,7 @@
   label {
     margin-bottom: 0;
   }
-  input[type='file'] {
+  input[type="file"] {
     display: none;
   }
 }
@@ -245,4 +245,8 @@
 }
 .limitedWidth {
   width: 400px;
+}
+.pre-defined-formatted-page {
+  margin-top: 60px;
+  width: 100%;
 }
