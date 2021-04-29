@@ -15,11 +15,11 @@ export enum ScreenType {
   PAGINAINICIALFORNECEDORES = "/paginainicialfornecedores",
   LOADING = "/loadingPage",
   TIPODEPAGAMENTO = "/pagamento",
+  RESPONDERCOTACAO = "/respondercotacao",
+  CADASTROFUNCIONARIOEMPRESAFORNECEDORA = "/cadastrofuncionarioempresafornecedora",
+  PAGINAINICIALCOMPRADORES = "/paginainicialcompradores",
 
   //To fix
-  RESPONDERCOTACAO = "/respondercotacao", //OK
-  CADASTROFUNCIONARIOEMPRESAFORNECEDORA = "/cadastrofuncionarioempresafornecedora", //OK
-  PAGINAINICIALCOMPRADORES = "/paginainicialcompradores", //OK
   SELECAODEPRODUTOS = "/selecaodeprodutos",
   SELECAODEPRODUTOSLISTA = "/listaselecaodeprodutos",
   PAGAMENTOBOLETO = "/pagamentoavista",
