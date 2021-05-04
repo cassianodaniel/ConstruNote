@@ -134,9 +134,9 @@ const CadastroFuncionarioEmpresaCompradora: React.FC = () => {
                   type="submit"
                   size="lg"
                   block
-                  className="buttom-login"
+                  className="bg-primary buttom-login"
                   style={{
-                    height: "54px",
+                    height: "45px",
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 import {
   Input,
@@ -6,11 +6,12 @@ import {
   InputGroupAddon,
   InputGroupText,
   Button,
-} from 'reactstrap';
+} from "reactstrap";
 
-import { IoFilter } from 'react-icons/io5';
+import { IoFilter } from "react-icons/io5";
 
-import ContainerCards from './ContainerCards';
+import ContainerCards from "./ContainerCards";
+import Line from "./Line";
 
 const CardOpcaoProdutos: React.FC = () => {
   return (
@@ -31,7 +32,7 @@ const CardOpcaoProdutos: React.FC = () => {
           </InputGroup>
         </div>
 
-        <div className="searchProductCheckBox ml-4 mt-2">
+        {/* <div className="searchProductCheckBox ml-4 mt-2">
           <input
             className="form-check-input"
             type="checkbox"
@@ -41,17 +42,20 @@ const CardOpcaoProdutos: React.FC = () => {
           <label className="form-check-label" htmlFor="searchProductCheck">
             Produto personalizado (anexar projeto)
           </label>
-        </div>
+        </div> */}
       </div>
 
-      <div className="f-flex flex-column cardsContainer mt-5">
+      <div className="f-flex flex-column cardsContainer mt-3 ml-1">
         <div className="filterProductCards">
           <Button outline color="primary">
             <IoFilter className="mr-2" />
             Filtrar
           </Button>
         </div>
-        <div className="productCard mt-2">
+        <div className="mt-3">
+          <Line />
+        </div>
+        <div className="productCard mt-3">
           <ContainerCards />
         </div>
       </div>

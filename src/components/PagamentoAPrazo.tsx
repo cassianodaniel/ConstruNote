@@ -1,254 +1,214 @@
-import React from 'react';
+import React from "react";
 
-import NavHorizontal from './NavHorizontal';
-import NavVertical from './NavVertical';
+import NavVertical from "./NavVertical";
+import NavHorizontal from "./NavHorizontal";
 import {
+  Button,
   Card,
   CardText,
   FormGroup,
   Input,
   InputGroup,
   InputGroupText,
-} from 'reactstrap';
+} from "reactstrap";
+import Line from "./Line";
 
-const PagamentoAPrazo: React.FC = () => {
+const PagamentoAVista: React.FC = () => {
   return (
     <>
       <NavVertical />
-      <NavHorizontal title={'Pagamentos à prazo'} />
-
-      <div className="w-100 p-5 h-100 margin-top-60 shadow-sm">
-        <h2 className="margin-top-60">
-          Selecione as opções aceitas para pagamento à prazo
-        </h2>
-
-        <div className="d-flex flex-column align-items-center justify-content-center margin-top-60">
-          <div className="firstLine-cards d-flex align-items-center justify-content-around w-100">
-            <div className="card-cartao-credito" style={{ width: '500px' }}>
-              <Card
-                body
-                style={{
-                  border: '1px solid var(--secondary)',
-                }}
-              >
-                <InputGroup>
-                  <InputGroupText className="bg-white border-secondary">
-                    <Input
-                      addon
-                      type="checkbox"
-                      className="mr-2"
-                      aria-label="Checkbox"
-                    />
-                    Cartão de crédito
-                  </InputGroupText>
-                </InputGroup>
-
-                <CardText className="mt-4">Condição:</CardText>
-
-                <FormGroup className="mt-4">
+      <NavHorizontal
+        title={"Selecione as opções aceitas para pagamento à vista"}
+      />
+      <div className="pre-defined-formatted-page w-100 p-4 shadow-sm">
+        <div className="d-flex flex-row justify-content-center mt-3">
+          <div className="firstLine-cards d-flex flex-row justify-content-center">
+            <Card body outline className="ml-4">
+              <InputGroup>
+                <InputGroupText className="bg-white ">
                   <Input
-                    type="select"
-                    name="selectQuantidadeParcelamento"
-                    id="quantidadeParcelamento"
-                  >
-                    <option>Dividimos em até 3x sem Juros</option>
-                    <option>1x sem Juros</option>
-                    <option>2x sem Juros</option>
-                    <option>3x sem Juros</option>
-                  </Input>
-                </FormGroup>
-              </Card>
-            </div>
+                    addon
+                    type="checkbox"
+                    className="mr-2"
+                    aria-label="Checkbox"
+                  />
+                  Boleto
+                </InputGroupText>
+              </InputGroup>
 
-            <div className="card-construcard ml-4" style={{ width: '500px' }}>
-              <Card
-                body
-                outline
-                style={{
-                  border: '1px solid var(--secondary)',
-                }}
-              >
-                <InputGroup>
-                  <InputGroupText className="bg-white border-secondary">
-                    <Input
-                      addon
-                      type="checkbox"
-                      className="mr-2"
-                      aria-label="Checkbox"
-                    />
-                    ConstruCard
-                  </InputGroupText>
-                </InputGroup>
+              <FormGroup className="mt-4">
+                <Input
+                  type="select"
+                  name="selectQuantidadeParcelamento"
+                  id="quantidadeParcelamento"
+                >
+                  <option disabled>Até 3x sem juros</option>
+                  <option>1x sem juros</option>
+                  <option>2x sem juros</option>
+                  <option>3x sem juros</option>
+                </Input>
+              </FormGroup>
 
-                <CardText className="mt-4">Condição:</CardText>
+              <div className="mt-4 mb-3">
+                <Line />
+              </div>
+              <CardText className="mt-4">Primeira parcela em dias:</CardText>
 
-                <FormGroup className="mt-4">
+              <FormGroup>
+                <Input
+                  placeholder="15"
+                  type="number"
+                  name="number"
+                  id="percentNumber"
+                />
+              </FormGroup>
+            </Card>
+
+            <Card body outline className="ml-4">
+              <InputGroup>
+                <InputGroupText className="bg-white ">
                   <Input
-                    type="select"
-                    name="selectQuantidadeParcelamento"
-                    id="quantidadeParcelamento"
-                  >
-                    <option>Dividimos em até 3x sem Juros</option>
-                    <option>1x sem Juros</option>
-                    <option>2x sem Juros</option>
-                    <option>3x sem Juros</option>
-                  </Input>
+                    addon
+                    type="checkbox"
+                    className="mr-2"
+                    aria-label="Checkbox"
+                  />
+                  Cheque predatado
+                </InputGroupText>
+              </InputGroup>
+
+              <FormGroup className="mt-4">
+                <Input
+                  type="select"
+                  name="selectQuantidadeParcelamento"
+                  id="quantidadeParcelamento"
+                >
+                  <option disabled>Até 3x sem juros</option>
+                  <option>1x sem juros</option>
+                  <option>2x sem juros</option>
+                  <option>3x sem juros</option>
+                </Input>
+              </FormGroup>
+              <div className="mt-4 mb-3">
+                <Line />
+              </div>
+              <CardText className="mt-4">Primeira parcela em dias:</CardText>
+
+              <FormGroup>
+                <Input
+                  placeholder="15"
+                  type="number"
+                  name="number"
+                  id="percentNumber"
+                />
+              </FormGroup>
+            </Card>
+
+            <Card body outline className="ml-4">
+              <InputGroup>
+                <InputGroupText className="bg-white ">
+                  <Input
+                    addon
+                    type="checkbox"
+                    className="mr-2"
+                    aria-label="Checkbox"
+                  />
+                  Sinal (%)
+                </InputGroupText>
+              </InputGroup>
+              <CardText className="mt-4">
+                <FormGroup>
+                  <Input
+                    placeholder="15"
+                    type="number"
+                    name="number"
+                    id="percentNumber"
+                  />{" "}
                 </FormGroup>
-              </Card>
-            </div>
+              </CardText>
+              <div className="mt-2 mb-3">
+                <Line />
+              </div>
+              <InputGroup>
+                <CardText className="mt-4">Primeira parcela em dias:</CardText>
+
+                <FormGroup>
+                  <Input
+                    placeholder="15"
+                    type="number"
+                    name="number"
+                    id="percentNumber"
+                  />
+                </FormGroup>
+              </InputGroup>
+            </Card>
+            <Card body outline className="ml-4">
+              <InputGroup>
+                <InputGroupText className="bg-white ">
+                  <Input
+                    addon
+                    type="checkbox"
+                    className="mr-2"
+                    aria-label="Checkbox"
+                  />
+                  Cartão de crédito
+                </InputGroupText>
+              </InputGroup>
+
+              <FormGroup className="mt-4">
+                <Input
+                  type="select"
+                  name="selectQuantidadeParcelamento"
+                  id="quantidadeParcelamento"
+                >
+                  <option disabled>Até 3x sem juros</option>
+                  <option>1x sem juros</option>
+                  <option>2x sem juros</option>
+                  <option>3x sem juros</option>
+                </Input>
+              </FormGroup>
+              <div className="mt-2 mb-3">
+                <Line />
+              </div>
+            </Card>
+            <Card body outline className="ml-4">
+              <InputGroup>
+                <InputGroupText className="bg-white ">
+                  <Input
+                    addon
+                    type="checkbox"
+                    className="mr-2"
+                    aria-label="Checkbox"
+                  />
+                  ConstruCard
+                </InputGroupText>
+              </InputGroup>
+
+              <FormGroup className="mt-4">
+                <Input
+                  type="select"
+                  name="selectQuantidadeParcelamento"
+                  id="quantidadeParcelamento"
+                >
+                  <option disabled>Até 3x sem juros</option>
+                  <option>1x sem juros</option>
+                  <option>2x sem juros</option>
+                  <option>3x sem juros</option>
+                </Input>
+              </FormGroup>
+              <div className="mt-2 mb-3">
+                <Line />
+              </div>
+            </Card>
           </div>
+        </div>
 
-          <div className="secondLine-cards d-flex d-flex align-items-center justify-content-around w-100">
-            <div className="card-sinal-saldo ml-4" style={{ width: '425px' }}>
-              <Card
-                body
-                outline
-                style={{
-                  border: '1px solid var(--secondary)',
-                }}
-              >
-                <InputGroup>
-                  <InputGroupText className="bg-white border-secondary">
-                    <Input
-                      addon
-                      type="checkbox"
-                      className="mr-2"
-                      aria-label="Checkbox"
-                    />
-                    Sinal e Saldo
-                  </InputGroupText>
-                </InputGroup>
-
-                <CardText className="mt-4">Sinal (%):</CardText>
-
-                <FormGroup>
-                  <Input
-                    placeholder="0%"
-                    type="number"
-                    name="number"
-                    id="percentNumber"
-                  />
-                </FormGroup>
-
-                <CardText className="mt-4">Saldo para:</CardText>
-
-                <FormGroup>
-                  <Input
-                    placeholder="15"
-                    type="number"
-                    name="number"
-                    id="percentNumber"
-                  />{' '}
-                  dias
-                </FormGroup>
-              </Card>
-            </div>
-
-            <div
-              className="card-cheque-predatado ml-4"
-              style={{ width: '425px' }}
-            >
-              <Card
-                body
-                outline
-                style={{
-                  border: '1px solid var(--secondary)',
-                }}
-              >
-                <InputGroup>
-                  <InputGroupText className="bg-white border-secondary">
-                    <Input
-                      addon
-                      type="checkbox"
-                      className="mr-2"
-                      aria-label="Checkbox"
-                    />
-                    Cheque predatado
-                  </InputGroupText>
-                </InputGroup>
-
-                <CardText className="mt-4">Condição:</CardText>
-
-                <FormGroup className="mt-4">
-                  <Input
-                    type="select"
-                    name="selectQuantidadeParcelamento"
-                    id="quantidadeParcelamento"
-                  >
-                    <option>Dividimos em até 3x sem Juros</option>
-                    <option>1x sem Juros</option>
-                    <option>2x sem Juros</option>
-                    <option>3x sem Juros</option>
-                  </Input>
-                </FormGroup>
-
-                <CardText className="mt-4">Primeira para:</CardText>
-
-                <FormGroup>
-                  <Input
-                    placeholder="15"
-                    type="number"
-                    name="number"
-                    id="percentNumber"
-                  />
-                  dias
-                </FormGroup>
-              </Card>
-            </div>
-
-            <div className="card-boleto ml-4" style={{ width: '400px' }}>
-              <Card
-                body
-                outline
-                style={{
-                  border: '1px solid var(--secondary)',
-                }}
-              >
-                <InputGroup>
-                  <InputGroupText className="bg-white border-secondary">
-                    <Input
-                      addon
-                      type="checkbox"
-                      className="mr-2"
-                      aria-label="Checkbox"
-                    />
-                    Boleto
-                  </InputGroupText>
-                </InputGroup>
-
-                <CardText className="mt-4">Condição:</CardText>
-
-                <FormGroup className="mt-4">
-                  <Input
-                    type="select"
-                    name="selectQuantidadeParcelamento"
-                    id="quantidadeParcelamento"
-                  >
-                    <option>Dividimos em até 3x sem Juros</option>
-                    <option>1x sem Juros</option>
-                    <option>2x sem Juros</option>
-                    <option>3x sem Juros</option>
-                  </Input>
-                </FormGroup>
-
-                <CardText className="mt-4">Primeira para:</CardText>
-
-                <FormGroup>
-                  <Input
-                    placeholder="15"
-                    type="number"
-                    name="number"
-                    id="percentNumber"
-                  />
-                  dias
-                </FormGroup>
-              </Card>
-            </div>
-          </div>
+        <div className="d-flex align-items-center justify-content-center align-self-center mt-3">
+          <Button className="bg-primary w-25">Confirmar opções</Button>
         </div>
       </div>
     </>
   );
 };
 
-export default PagamentoAPrazo;
+export default PagamentoAVista;

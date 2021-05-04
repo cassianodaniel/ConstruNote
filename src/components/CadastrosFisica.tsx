@@ -161,7 +161,7 @@ const CadastrosFisica: React.FC = () => {
                   type="submit"
                   size="lg"
                   block
-                  className="buttom-login d-flex justify-content-center align-items-center"
+                  className="bg-primary buttom-login d-flex justify-content-center align-items-center"
                   onClick={() => {
                     Swal.fire({
                       position: "center",

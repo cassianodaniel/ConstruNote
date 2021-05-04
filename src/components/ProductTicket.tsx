@@ -1,5 +1,5 @@
-import React from 'react';
-import ReactImageFallback from 'react-image-fallback';
+import React from "react";
+import ReactImageFallback from "react-image-fallback";
 
 interface IProps {
   title: string;
@@ -13,16 +13,16 @@ const ProductTicket: React.FC<IProps> = ({ title, description, price }) => {
       <div className="ticketCardContainer p-4">
         <div className="productPictureContainer">
           <ReactImageFallback
-            fallbackImage={require('../assets/images/emblems/logo.png')}
+            fallbackImage={require("../assets/images/emblems/logo.png")}
             className="productCardImage cursor-pointer"
-            src={require('../assets/images/emblems/logo.png')} //card.productPicture
+            src={require("../assets/images/emblems/logo.png")} //card.productPicture
           />
         </div>
 
         <div className="productDescription mt-2">
           <div className="card-title cursor-pointer mt-2">{title}</div>
 
-          <div className="font-weight-bold d-flex flex-row cursor-pointer mt-2">
+          <div className="text-muted font-size-13 d-flex flex-row cursor-pointer mt-2">
             <div>{description}</div>
           </div>
 
@@ -30,7 +30,7 @@ const ProductTicket: React.FC<IProps> = ({ title, description, price }) => {
 
           <div>
             <button type="button" className="btn btn-primary mt-2">
-              Adicionar
+              + Adicionar
             </button>
           </div>
         </div>

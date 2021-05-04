@@ -24,7 +24,7 @@ const Welcome: React.FC = () => {
           transition={{ duration: 0.5 }}
           className={"main"}
         >
-          <img
+          {/* <img
             style={{
               backgroundSize: "contain",
               background: "no-repeat",
@@ -35,7 +35,7 @@ const Welcome: React.FC = () => {
             src={require("./../assets/images/backgrounds/negocio.png")}
             alt={"decisions"}
           />
-
+ */}
           <div className={"form shadow bg-white rounded"}>
             <div className={"inputs"}>
               <h1>Entre já!</h1>

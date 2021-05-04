@@ -38,18 +38,96 @@ const PaginaInicialCompradores: React.FC = () => {
 
           <tbody>
             <tr>
-              <td style={{ width: 80 }}>123ABC</td>
+              <td style={{ width: 80 }}>109328</td>
               <td style={{ width: 80 }}>BRAG</td>
               <td>Tintas, tubos e conexões</td>
               <td>Daniel Chaves</td>
               <td>06/03/2021</td>
               <td>07/03/2021</td>
-              <td>1 Proposta</td>
+              <td>Proposta única</td>
               <td>4 de 4 itens</td>
               <td>4 de 12 itens</td>
               <td>1 de 11 itens</td>
               <Dropdown direction="left" isOpen={dropdownOpen} toggle={toggle}>
-                <DropdownToggle caret>
+                <DropdownToggle className="ml-3 bg-primary" caret>
+                  <RiArrowDropDownFill />
+                </DropdownToggle>
+                <DropdownMenu>
+                  <DropdownItem>Cancelar cotação</DropdownItem>
+                  <DropdownItem>Editar cotação</DropdownItem>
+                  <DropdownItem>Reabrir prazo</DropdownItem>
+                  <DropdownItem>Enviar por e-mail</DropdownItem>
+                  <DropdownItem>Alterar objetivo</DropdownItem>
+                </DropdownMenu>
+              </Dropdown>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td style={{ width: 80 }}>109328</td>
+              <td style={{ width: 80 }}>BRAG</td>
+              <td>Tintas, tubos e conexões</td>
+              <td>Daniel Chaves</td>
+              <td>06/03/2021</td>
+              <td>07/03/2021</td>
+              <td>Proposta única</td>
+              <td>4 de 4 itens</td>
+              <td>4 de 12 itens</td>
+              <td>1 de 11 itens</td>
+              <Dropdown direction="left" isOpen={false} toggle={() => {}}>
+                <DropdownToggle className="ml-3 bg-primary" caret>
+                  <RiArrowDropDownFill />
+                </DropdownToggle>
+                <DropdownMenu>
+                  <DropdownItem>Cancelar cotação</DropdownItem>
+                  <DropdownItem>Editar cotação</DropdownItem>
+                  <DropdownItem>Reabrir prazo</DropdownItem>
+                  <DropdownItem>Enviar por e-mail</DropdownItem>
+                  <DropdownItem>Alterar objetivo</DropdownItem>
+                </DropdownMenu>
+              </Dropdown>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td style={{ width: 80 }}>109328</td>
+              <td style={{ width: 80 }}>BRAG</td>
+              <td>Tintas, tubos e conexões</td>
+              <td>Daniel Chaves</td>
+              <td>06/03/2021</td>
+              <td>07/03/2021</td>
+              <td>Proposta única</td>
+              <td>4 de 4 itens</td>
+              <td>4 de 12 itens</td>
+              <td>1 de 11 itens</td>
+              <Dropdown direction="left" isOpen={false} toggle={() => {}}>
+                <DropdownToggle className="ml-3 bg-primary" caret>
+                  <RiArrowDropDownFill />
+                </DropdownToggle>
+                <DropdownMenu>
+                  <DropdownItem>Cancelar cotação</DropdownItem>
+                  <DropdownItem>Editar cotação</DropdownItem>
+                  <DropdownItem>Reabrir prazo</DropdownItem>
+                  <DropdownItem>Enviar por e-mail</DropdownItem>
+                  <DropdownItem>Alterar objetivo</DropdownItem>
+                </DropdownMenu>
+              </Dropdown>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td style={{ width: 80 }}>109328</td>
+              <td style={{ width: 80 }}>BRAG</td>
+              <td>Tintas, tubos e conexões</td>
+              <td>Daniel Chaves</td>
+              <td>06/03/2021</td>
+              <td>07/03/2021</td>
+              <td>Proposta única</td>
+              <td>4 de 4 itens</td>
+              <td>4 de 12 itens</td>
+              <td>1 de 11 itens</td>
+              <Dropdown direction="left" isOpen={false} toggle={() => {}}>
+                <DropdownToggle className="ml-3 bg-primary" caret>
                   <RiArrowDropDownFill />
                 </DropdownToggle>
                 <DropdownMenu>

@@ -119,7 +119,7 @@ const CadastroFuncionarioEmpresaCompradora: React.FC = () => {
                   type="submit"
                   size="lg"
                   block
-                  className="buttom-login"
+                  className="bg-primary buttom-login"
                   onClick={() =>
                     Swal.fire({
                       position: "center",

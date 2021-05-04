@@ -166,7 +166,7 @@ const CadastrosJuridica: React.FC = () => {
                   type="submit"
                   size="lg"
                   block
-                  className="buttom-login d-flex flex-row justify-content-center align-items-center"
+                  className="bg-primary buttom-login d-flex flex-row justify-content-center align-items-center"
                   onClick={() =>
                     history.push(
                       ScreenType.CADASTROFUNCIONARIOEMPRESAFORNECEDORA

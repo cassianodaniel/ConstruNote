@@ -1,12 +1,10 @@
-import React from 'react';
-import ProductTicket from './ProductTicket';
+import React from "react";
+import ProductTicket from "./ProductTicket";
 
 const Card: React.FC = () => (
   <ProductTicket
-    title={
-      'Luminária retangular com refletor e aletas planas, completa, para 2 lâmpadas tubular'
-    }
-    description={'Vergalhão 12 metros'}
+    title={"Luminária retangular com refletor"}
+    description={"Aletas planas, completa, para 2 lâmpadas tubular."}
     price={110.99}
   />
 );
