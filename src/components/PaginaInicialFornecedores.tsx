@@ -1,40 +1,46 @@
-import React, { ReactNode } from 'react';
-import { Button, Table } from 'reactstrap';
-import NavHorizontal from './NavHorizontal';
-import NavVertical from './NavVertical';
-import { fakeUsers } from '../mock/fakeUsers';
-import { UserType } from '../enums/UserType';
-import { ParseUserQuotationExpirationDate } from '../helpers/ParseUserQuotationExpirationDate';
-import { ParseQuotationProgress } from '../helpers/ParseQuotationProgress';
-import { IUser } from '../aliases/IUser';
-import Swal from 'sweetalert2';
-
-import MUIDataTable from 'mui-datatables';
+import React, { ReactNode } from "react";
+import { Button, Table } from "reactstrap";
+import NavHorizontal from "./NavHorizontal";
+import NavVertical from "./NavVertical";
+import { fakeUsers } from "../mock/fakeUsers";
+import { UserType } from "../enums/UserType";
+import { ParseUserQuotationExpirationDate } from "../helpers/ParseUserQuotationExpirationDate";
+import { ParseQuotationProgress } from "../helpers/ParseQuotationProgress";
+import { IUser } from "../aliases/IUser";
+import Swal from "sweetalert2";
+import MUIDataTable from "mui-datatables";
+import ReactImageFallback from "react-image-fallback";
+import { IoLocation } from "react-icons/io5";
+import {
+  FcCalendar,
+  FcComboChart,
+  FcKindle,
+  FcMoneyTransfer,
+} from "react-icons/fc";
 
 const PaginaInicialFornecedores: React.FC = () => {
   const columns = [
-    'Tipo',
-    'Cliente',
-    'Local',
-    'Cotação',
-    'Vencimento',
-    'Pedido',
-    'Detalhes',
+    "Cliente",
+    "Local",
+    "Cotação",
+    "Vencimento",
+    "Pedido",
+    "Detalhes",
   ];
 
   function getClassification(user: IUser) {
     return (
       <>
         {user.classification.gold === true && (
-          <i className={'ri-star-line mr-2 yellow-star'} />
+          <i className={"ri-star-line mr-1 yellow-star"} />
         )}
 
         {user.classification.silver === true && (
-          <i className={'ri-star-line mr-2 silver-star'} />
+          <i className={"ri-star-line mr-1 silver-star"} />
         )}
 
         {user.classification.bronze === true && (
-          <i className={'ri-star-line mr-2 bronze-star'} />
+          <i className={"ri-star-line mr-1 bronze-star"} />
         )}
       </>
     );
@@ -47,8 +53,8 @@ const PaginaInicialFornecedores: React.FC = () => {
       arrayTypes.push(
         `${
           user.userType === UserType.PESSOAJURIDICA
-            ? 'Pessoa jurídica'
-            : 'Pessoa física'
+            ? "Pessoa jurídica"
+            : "Pessoa física"
         }`
       )
     );
@@ -108,20 +114,20 @@ const PaginaInicialFornecedores: React.FC = () => {
     fakeUsers.forEach((user) =>
       arrayDetails.push(
         <Button
-          type={'button'}
+          type={"button"}
           color="primary"
           className="d-flex flex-row align-items-center eye-height"
           onClick={() =>
             Swal.fire({
-              icon: 'error',
-              title: 'Oops...',
-              text: 'Alguma coisa deu errado!',
-              footer: 'Nossos serviços estão fora do ar...',
+              icon: "error",
+              title: "Oops...",
+              text: "Alguma coisa deu errado!",
+              footer: "Nossos serviços estão fora do ar...",
             })
           }
         >
-          <i className={'ri-eye-line mr-2'} />
-          {'Ver'}
+          <FcKindle />
+          <div className="ml-2">{"Ver detalhes"}</div>
         </Button>
       )
     );
@@ -130,112 +136,131 @@ const PaginaInicialFornecedores: React.FC = () => {
   }
 
   const data = fakeUsers.map((user, key) => [
-    [getClassification(user), `${getType(key)}`],
+    [
+      <div className="d-flex flex-row">
+        <ReactImageFallback
+          fallbackImage={require("../assets/images/users/avatar-1.jpg")}
+          className="charPicFavoritePage mr-2"
+          src={require("../assets/images/users/avatar-1.jpg")} //user.profilePicture
+        />
+        <div className="d-flex flex-column">
+          {`${getUsername(key)}`}
+          <div className="font-size-13 text-muted">
+            {getClassification(user)}
+            {`${getType(key)}`}
+          </div>
+        </div>
+      </div>,
+    ],
 
-    [`${getUsername(key)}`],
+    [
+      <div className="d-flex flex-column">
+        <div className="d-flex flex-row">
+          <div className="locationIcon">
+            <IoLocation />
+          </div>
+          {`${getLocation(key)}`}
+        </div>
+        <div className="text-muted font-size-13">Localização do usuário</div>
+      </div>,
+    ],
 
-    [`${getLocation(key)}`],
+    [
+      <div className="d-flex flex-column">
+        <div className="d-flex flex-row">
+          <div className="locationIcon">
+            <FcMoneyTransfer />
+          </div>
+          {`${getQuotation(key)}`}
+        </div>
+        <div className="text-muted font-size-13">Código da cotação</div>
+      </div>,
+    ],
 
-    [`${getQuotation(key)}`],
+    [
+      <div className="d-flex flex-column">
+        <div className="d-flex flex-row">
+          <div className="locationIcon">
+            <FcCalendar />
+          </div>
+          {`${getDueDate(key)}`}
+        </div>
+        <div className="text-muted font-size-13">Vencimento da cotação</div>
+      </div>,
+    ],
 
-    [`${getDueDate(key)}`],
-
-    [`${getOrder(key)}`],
+    [
+      <div className="d-flex flex-column">
+        <div className="d-flex flex-row">
+          <div className="locationIcon">
+            <FcComboChart />
+          </div>
+          {`${getOrder(key)}`}
+        </div>
+        <div className="text-muted font-size-13">Andamento</div>
+      </div>,
+    ],
 
     [getDetails(key)],
   ]);
 
+  const options = {
+    download: false,
+    search: false,
+    filter: false,
+    textLabels: {
+      body: {
+        noMatch: "Desculpe, não há resultados disponíveis.",
+        toolTip: "Sorteie",
+      },
+      pagination: {
+        next: "Próxima página",
+        previous: "Página anterior",
+        rowsPerPage: "Linhas por página:",
+        displayRows: "de",
+      },
+      toolbar: {
+        search: "Procurar",
+        print: "Imprimir",
+        viewColumns: "Ver colunas",
+        filterTable: "Filtrar tabela",
+      },
+      filter: {
+        all: "Todos",
+        title: "Filtros",
+        reset: "Resetar",
+      },
+      viewColumns: {
+        title: "Mostrar colunas",
+        titleAria: "Mostrar/Esconder colunas",
+      },
+      selectedRows: {
+        text: "linha(s) selecionadas",
+        delete: "Deletar",
+        deleteAria: "Deletar linhas selecionadas",
+      },
+    },
+  };
+
   return (
     <>
       <NavVertical />
-      <NavHorizontal title={'Fornecedores'} />
-
+      <NavHorizontal title={"Fornecedores"} />
       <Table
-        className="margin-top-60 d-flex align-items-center justify-content-center"
+        className="margin-top-80 d-flex align-items-center justify-content-center"
         hover
         responsive
-        autoCapitalize={'on'}
+        autoCapitalize={"on"}
       >
-        <div style={{ width: '90vw' }}>
+        <div style={{ width: "90vw" }}>
           <MUIDataTable
-            title={'Fornecedores disponíveis'}
+            options={options}
+            title={"Fornecedores disponíveis"}
             data={data}
             columns={columns}
           />
         </div>
       </Table>
-
-      {/*
-      <Table className="margin-top-60" hover responsive autoCapitalize={'on'}>
-        <thead>
-          <tr>
-            <th>Cliente</th>
-            <th>Local</th>
-            <th>Cotação</th>
-            <th>Vencimento</th>
-            <th>Pedido</th>
-            <th> </th>
-          </tr>
-        </thead>
-
-        <tbody>
-          {fakeUsers.map((user, key) => {
-            return (
-              <>
-                <tr>
-                  <td className="d-flex align-items-center">
-                    {user.classification.gold === true && (
-                      <i className={'ri-star-line mr-2 yellow-star'} />
-                    )}
-                    {user.classification.silver === true && (
-                      <i className={'ri-star-line mr-2 silver-star'} />
-                    )}
-                    {user.classification.bronze === true && (
-                      <i className={'ri-star-line mr-2 bronze-star'} />
-                    )}
-                    {user.userType === UserType.PESSOAJURIDICA
-                      ? 'Pessoa jurídica'
-                      : 'Pessoa física'}
-                  </td>
-
-                  <td>
-                    {user.location}
-                    <i className={'ri-map-pin-2-line ml-1'} />
-                  </td>
-                  <td className="d-flex flex-row align-items-center">
-                    {user.quotation} <i className={'ri-file-list-line ml-1'} />
-                  </td>
-                  <td>
-                    {ParseUserQuotationExpirationDate(
-                      user.quotationExpirationDate
-                    )}
-                  </td>
-                  <td>{ParseQuotationProgress(user.quotationProgress)}</td>
-                  <td>
-                    <Button
-                      type={'button'}
-                      color="primary"
-                      className="d-flex flex-row align-items-center eye-height"
-                      onClick={() =>
-                        Swal.fire({
-                          icon: 'error',
-                          title: 'Oops...',
-                          text: 'Alguma coisa deu errado!',
-                          footer: 'Nossos serviços estão fora do ar...',
-                        })
-                      }
-                    >
-                      <i className={'ri-eye-line mr-2'} />
-                      {'Ver'}
-                    </Button>
-                  </td>
-                </tr>
-              </>
-            );
-          })}
-        </tbody>
-      </Table>
-     */}
     </>
   );
 };
