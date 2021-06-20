@@ -59,6 +59,8 @@ interface IStateContextData {
   microrregioesDistritoFederal: any[];
   selectedStatesArray: string[];
   setSelectedStatesArray(value: string[]): void;
+  moreOptions: boolean;
+  setMoreOptions(value: boolean): void;
 }
 
 export const StateContext = createContext<IStateContextData>(
@@ -79,10 +81,8 @@ export const StateProvider: React.FC = ({ children }) => {
   const [microrregioesMaranhao, setMicrorregioesMaranhao] = useState<any[]>([]);
   const [microrregioesPiaui, setMicrorregioesPiaui] = useState<any[]>([]);
   const [microrregioesCeara, setMicrorregioesCeara] = useState<any[]>([]);
-  const [
-    microrregioesRioGrandeDoNorte,
-    setMicrorregioesRioGrandeDoNorte,
-  ] = useState<any[]>([]);
+  const [microrregioesRioGrandeDoNorte, setMicrorregioesRioGrandeDoNorte] =
+    useState<any[]>([]);
   const [microrregioesParaiba, setMicrorregioesParaiba] = useState<any[]>([]);
   const [microrregioesPernambuco, setMicrorregioesPernambuco] = useState<any[]>(
     []
@@ -104,25 +104,20 @@ export const StateProvider: React.FC = ({ children }) => {
   const [microrregioesSantaCatarina, setMicrorregioesSantaCatarina] = useState<
     any[]
   >([]);
-  const [
-    microrregioesRioGrandeDoSul,
-    setMicrorregioesRioGrandeDoSul,
-  ] = useState<any[]>([]);
-  const [
-    microrregioesMatoGrossoDoSul,
-    setMicrorregioesMatoGrossoDoSul,
-  ] = useState<any[]>([]);
+  const [microrregioesRioGrandeDoSul, setMicrorregioesRioGrandeDoSul] =
+    useState<any[]>([]);
+  const [microrregioesMatoGrossoDoSul, setMicrorregioesMatoGrossoDoSul] =
+    useState<any[]>([]);
   const [microrregioesMatoGrosso, setMicrorregioesMatoGrosso] = useState<any[]>(
     []
   );
   const [microrregioesGoias, setMicrorregioesGoias] = useState<any[]>([]);
-  const [
-    microrregioesDistritoFederal,
-    setMicrorregioesDistritoFederal,
-  ] = useState<any[]>([]);
+  const [microrregioesDistritoFederal, setMicrorregioesDistritoFederal] =
+    useState<any[]>([]);
   const [selectedStatesArray, setSelectedStatesArray] = React.useState<
     string[]
   >([]);
+  const [moreOptions, setMoreOptions] = React.useState<boolean>(false);
 
   return (
     <StateContext.Provider
@@ -185,6 +180,8 @@ export const StateProvider: React.FC = ({ children }) => {
         microrregioesDistritoFederal,
         selectedStatesArray,
         setSelectedStatesArray,
+        moreOptions,
+        setMoreOptions,
       }}
     >
       {children}

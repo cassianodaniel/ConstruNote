@@ -1,10 +1,12 @@
-import React from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import { Nav, NavItem, NavLink } from 'reactstrap';
-import emblem from './../assets/images/emblems/emblem.png';
-import ScreenType from '../enums/ScreenType';
+import React from "react";
+import { Link, useHistory } from "react-router-dom";
+import { Nav, NavItem, NavLink } from "reactstrap";
+import emblem from "./../assets/images/emblems/emblem.png";
+import ScreenType from "../enums/ScreenType";
+import { useStateContext } from "../contexts/StateContext";
 
 const NavVertical: React.FC = () => {
+  const { setMoreOptions, moreOptions } = useStateContext();
   const history = useHistory();
   return (
     <div className="side-menu flex-lg-column">
@@ -25,10 +27,10 @@ const NavVertical: React.FC = () => {
           <NavItem
             id="SelecaoDeProdutos"
             style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'center',
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
             <NavLink
@@ -39,17 +41,17 @@ const NavVertical: React.FC = () => {
               <i className="ri-search-2-line hoverColorGray"></i>
             </NavLink>
             <span className="text-center text-muted" style={{ fontSize: 10 }}>
-              Seleção de Produtos
+              Produtos
             </span>
           </NavItem>
 
           <NavItem
             id="PaginaInicial"
             style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'center',
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
             <NavLink
@@ -67,10 +69,10 @@ const NavVertical: React.FC = () => {
           <NavItem
             id="FornecedoresFavoritos"
             style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'center',
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
             <NavLink
@@ -82,6 +84,29 @@ const NavVertical: React.FC = () => {
             </NavLink>
             <span className="text-center text-muted" style={{ fontSize: 10 }}>
               Favoritos
+            </span>
+          </NavItem>
+
+          <NavItem
+            id="more"
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <NavLink
+              onClick={() => {
+                setMoreOptions(!moreOptions);
+              }}
+            >
+              <i className="ri-more-2-line hoverColorGray"></i>
+            </NavLink>
+            {moreOptions && <div>Dropdown</div>}
+            {/* “Obras”, “Equipe” e “Fornecedores" */}
+            <span className="text-center text-muted" style={{ fontSize: 10 }}>
+              Mais opções
             </span>
           </NavItem>
         </Nav>

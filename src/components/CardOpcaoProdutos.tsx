@@ -1,48 +1,86 @@
-import React from "react";
-
+import React, { useState } from "react";
+import ReactTextareaAutocomplete from "@webscopeio/react-textarea-autocomplete";
+import "@webscopeio/react-textarea-autocomplete/style.css";
+import { IoFilter } from "react-icons/io5";
+import ContainerCards from "./ContainerCards";
+import Line from "./Line";
 import {
-  Input,
   InputGroup,
-  InputGroupAddon,
-  InputGroupText,
   Button,
 } from "reactstrap";
 
-import { IoFilter } from "react-icons/io5";
-
-import ContainerCards from "./ContainerCards";
-import Line from "./Line";
-
 const CardOpcaoProdutos: React.FC = () => {
+  const [search, setSearch] = useState<string>("");
+  interface IItems {
+    entity: {
+      name: string;
+    };
+  }
+  
+  const Item: React.FC<IItems> = ({ entity }) => <div>{`${entity.name}`}</div>;
+
+  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setSearch(e.target.value);
+  };
+
   return (
     <div className="containerSelecaoProdutos">
       <div className="searchProduct">
         <div className="d-flex searchProduct-input-group">
           <InputGroup>
-            <Input
-              placeholder="Descreva aqui o produto"
-              bsSize="lg"
-              className="input-search-products"
-            />
-            <InputGroupAddon addonType="append">
-              <InputGroupText className="input-group-text">
-                <i className="ri-search-2-line hoverColorGray"></i>
-              </InputGroupText>
-            </InputGroupAddon>
+          <ReactTextareaAutocomplete
+                  className={'autoComplete'}
+                  value={search}
+                  style={{ 
+                    height: 40,
+                    lineHeight: 1,
+                    border: 'solid',
+                    fontSize: 16,
+                    borderColor: 'gray',
+                    borderWidth: 1,
+                  }}
+                  onChange={(e) => handleChange(e)}
+                  placeholder={("Digite @ e o nome do item correspondente...")}
+                  loadingComponent={() => <span>Loading</span>}
+                  listClassName="list-group"
+                  listStyle={{
+                    textAlign: "start",
+                    width: "100%",
+                  }}
+                  itemClassName="list-group-item"
+                  trigger={{
+                    '@': {
+                      dataProvider: (token) => {
+                        let viewArray =
+                          [
+                            { name: '@'.concat('Mangueira de aço')},
+                            { name: '@'.concat('Mangueira de látex')},
+                            { name: '@'.concat('Mangueira de alumínio')},
+                            { name: '@'.concat('Mangueira de titânio')},
+                            { name: '@'.concat('Mangueira de inox')},
+                          ]
+                        if (viewArray) {
+                          return viewArray.filter(
+                            (item) => {
+                              return item.name
+                              .toUpperCase()
+                              .match(token.toUpperCase());
+                            }
+                          );
+                        }
+                        return [];
+                      },
+                      // @ts-ignore
+                      component: Item,
+                      output: (item, trigger) =>
+                        '@'+ JSON.stringify(item as string).split('@')[1].slice(0, -2),
+                        allowWhitespace: true,
+                    },
+                  }}
+                  />
           </InputGroup>
         </div>
-
-        {/* <div className="searchProductCheckBox ml-4 mt-2">
-          <input
-            className="form-check-input"
-            type="checkbox"
-            value=""
-            id="searchProductCheck"
-          />
-          <label className="form-check-label" htmlFor="searchProductCheck">
-            Produto personalizado (anexar projeto)
-          </label>
-        </div> */}
+            {search.length > 0 && !search.includes('@') && <div className={`alert-at`}>Digite @ e o nome do item correspondente para procurá-lo...</div>}
       </div>
 
       <div className="f-flex flex-column cardsContainer mt-3 ml-1">

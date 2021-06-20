@@ -9,17 +9,12 @@ import { ParseQuotationProgress } from "../helpers/ParseQuotationProgress";
 import { IUser } from "../aliases/IUser";
 import Swal from "sweetalert2";
 import MUIDataTable from "mui-datatables";
-import ReactImageFallback from "react-image-fallback";
 import { IoLocation } from "react-icons/io5";
-import {
-  FcCalendar,
-  FcComboChart,
-  FcKindle,
-  FcMoneyTransfer,
-} from "react-icons/fc";
+import { RiBook2Line, RiShoppingCartLine } from "react-icons/ri";
 
 const PaginaInicialFornecedores: React.FC = () => {
   const columns = [
+    "Classificação",
     "Cliente",
     "Local",
     "Cotação",
@@ -126,8 +121,7 @@ const PaginaInicialFornecedores: React.FC = () => {
             })
           }
         >
-          <FcKindle />
-          <div className="ml-2">{"Ver detalhes"}</div>
+          <div>{"Ver detalhes"}</div>
         </Button>
       )
     );
@@ -138,18 +132,17 @@ const PaginaInicialFornecedores: React.FC = () => {
   const data = fakeUsers.map((user, key) => [
     [
       <div className="d-flex flex-row">
-        <ReactImageFallback
-          fallbackImage={require("../assets/images/users/avatar-1.jpg")}
-          className="charPicFavoritePage mr-2"
-          src={require("../assets/images/users/avatar-1.jpg")} //user.profilePicture
-        />
         <div className="d-flex flex-column">
-          {`${getUsername(key)}`}
-          <div className="font-size-13 text-muted">
+          <div className="font-size-13">
             {getClassification(user)}
             {`${getType(key)}`}
           </div>
         </div>
+      </div>,
+    ],
+    [
+      <div className="d-flex flex-row">
+        <div className="d-flex flex-column">{`${getUsername(key)}`}</div>
       </div>,
     ],
 
@@ -161,7 +154,6 @@ const PaginaInicialFornecedores: React.FC = () => {
           </div>
           {`${getLocation(key)}`}
         </div>
-        <div className="text-muted font-size-13">Localização do usuário</div>
       </div>,
     ],
 
@@ -169,35 +161,22 @@ const PaginaInicialFornecedores: React.FC = () => {
       <div className="d-flex flex-column">
         <div className="d-flex flex-row">
           <div className="locationIcon">
-            <FcMoneyTransfer />
+            {Math.random() > 0.5 ? <RiBook2Line /> : <RiShoppingCartLine />}
           </div>
           {`${getQuotation(key)}`}
         </div>
-        <div className="text-muted font-size-13">Código da cotação</div>
       </div>,
     ],
 
     [
       <div className="d-flex flex-column">
-        <div className="d-flex flex-row">
-          <div className="locationIcon">
-            <FcCalendar />
-          </div>
-          {`${getDueDate(key)}`}
-        </div>
-        <div className="text-muted font-size-13">Vencimento da cotação</div>
+        <div className="d-flex flex-row">{`${getDueDate(key)}`}</div>
       </div>,
     ],
 
     [
       <div className="d-flex flex-column">
-        <div className="d-flex flex-row">
-          <div className="locationIcon">
-            <FcComboChart />
-          </div>
-          {`${getOrder(key)}`}
-        </div>
-        <div className="text-muted font-size-13">Andamento</div>
+        <div className="d-flex flex-row">{`${getOrder(key)}`}</div>
       </div>,
     ],
 
@@ -208,6 +187,10 @@ const PaginaInicialFornecedores: React.FC = () => {
     download: false,
     search: false,
     filter: false,
+    print: false,
+    viewColumns: false,
+    selectableRowsHeader: false,
+    selectableRowsHideCheckboxes: true,
     textLabels: {
       body: {
         noMatch: "Desculpe, não há resultados disponíveis.",

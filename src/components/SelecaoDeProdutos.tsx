@@ -1,13 +1,12 @@
 import React from "react";
-
 import NavHorizontal from "./NavHorizontal";
 import NavVertical from "./NavVertical";
 import ScreenType from "../enums/ScreenType";
 import CardOpcaoProdutos from "./CardOpcaoProdutos";
-
 import { ImLocation } from "react-icons/im";
 import { FcHome } from "react-icons/fc";
 import { HiOutlineSwitchHorizontal } from "react-icons/hi";
+
 import Line from "./Line";
 
 const SelecaoDeProdutos: React.FC = () => {

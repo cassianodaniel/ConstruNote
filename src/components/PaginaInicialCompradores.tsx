@@ -1,147 +1,222 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import {
-  Dropdown,
-  DropdownItem,
-  DropdownMenu,
-  DropdownToggle,
   Table,
 } from "reactstrap";
-import { RiArrowDropDownFill } from "react-icons/ri";
-import NavVertical from "./NavVertical";
 import NavHorizontal from "./NavHorizontal";
+import NavVertical from "./NavVertical";
+import { fakeUsers } from "../mock/fakeUsers";
+import { ParseUserQuotationExpirationDate } from "../helpers/ParseUserQuotationExpirationDate";
+import MUIDataTable from "mui-datatables";
+import { RiArrowDropDownLine } from "react-icons/ri";
 
 const PaginaInicialCompradores: React.FC = () => {
-  const [dropdownOpen, setDropdownOpen] = React.useState(false);
-  const toggle = () => setDropdownOpen(!dropdownOpen);
+  const columns = [
+    "Código",
+    "Obra",
+    "Categorias",
+    "Solicitante",
+    "Solicitação",
+    "Encerramento",
+    "Status",
+    "Itens com proposta",
+    "Itens com 2 propostas",
+    "Itens com 3 propostas",
+    "Ações",
+  ];
+
+  function getCode(index: number) {
+    let arrayTypes: ReactNode[] = [];
+
+    fakeUsers.forEach(() => arrayTypes.push("109328"));
+
+    return arrayTypes[index];
+  }
+
+  function getConstruction(index: number) {
+    let arrayNames: string[] = [];
+
+    fakeUsers.forEach(() => arrayNames.push("BRAG"));
+
+    return arrayNames[index];
+  }
+
+  function getApplicant(index: number) {
+    let arrayLocations: string[] = [];
+
+    fakeUsers.forEach(() => arrayLocations.push("Daniel Chaves"));
+
+    return arrayLocations[index];
+  }
+
+  function getQuotation() {
+    let arrayQuotations: string[] = [];
+    arrayQuotations.push("Tintas e tubos");
+
+    return arrayQuotations;
+  }
+
+  function getDueDate(index: number) {
+    let arrayDueDate: string[] = [];
+
+    fakeUsers.forEach((user) => {
+      arrayDueDate.push(
+        ParseUserQuotationExpirationDate(user.quotationExpirationDate)
+      );
+    });
+
+    return arrayDueDate[index];
+  }
+
+  /* function getOrder(index: number) {
+    let arrayOrders: string[] = [];
+
+    fakeUsers.forEach((user) =>
+      arrayOrders.push(ParseQuotationProgress(user.quotationProgress))
+    );
+
+    return arrayOrders[index];
+  } */
+
+  function getDetails(index: number) {
+    let arrayDetails: ReactNode[] = [];
+
+    fakeUsers.forEach(() =>
+      arrayDetails.push(
+        Math.random() > 0.5 ? (
+          <div className="teste123">4/4</div>
+        ) : Math.random() > 0.5 ? (
+          <div className={"teste123 success"}>1/4</div>
+        ) : (
+          <div className="teste123 middle">2/4</div>
+        )
+      )
+    );
+
+    return arrayDetails[index];
+  }
+
+  const data = fakeUsers.map((user, key) => [
+    [
+      <div className="d-flex flex-row">
+        <div className="d-flex flex-column">
+          <div className="font-size-13">{`${getCode(key)}`}</div>
+        </div>
+      </div>,
+    ],
+
+    [
+      <div className="d-flex flex-row">
+        <div className="d-flex flex-row">{`${getConstruction(key)}`}</div>
+      </div>,
+    ],
+    [
+      <div className="d-flex flex-row">
+        <div className="d-flex flex-column">{`${getQuotation()}`}</div>
+      </div>,
+    ],
+
+    [
+      <div className="d-flex flex-column">
+        <div className="d-flex flex-row">{`${getApplicant(key)}`}</div>
+      </div>,
+    ],
+
+    [
+      <div className="d-flex flex-column">
+        <div className="d-flex flex-row">{`${getDueDate(key)}`}</div>
+      </div>,
+    ],
+
+    [
+      <div className="d-flex flex-column">
+        <div className="d-flex flex-row">{`${getDueDate(key)}`}</div>
+      </div>,
+    ],
+
+    [
+      <div className="d-flex flex-column">
+        <div className="d-flex flex-row">{`Proposta única`}</div>
+      </div>,
+    ],
+
+    [getDetails(key)],
+
+    [getDetails(key)],
+
+    [getDetails(key)],
+
+    <div className="ml-2">
+      <RiArrowDropDownLine size={20} />
+    </div>,
+    /* <DropdownItem>Cancelar cotação</DropdownItem>
+        <DropdownItem>Editar cotação</DropdownItem>
+        <DropdownItem>Reabrir prazo</DropdownItem>
+        <DropdownItem>Enviar por e-mail</DropdownItem>
+        <DropdownItem>Ver propostas</DropdownItem>
+        <DropdownItem>Alterar objetivo</DropdownItem> */
+  ]);
+
+  const options = {
+    download: false,
+    search: false,
+    filter: false,
+    print: false,
+    viewColumns: false,
+    selectableRowsHeader: false,
+    selectableRowsHideCheckboxes: true,
+    textLabels: {
+      body: {
+        noMatch: "Desculpe, não há resultados disponíveis.",
+        toolTip: "Sorteie",
+      },
+      pagination: {
+        next: "Próxima página",
+        previous: "Página anterior",
+        rowsPerPage: "Linhas por página:",
+        displayRows: "de",
+      },
+      toolbar: {
+        search: "Procurar",
+        print: "Imprimir",
+        viewColumns: "Ver colunas",
+        filterTable: "Filtrar tabela",
+      },
+      filter: {
+        all: "Todos",
+        title: "Filtros",
+        reset: "Resetar",
+      },
+      viewColumns: {
+        title: "Mostrar colunas",
+        titleAria: "Mostrar/Esconder colunas",
+      },
+      selectedRows: {
+        text: "linha(s) selecionadas",
+        delete: "Deletar",
+        deleteAria: "Deletar linhas selecionadas",
+      },
+    },
+  };
 
   return (
     <>
       <NavVertical />
       <NavHorizontal title={"Página inicial de compradores"} />
-      <div className="vw-100 vh-100">
-        <Table className="margin-top-60" hover autoCapitalize={"on"}>
-          <thead>
-            <tr>
-              <th>Código</th>
-              <th>Obra</th>
-              <th>Categorias</th>
-              <th>Solicitante</th>
-              <th>Solicitação</th>
-              <th>Encerramento</th>
-              <th>Status</th>
-              <th>Itens com 1 Proposta</th>
-              <th>Itens com 2 Propostas</th>
-              <th>Itens com 3 Propostas</th>
-              <th>Ações</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <tr>
-              <td style={{ width: 80 }}>109328</td>
-              <td style={{ width: 80 }}>BRAG</td>
-              <td>Tintas, tubos e conexões</td>
-              <td>Daniel Chaves</td>
-              <td>06/03/2021</td>
-              <td>07/03/2021</td>
-              <td>Proposta única</td>
-              <td>4 de 4 itens</td>
-              <td>4 de 12 itens</td>
-              <td>1 de 11 itens</td>
-              <Dropdown direction="left" isOpen={dropdownOpen} toggle={toggle}>
-                <DropdownToggle className="ml-3 bg-primary" caret>
-                  <RiArrowDropDownFill />
-                </DropdownToggle>
-                <DropdownMenu>
-                  <DropdownItem>Cancelar cotação</DropdownItem>
-                  <DropdownItem>Editar cotação</DropdownItem>
-                  <DropdownItem>Reabrir prazo</DropdownItem>
-                  <DropdownItem>Enviar por e-mail</DropdownItem>
-                  <DropdownItem>Alterar objetivo</DropdownItem>
-                </DropdownMenu>
-              </Dropdown>
-            </tr>
-          </tbody>
-          <tbody>
-            <tr>
-              <td style={{ width: 80 }}>109328</td>
-              <td style={{ width: 80 }}>BRAG</td>
-              <td>Tintas, tubos e conexões</td>
-              <td>Daniel Chaves</td>
-              <td>06/03/2021</td>
-              <td>07/03/2021</td>
-              <td>Proposta única</td>
-              <td>4 de 4 itens</td>
-              <td>4 de 12 itens</td>
-              <td>1 de 11 itens</td>
-              <Dropdown direction="left" isOpen={false} toggle={() => {}}>
-                <DropdownToggle className="ml-3 bg-primary" caret>
-                  <RiArrowDropDownFill />
-                </DropdownToggle>
-                <DropdownMenu>
-                  <DropdownItem>Cancelar cotação</DropdownItem>
-                  <DropdownItem>Editar cotação</DropdownItem>
-                  <DropdownItem>Reabrir prazo</DropdownItem>
-                  <DropdownItem>Enviar por e-mail</DropdownItem>
-                  <DropdownItem>Alterar objetivo</DropdownItem>
-                </DropdownMenu>
-              </Dropdown>
-            </tr>
-          </tbody>
-          <tbody>
-            <tr>
-              <td style={{ width: 80 }}>109328</td>
-              <td style={{ width: 80 }}>BRAG</td>
-              <td>Tintas, tubos e conexões</td>
-              <td>Daniel Chaves</td>
-              <td>06/03/2021</td>
-              <td>07/03/2021</td>
-              <td>Proposta única</td>
-              <td>4 de 4 itens</td>
-              <td>4 de 12 itens</td>
-              <td>1 de 11 itens</td>
-              <Dropdown direction="left" isOpen={false} toggle={() => {}}>
-                <DropdownToggle className="ml-3 bg-primary" caret>
-                  <RiArrowDropDownFill />
-                </DropdownToggle>
-                <DropdownMenu>
-                  <DropdownItem>Cancelar cotação</DropdownItem>
-                  <DropdownItem>Editar cotação</DropdownItem>
-                  <DropdownItem>Reabrir prazo</DropdownItem>
-                  <DropdownItem>Enviar por e-mail</DropdownItem>
-                  <DropdownItem>Alterar objetivo</DropdownItem>
-                </DropdownMenu>
-              </Dropdown>
-            </tr>
-          </tbody>
-          <tbody>
-            <tr>
-              <td style={{ width: 80 }}>109328</td>
-              <td style={{ width: 80 }}>BRAG</td>
-              <td>Tintas, tubos e conexões</td>
-              <td>Daniel Chaves</td>
-              <td>06/03/2021</td>
-              <td>07/03/2021</td>
-              <td>Proposta única</td>
-              <td>4 de 4 itens</td>
-              <td>4 de 12 itens</td>
-              <td>1 de 11 itens</td>
-              <Dropdown direction="left" isOpen={false} toggle={() => {}}>
-                <DropdownToggle className="ml-3 bg-primary" caret>
-                  <RiArrowDropDownFill />
-                </DropdownToggle>
-                <DropdownMenu>
-                  <DropdownItem>Cancelar cotação</DropdownItem>
-                  <DropdownItem>Editar cotação</DropdownItem>
-                  <DropdownItem>Reabrir prazo</DropdownItem>
-                  <DropdownItem>Enviar por e-mail</DropdownItem>
-                  <DropdownItem>Alterar objetivo</DropdownItem>
-                </DropdownMenu>
-              </Dropdown>
-            </tr>
-          </tbody>
-        </Table>
-      </div>
+      <Table
+        className="margin-top-80 d-flex align-items-center justify-content-center"
+        hover
+        responsive
+        autoCapitalize={"on"}
+      >
+        <div style={{ width: "90vw" }}>
+          <MUIDataTable
+            options={options}
+            title={""}
+            data={data}
+            columns={columns}
+          />
+        </div>
+      </Table>
     </>
   );
 };

@@ -257,3 +257,34 @@
 .constructionsNotice {
   background-color: transparent;
 }
+.teste123 {
+  color: white;
+  height: 100%;
+  width: 80%;
+  border-radius: 4%;
+  margin-left: 7%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #14a613;
+  &.success {
+    background-color: #aae4aa;
+  }
+  &.middle {
+    background-color: #22ce20;
+  }
+}
+
+.dropdown-toggle-pagina-inicial-compradores {
+  background-color: $blue !important;
+  height: 10px !important;
+  width: 10px !important;
+}
+
+.autoComplete{
+  width: 90%;
+}
+
+.alert-at{
+    color: red;
+}
