@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
-import NavHorizontal from './NavHorizontal';
-import NavVertical from './NavVertical';
-import ScreenType from '../enums/ScreenType';
-import Line from './Line/Line';
+import NavHorizontal from '../NavHorizontal/NavHorizontal';
+import NavVertical from '../NavVertical/NavVertical';
+import ScreenType from '../../enums/ScreenType';
+import Line from '../Line/Line';
 
 import {
   Card,
@@ -18,7 +18,7 @@ import {
   ListGroupItem,
 } from 'reactstrap';
 
-import ProfilePicture from '../assets/images/emblems/emblem.png';
+import ProfilePicture from '../../assets/images/emblems/emblem.png';
 import { IoChatbox } from 'react-icons/io5';
 import { RiAddCircleLine } from 'react-icons/ri';
 import { Link } from 'react-router-dom';

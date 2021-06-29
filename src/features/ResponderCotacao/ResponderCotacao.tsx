@@ -1,8 +1,8 @@
 import React from "react";
 
-import NavVertical from "./NavVertical";
-import NavHorizontal from "./NavHorizontal";
-import Line from "./Line/Line";
+import NavVertical from "../NavVertical/NavVertical";
+import NavHorizontal from "../NavHorizontal/NavHorizontal";
+import Line from "../Line/Line";
 
 import {
   Button,
@@ -16,7 +16,7 @@ import {
   Input,
 } from "reactstrap";
 
-import ProfilePicture from "../assets/images/emblems/emblem.png";
+import ProfilePicture from "../../assets/images/emblems/emblem.png";
 import { FcShop } from "react-icons/fc";
 import { IoChatbox } from "react-icons/io5";
 import { MdDelete } from "react-icons/md";

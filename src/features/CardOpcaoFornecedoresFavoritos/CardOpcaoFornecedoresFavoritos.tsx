@@ -1,6 +1,6 @@
 import React from "react";
-import { Input } from "reactstrap";
-import ContainerFornecedoresFavoritos from "../ContainerFornecedoresFavoritos";
+import ContainerFornecedoresListaTransmissao from "../ContainerFornecedoresListaTransmissao/ContainerFornecedoresListaTransmissao";
+import ContainerFornecedoresFavoritos from "../ContainerFornecedoresListaTransmissao/ContainerFornecedoresListaTransmissao";
 import Line from "../Line/Line";
 
 const CardOpcaoFornecedoresFavoritos = () => {
@@ -14,14 +14,10 @@ const CardOpcaoFornecedoresFavoritos = () => {
           Use a barra de busca abaixo para encontrar seus fornecedores
           favoritos. Nos empenharemos em trazer suas propostas.
         </div>
-        <div className="searchFavorite">
-          <Input placeholder="Busque aqui o seu fornecedor favorito" />
-        </div>
         <div className="font-size-15 font-weight-bold mt-3">
           Fornecedores favoritos
         </div>
         <Line />
-        <ContainerFornecedoresFavoritos />
       </div>
     </div>
   );

@@ -5,10 +5,13 @@
   color: white;
 }
 .mainContainerFavoritos {
-  width: 33%;
+  width: 40%;
   height: 66vh;
   overflow-y: auto;
   color: black;
+  &.transmissao{
+    width: 55%;
+  }
 }
 .mainContainerSugeridos {
   width: 33%;

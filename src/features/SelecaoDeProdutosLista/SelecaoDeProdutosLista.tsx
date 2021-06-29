@@ -1,9 +1,9 @@
 import React from "react";
 
-import NavHorizontal from "./NavHorizontal";
-import NavVertical from "./NavVertical";
-import ScreenType from "../enums/ScreenType";
-import ListaCotacoes from "./ListaCotacoes";
+import NavHorizontal from "../NavHorizontal/NavHorizontal";
+import NavVertical from "../NavVertical/NavVertical";
+import ScreenType from "../../enums/ScreenType";
+import ListaCotacoes from "../ListaCotacoes/ListaCotacoes";
 
 import { ImLocation } from "react-icons/im";
 import { FcHome } from "react-icons/fc";

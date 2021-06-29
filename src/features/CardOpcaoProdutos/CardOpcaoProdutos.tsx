@@ -5,7 +5,6 @@ import { IoFilter } from "react-icons/io5";
 import ContainerCards from "../ContainerCards/ContainerCards";
 import Line from "../Line/Line";
 import {
-  InputGroup,
   Button,
 } from "reactstrap";
 
@@ -26,18 +25,18 @@ const CardOpcaoProdutos: React.FC = () => {
   return (
     <div className="containerSelecaoProdutos">
       <div className="searchProduct">
-        <div className="d-flex searchProduct-input-group">
-          <InputGroup>
+        <div className="d-flex flex-row justify-content-center align-items-center">
           <ReactTextareaAutocomplete
                   className={'autoComplete'}
                   value={search}
                   style={{ 
-                    height: 40,
+                    height: '100%',
                     lineHeight: 1,
-                    border: 'solid',
+                    border: '1 solid',
                     fontSize: 16,
                     borderColor: 'gray',
-                    borderWidth: 1,
+                    borderWidth: 0.5,
+                    width: '100%'
                   }}
                   onChange={(e) => handleChange(e)}
                   placeholder={("Digite @ e o nome do item correspondente...")}
@@ -78,18 +77,14 @@ const CardOpcaoProdutos: React.FC = () => {
                     },
                   }}
                   />
-          </InputGroup>
-        </div>
-            {search.length > 0 && !search.includes('@') && <div className={`alert-at`}>Digite @ e o nome do item correspondente para procurá-lo...</div>}
-      </div>
+            </div>
 
-      <div className="f-flex flex-column cardsContainer mt-3 ml-1">
-        <div className="filterProductCards">
           <Button outline color="primary">
             <IoFilter className="mr-2" />
             Filtrar
           </Button>
-        </div>
+          {search.length > 0 && !search.includes('@') && <div className={`alert-at`}>Digite @ e o nome do item correspondente para procurá-lo...</div>}
+        
         <div className="mt-3">
           <Line />
         </div>

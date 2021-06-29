@@ -1,7 +1,7 @@
 import React from "react";
 
-import NavVertical from "../NavVertical";
-import NavHorizontal from "../NavHorizontal";
+import NavVertical from "../NavVertical/NavVertical";
+import NavHorizontal from "../NavHorizontal/NavHorizontal";
 import {
   Button,
   Card,

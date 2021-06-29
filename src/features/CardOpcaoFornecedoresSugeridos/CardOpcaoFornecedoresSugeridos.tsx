@@ -1,6 +1,5 @@
 import React from "react";
-import { Input } from "reactstrap";
-import ContainerFornecedoresFavoritos from "../ContainerFornecedoresFavoritos";
+import ContainerFornecedoresListaSugeridos from "../ContainerFornecedoresListaSugeridos/ContainerFornecedoresListaSugeridos";
 import Line from "../Line/Line";
 
 const CardOpcaoFornecedoresSugeridos = () => {
@@ -17,11 +16,8 @@ const CardOpcaoFornecedoresSugeridos = () => {
         <div className="font-size-15 font-weight-bold mt-3">
           Fornecedores sugeridos
         </div>
-        <div className="searchFavorite">
-          <Input placeholder="Busque aqui o seu fornecedor favorito" />
-        </div>
         <Line />
-        <ContainerFornecedoresFavoritos />
+        <ContainerFornecedoresListaSugeridos />
       </div>
     </div>
   );

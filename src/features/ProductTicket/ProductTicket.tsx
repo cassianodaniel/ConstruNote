@@ -1,6 +1,6 @@
 import React from "react";
 import ReactImageFallback from "react-image-fallback";
-
+import logo from "./../../assets/images/emblems/logo.png";
 interface IProps {
   title: string;
   description: string;
@@ -13,9 +13,9 @@ const ProductTicket: React.FC<IProps> = ({ title, description, price }) => {
       <div className="ticketCardContainer p-4">
         <div className="productPictureContainer">
           <ReactImageFallback
-            fallbackImage={require("../assets/images/emblems/logo.png")}
+            fallbackImage={logo}
             className="productCardImage cursor-pointer"
-            src={require("../assets/images/emblems/logo.png")} //card.productPicture
+            src={logo}
           />
         </div>
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import NavVertical from '../NavVertical';
-import NavHorizontal from '../NavHorizontal';
+import NavVertical from '../NavVertical/NavVertical';
+import NavHorizontal from '../NavHorizontal/NavHorizontal';
 import ScreenType from '../../enums/ScreenType';
 
 import { RiAddCircleLine } from 'react-icons/ri';

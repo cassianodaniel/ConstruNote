@@ -1,8 +1,8 @@
 import React from 'react';
 
-import NavVertical from './NavVertical';
-import NavHorizontal from './NavHorizontal';
-import ScreenType from '../enums/ScreenType';
+import NavVertical from '../NavVertical/NavVertical';
+import NavHorizontal from '../NavHorizontal/NavHorizontal';
+import ScreenType from '../../enums/ScreenType';
 
 import { ImLocation } from 'react-icons/im';
 import { FcHome } from 'react-icons/fc';

@@ -2,9 +2,9 @@ import React from "react";
 
 import { useHistory } from "react-router-dom";
 import { Button } from "reactstrap";
-import ScreenType from "../enums/ScreenType";
-import NavVertical from "./NavVertical";
-import NavHorizontal from "./NavHorizontal";
+import ScreenType from "../../enums/ScreenType";
+import NavVertical from "../NavVertical/NavVertical";
+import NavHorizontal from "../NavHorizontal/NavHorizontal";
 
 const TipoDePagamento: React.FC = () => {
   const history = useHistory();

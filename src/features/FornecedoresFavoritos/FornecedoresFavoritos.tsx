@@ -1,11 +1,10 @@
 import React from 'react';
 import { GoLocation, GoMail, GoSync } from 'react-icons/go';
-import ScreenType from '../enums/ScreenType';
-import CardOpcaoFornecedoresConvidados from './CardOpcaoFornecedoresConvidados/CardOpcaoFornecedoresConvidados';
-import CardOpcaoFornecedoresFavoritos from './CardOpcaoFornecedoresFavoritos/CardOpcaoFornecedoresFavoritos';
-import CardOpcaoFornecedoresSugeridos from './CardOpcaoFornecedoresSugeridos/CardOpcaoFornecedoresSugeridos';
-import NavHorizontal from './NavHorizontal';
-import NavVertical from './NavVertical';
+import ScreenType from '../../enums/ScreenType';
+import CardOpcaoFornecedoresListaDeTransmissao from '../CardOpcaoFornecedoresListaDeTransmissao/CardOpcaoFornecedoresListaDeTransmissao';
+import CardOpcaoFornecedoresSugeridos from '../CardOpcaoFornecedoresSugeridos/CardOpcaoFornecedoresSugeridos';
+import NavHorizontal from '../NavHorizontal/NavHorizontal';
+import NavVertical from '../NavVertical/NavVertical';
 
 const FornecedoresFavoritos: React.FC = () => {
   return (
@@ -35,8 +34,7 @@ const FornecedoresFavoritos: React.FC = () => {
             </div>
           </div>
           <div className="cardsContainer">
-            <CardOpcaoFornecedoresFavoritos />
-            <CardOpcaoFornecedoresConvidados />
+            <CardOpcaoFornecedoresListaDeTransmissao />
             <CardOpcaoFornecedoresSugeridos />
           </div>
         </div>

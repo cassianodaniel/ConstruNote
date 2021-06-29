@@ -1,5 +1,5 @@
 import React from "react";
-import ProductTicket from "../ProductTicket";
+import ProductTicket from "../ProductTicket/ProductTicket";
 
 const Card: React.FC = () => (
   <ProductTicket

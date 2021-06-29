@@ -2,10 +2,10 @@ import React, { ReactNode } from "react";
 import {
   Table,
 } from "reactstrap";
-import NavHorizontal from "./NavHorizontal";
-import NavVertical from "./NavVertical";
-import { fakeUsers } from "../mock/fakeUsers";
-import { ParseUserQuotationExpirationDate } from "../helpers/ParseUserQuotationExpirationDate";
+import NavHorizontal from "../NavHorizontal/NavHorizontal";
+import NavVertical from "../NavVertical/NavVertical";
+import { fakeUsers } from "../../mock/fakeUsers";
+import { ParseUserQuotationExpirationDate } from "../../helpers/ParseUserQuotationExpirationDate";
 import MUIDataTable from "mui-datatables";
 import { RiArrowDropDownLine } from "react-icons/ri";
 

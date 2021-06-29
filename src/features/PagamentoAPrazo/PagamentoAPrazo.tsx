@@ -1,7 +1,7 @@
 import React from "react";
 
-import NavVertical from "./NavVertical";
-import NavHorizontal from "./NavHorizontal";
+import NavVertical from "../NavVertical/NavVertical";
+import NavHorizontal from "../NavHorizontal/NavHorizontal";
 import {
   Button,
   Card,
@@ -11,7 +11,7 @@ import {
   InputGroup,
   InputGroupText,
 } from "reactstrap";
-import Line from "./Line/Line";
+import Line from "../Line/Line";
 
 const PagamentoAVista: React.FC = () => {
   return (

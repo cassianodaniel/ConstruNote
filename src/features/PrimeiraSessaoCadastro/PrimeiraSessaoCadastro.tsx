@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "reactstrap";
 import { useHistory } from "react-router-dom";
-import ScreenType from "../enums/ScreenType";
+import ScreenType from "../../enums/ScreenType";
 
 const PrimeiraSessaoCadastro: React.FC = () => {
   const history = useHistory();

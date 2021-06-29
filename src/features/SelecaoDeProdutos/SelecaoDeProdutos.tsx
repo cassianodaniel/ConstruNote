@@ -1,13 +1,13 @@
 import React from "react";
-import NavHorizontal from "./NavHorizontal";
-import NavVertical from "./NavVertical";
-import ScreenType from "../enums/ScreenType";
-import CardOpcaoProdutos from "./CardOpcaoProdutos/CardOpcaoProdutos";
+import NavHorizontal from "../NavHorizontal/NavHorizontal";
+import NavVertical from "../NavVertical/NavVertical";
+import ScreenType from "../../enums/ScreenType";
+import CardOpcaoProdutos from "../CardOpcaoProdutos/CardOpcaoProdutos";
 import { ImLocation } from "react-icons/im";
 import { FcHome } from "react-icons/fc";
 import { HiOutlineSwitchHorizontal } from "react-icons/hi";
 
-import Line from "./Line/Line";
+import Line from "../Line/Line";
 
 const SelecaoDeProdutos: React.FC = () => {
   return (

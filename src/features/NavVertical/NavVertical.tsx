@@ -1,9 +1,9 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
-import { Nav, NavItem, NavLink } from "reactstrap";
-import emblem from "./../assets/images/emblems/emblem.png";
-import ScreenType from "../enums/ScreenType";
-import { useStateContext } from "../contexts/StateContext";
+import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle, Nav, NavItem, NavLink } from "reactstrap";
+import emblem from "./../../assets/images/emblems/emblem.png";
+import ScreenType from "../../enums/ScreenType";
+import { useStateContext } from "../../contexts/StateContext";
 
 const NavVertical: React.FC = () => {
   const { setMoreOptions, moreOptions } = useStateContext();
@@ -96,18 +96,59 @@ const NavVertical: React.FC = () => {
               justifyContent: "center",
             }}
           >
-            <NavLink
-              onClick={() => {
-                setMoreOptions(!moreOptions);
-              }}
+            <Dropdown
+              nav
+              isOpen={moreOptions}
+              direction={"right"}
+              onClick={
+                () => setMoreOptions(!moreOptions)
+              }
+              className="btn-group dropup profile-user-dropdown"
+              toggle={() => {setMoreOptions(!moreOptions)}}
             >
-              <i className="ri-more-2-line hoverColorGray"></i>
+              <DropdownToggle nav>
+                <NavLink
+                  onClick={() => {
+                    setMoreOptions(!moreOptions);
+                  }}
+                >
+              <i className="ri-more-2-line hoverColorGray"/>
             </NavLink>
-            {moreOptions && <div>Dropdown</div>}
+              </DropdownToggle>
+              <DropdownMenu className="customAlignDropdown">
+                <DropdownItem
+                  onClick={() => {
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                      alignItems: "center",
+                    }}
+                  >
+                    <i className="ri-settings-3-line mr-2 text-muted"></i>
+                    {("Configurações")}{" "}
+                  </div>
+                </DropdownItem>
+
+                <DropdownItem divider />
+                <DropdownItem onClick={() => {}}>
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                      alignItems: "center",
+                    }}
+                  >
+                    <i className="ri-logout-circle-r-line mr-2 text-muted"></i>
+                    {("Sair")}{" "}
+                  </div>
+                </DropdownItem>
+              </DropdownMenu>
+            </Dropdown>
+            
             {/* “Obras”, “Equipe” e “Fornecedores" */}
-            <span className="text-center text-muted" style={{ fontSize: 10 }}>
-              Mais opções
-            </span>
           </NavItem>
         </Nav>
       </div>

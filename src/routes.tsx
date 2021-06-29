@@ -1,53 +1,53 @@
 import React, { lazy, Suspense } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Loading from './pages/Loading';
-import LoadingPage from './pages/LoadingPage';
-import Welcome from './pages/Welcome';
+import Loading from './features/Loading/Loading';
+import LoadingPage from './features/LoadingPage/LoadingPage';
+import Welcome from './features/Welcome/Welcome';
 import { ScreenType } from './enums/ScreenType';
 
 const FornecedoresFavoritos = lazy(
-  () => import('./pages/FornecedoresFavoritos')
+  () => import('./features/FornecedoresFavoritos/FornecedoresFavoritos')
 );
 const PaginaInicialCompradores = lazy(
-  () => import('./pages/PaginaInicialCompradores')
+  () => import('./features/PaginaInicialCompradores/PaginaInicialCompradores')
 );
 const PaginaInicialFornecedores = lazy(
-  () => import('./pages/PaginaInicialFornecedores')
+  () => import('./features/PaginaInicialFornecedores/PaginaInicialFornecedores')
 );
 const PrimeiraSessaoCadastro = lazy(
-  () => import('./pages/PrimeiraSessaoCadastro')
+  () => import('./features/PrimeiraSessaoCadastro/PrimeiraSessaoCadastro')
 );
 const SegundaSessaoCadastroComprador = lazy(
-  () => import('./pages/SegundaSessaoCadastroComprador')
+  () => import('./features/SegundaSessaoCadastroComprador/SegundaSessaoCadastroComprador')
 );
 const PreCadastroEmpresaFornecedora = lazy(
-  () => import('./pages/PreCadastroEmpresaFornecedora')
+  () => import('./features/PreCadastroEmpresaFornecedora/PreCadastroEmpresaFornecedora')
 );
-const CadastrosFisica = lazy(() => import('./pages/CadastrosFisica/CadastrosFisica'));
-const CadastrosJuridica = lazy(() => import('./pages/CadastrosJuridica/CadastrosJuridica'));
+const CadastrosFisica = lazy(() => import('./features/CadastrosFisica/CadastrosFisica'));
+const CadastrosJuridica = lazy(() => import('./features/CadastrosJuridica/CadastrosJuridica'));
 const CadastroFuncionarioEmpresaCompradora = lazy(
-  () => import('./pages/CadastroFuncionarioEmpresaCompradora/CadastroFuncionarioEmpresaCompradora')
+  () => import('./features/CadastroFuncionarioEmpresaCompradora/CadastroFuncionarioEmpresaCompradora')
 );
 const CadastroFuncionarioEmpresaFornecedora = lazy(
-  () => import('./pages/CadastroFuncionarioEmpresaFornecedora/CadastroFuncionarioEmpresaFornecedora')
+  () => import('./features/CadastroFuncionarioEmpresaFornecedora/CadastroFuncionarioEmpresaFornecedora')
 );
 const CadastrosFornecedor = lazy(
-  () => import('./pages/CadastrosFornecedor/CadastrosFornecedor')
+  () => import('./features/CadastrosFornecedor/CadastrosFornecedor')
 );
-const SelecaoDeProdutos = lazy(() => import('./pages/SelecaoDeProdutos'));
+const SelecaoDeProdutos = lazy(() => import('./features/SelecaoDeProdutos/SelecaoDeProdutos'));
 const SelecaoDeProdutosLista = lazy(
-  () => import('./pages/SelecaoDeProdutosLista')
+  () => import('./features/SelecaoDeProdutosLista/SelecaoDeProdutosLista')
 );
-const TipoDePagamento = lazy(() => import('./pages/TipoDePagamento'));
-const PagamentoAVista = lazy(() => import('./pages/PagamentoAVista'));
-const PagamentoAPrazo = lazy(() => import('./pages/PagamentoAPrazo'));
-const PagamentoFrete = lazy(() => import('./pages/PagamentoFrete/PagamentoFrete'));
-const ResponderCotacao = lazy(() => import('./pages/ResponderCotacao'));
+const TipoDePagamento = lazy(() => import('./features/TipoDePagamento/TipoDePagamento'));
+const PagamentoAVista = lazy(() => import('./features/PagamentoAVista/PagamentoAVista'));
+const PagamentoAPrazo = lazy(() => import('./features/PagamentoAPrazo/PagamentoAPrazo'));
+const PagamentoFrete = lazy(() => import('./features/PagamentoFrete/PagamentoFrete'));
+const ResponderCotacao = lazy(() => import('./features/ResponderCotacao/ResponderCotacao'));
 const InformacoesAdicionais = lazy(
-  () => import('./pages/InformacoesAdicionais')
+  () => import('./features/InformacoesAdicionais/InformacoesAdicionais')
 );
-const Obras = lazy(() => import('./pages/Obras/Obras'));
-const MapaDePrecos = lazy(() => import('./pages/MapaDePrecos'));
+const Obras = lazy(() => import('./features/Obras/Obras'));
+const MapaDePrecos = lazy(() => import('./features/MapaDePrecos/MapaDePrecos'));
 
 const Routes: React.FC = () => {
   return (
