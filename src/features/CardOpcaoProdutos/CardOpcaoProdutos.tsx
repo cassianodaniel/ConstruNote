@@ -27,64 +27,64 @@ const CardOpcaoProdutos: React.FC = () => {
       <div className="searchProduct">
         <div className="d-flex flex-row justify-content-center align-items-center">
           <ReactTextareaAutocomplete
-                  className={'autoComplete'}
-                  value={search}
-                  style={{ 
-                    height: '100%',
-                    lineHeight: 1,
-                    border: '1 solid',
-                    fontSize: 16,
-                    borderColor: 'gray',
-                    borderWidth: 0.5,
-                    width: '100%'
-                  }}
-                  onChange={(e) => handleChange(e)}
-                  placeholder={("Digite @ e o nome do item correspondente...")}
-                  loadingComponent={() => <span>Loading</span>}
-                  listClassName="list-group"
-                  listStyle={{
-                    textAlign: "start",
-                    width: "100%",
-                  }}
-                  itemClassName="list-group-item"
-                  trigger={{
-                    '@': {
-                      dataProvider: (token) => {
-                        let viewArray =
-                          [
-                            { name: '@'.concat('Mangueira de aço')},
-                            { name: '@'.concat('Mangueira de látex')},
-                            { name: '@'.concat('Mangueira de alumínio')},
-                            { name: '@'.concat('Mangueira de titânio')},
-                            { name: '@'.concat('Mangueira de inox')},
-                          ]
-                        if (viewArray) {
-                          return viewArray.filter(
-                            (item) => {
-                              return item.name
-                              .toUpperCase()
-                              .match(token.toUpperCase());
-                            }
-                          );
-                        }
-                        return [];
-                      },
-                      // @ts-ignore
-                      component: Item,
-                      output: (item, trigger) =>
-                        '@'+ JSON.stringify(item as string).split('@')[1].slice(0, -2),
-                        allowWhitespace: true,
-                    },
-                  }}
-                  />
-            </div>
+            value={search}
+            style={{ 
+              height: '100%',
+              lineHeight: 1,
+              border: '1 solid',
+              fontSize: 16,
+              borderColor: 'gray',
+              borderWidth: 0.5,
+              width: '100%'
+            }}
+            movePopupAsYouType={true}
+            /*dropdownStyle={}*/
+            onChange={(e) => handleChange(e)}
+            placeholder={("Digite @ e o nome do item correspondente...")}
+            loadingComponent={() => <span>Loading</span>}
+            listClassName="list-group"
+            listStyle={{
+              textAlign: "start",
+              width: "100%",
+            }}
+            itemClassName={"autoCompleteBotao"}
+            trigger={{
+              '@': {
+                dataProvider: (token) => {
+                  let viewArray =
+                    [
+                      { name: '@'.concat('Mangueira de aço')},
+                      { name: '@'.concat('Mangueira de látex')},
+                      { name: '@'.concat('Mangueira de alumínio')},
+                      { name: '@'.concat('Mangueira de titânio')},
+                      { name: '@'.concat('Mangueira de inox')},
+                    ]
+                  if (viewArray) {
+                    return viewArray.filter(
+                      (item) => {
+                        return item.name
+                        .toUpperCase()
+                        .match(token.toUpperCase());
+                      }
+                    );
+                  }
+                  return [];
+                },
+                // @ts-ignore
+                component: Item,
+                output: (item, trigger) =>
+                  '@'+ JSON.stringify(item as string).split('@')[1].slice(0, -2),
+                  allowWhitespace: true,
 
-          <Button outline color="primary">
-            <IoFilter className="mr-2" />
-            Filtrar
-          </Button>
-          {search.length > 0 && !search.includes('@') && <div className={`alert-at`}>Digite @ e o nome do item correspondente para procurá-lo...</div>}
-        
+              },
+            }}
+            />
+        </div>
+        <Button outline color="primary">
+          <IoFilter className="mr-2" />
+          Filtrar
+        </Button>
+        {search.length > 0 && !search.includes('@') && <div className={`alert-at`}>Digite @ e o nome do item correspondente para procurá-lo...</div>}
         <div className="mt-3">
           <Line />
         </div>
