@@ -33,7 +33,8 @@ const FornecedoresFavoritos: React.FC = () => {
               </a>
             </div>
           </div>
-          <div className="cardsContainer">
+
+          <div className="cardsContainer only-bg-red">
             <CardOpcaoFornecedoresListaDeTransmissao />
             <CardOpcaoFornecedoresSugeridos />
           </div>
