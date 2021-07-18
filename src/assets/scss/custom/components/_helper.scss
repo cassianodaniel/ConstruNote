@@ -38,6 +38,12 @@
   font-size: 18px !important;
 }
 
+.font-responsive {
+  @media (max-width: 425px) {
+    font-size: 17px !important;
+  }
+}
+
 .font-size-20 {
   font-size: 20px !important;
 }
@@ -72,12 +78,11 @@
   color: $gray-500;
   text-align: center;
   transition: all 0.4s;
-  &:hover{
+  &:hover {
     color: $gray-600;
     background-color: $gray-200;
   }
 }
-
 
 .w-xs {
   min-width: 80px;
