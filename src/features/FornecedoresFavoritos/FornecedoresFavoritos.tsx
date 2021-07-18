@@ -1,16 +1,16 @@
-import React from 'react';
-import { GoLocation, GoMail, GoSync } from 'react-icons/go';
-import ScreenType from '../../enums/ScreenType';
-import CardOpcaoFornecedoresListaDeTransmissao from '../CardOpcaoFornecedoresListaDeTransmissao/CardOpcaoFornecedoresListaDeTransmissao';
-import CardOpcaoFornecedoresSugeridos from '../CardOpcaoFornecedoresSugeridos/CardOpcaoFornecedoresSugeridos';
-import NavHorizontal from '../NavHorizontal/NavHorizontal';
-import NavVertical from '../NavVertical/NavVertical';
+import React from "react";
+import { GoLocation, GoMail, GoSync } from "react-icons/go";
+import ScreenType from "../../enums/ScreenType";
+import CardOpcaoFornecedoresListaDeTransmissao from "../../components/CardOpcaoFornecedoresListaDeTransmissao/CardOpcaoFornecedoresListaDeTransmissao";
+import CardOpcaoFornecedoresSugeridos from "../../components/CardOpcaoFornecedoresSugeridos/CardOpcaoFornecedoresSugeridos";
+import NavHorizontal from "../../components/NavHorizontal/NavHorizontal";
+import NavVertical from "../../components/NavVertical/NavVertical";
 
 const FornecedoresFavoritos: React.FC = () => {
   return (
     <>
       <NavVertical />
-      <NavHorizontal title={'Fornecedores favoritos'} />
+      <NavHorizontal title={"Fornecedores favoritos"} />
       <div className="margin-top-60">
         <div className="bg-red m-4 shadow-sm">
           <div className="constructionTextContainer">
@@ -21,13 +21,13 @@ const FornecedoresFavoritos: React.FC = () => {
               </div>
             </div>
             <div className="mt-1 d-flex flex-row">
-              <GoSync />{' '}
+              <GoSync />{" "}
               <a className="ml-2" href={ScreenType.FORNECEDORESFAVORITOS}>
                 Trocar de obra
               </a>
             </div>
             <div className="mt-1 d-flex flex-row">
-              <GoMail />{' '}
+              <GoMail />{" "}
               <a className="ml-2" href={ScreenType.FORNECEDORESFAVORITOS}>
                 Convidar fornecedores
               </a>

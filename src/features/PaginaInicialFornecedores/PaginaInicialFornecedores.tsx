@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import { Button, Table } from "reactstrap";
-import NavHorizontal from "../NavHorizontal/NavHorizontal";
-import NavVertical from "../NavVertical/NavVertical";
+import NavHorizontal from "../../components/NavHorizontal/NavHorizontal";
+import NavVertical from "../../components/NavVertical/NavVertical";
 import { fakeUsers } from "../../mock/fakeUsers";
 import { UserType } from "../../enums/UserType";
 import { ParseUserQuotationExpirationDate } from "../../helpers/ParseUserQuotationExpirationDate";

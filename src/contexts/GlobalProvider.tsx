@@ -1,20 +1,23 @@
-import React from 'react';
-import { LoadingProvider } from './LoadingContext';
-import { LayoutProvider } from './LayoutContext';
-import { ModalProvider } from './ModalContext';
-import { StateProvider } from './StateContext';
+import React from "react";
+import { LoadingProvider } from "./LoadingContext";
+import { LayoutProvider } from "./LayoutContext";
+import { ModalProvider } from "./ModalContext";
+import { StateProvider } from "./StateContext";
+import { AuthProvider } from "./AuthContext";
 
 const Provider: React.FC = ({ children }) => {
   return (
-    <LoadingProvider>
-      <LayoutProvider>
-        <ModalProvider>
-          <StateProvider>
-            <>{children}</>
-          </StateProvider>
-        </ModalProvider>
-      </LayoutProvider>
-    </LoadingProvider>
+    <AuthProvider>
+      <LoadingProvider>
+        <LayoutProvider>
+          <ModalProvider>
+            <StateProvider>
+              <>{children}</>
+            </StateProvider>
+          </ModalProvider>
+        </LayoutProvider>
+      </LoadingProvider>
+    </AuthProvider>
   );
 };
 

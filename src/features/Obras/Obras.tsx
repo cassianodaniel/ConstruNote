@@ -1,25 +1,25 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
-import NavVertical from '../NavVertical/NavVertical';
-import NavHorizontal from '../NavHorizontal/NavHorizontal';
-import ScreenType from '../../enums/ScreenType';
+import NavVertical from "../../components/NavVertical/NavVertical";
+import NavHorizontal from "../../components/NavHorizontal/NavHorizontal";
+import ScreenType from "../../enums/ScreenType";
 
-import { RiAddCircleLine } from 'react-icons/ri';
-import { ImLocation } from 'react-icons/im';
-import { FcHome } from 'react-icons/fc';
-import { HiOutlineSwitchHorizontal } from 'react-icons/hi';
-import { IoIosReturnLeft } from 'react-icons/io';
-import { IoFilter } from 'react-icons/io5';
-import { BsThreeDotsVertical } from 'react-icons/bs';
+import { RiAddCircleLine } from "react-icons/ri";
+import { ImLocation } from "react-icons/im";
+import { FcHome } from "react-icons/fc";
+import { HiOutlineSwitchHorizontal } from "react-icons/hi";
+import { IoIosReturnLeft } from "react-icons/io";
+import { IoFilter } from "react-icons/io5";
+import { BsThreeDotsVertical } from "react-icons/bs";
 
-import { Button, Card, CardBody, CardTitle, Table } from 'reactstrap';
+import { Button, Card, CardBody, CardTitle, Table } from "reactstrap";
 
 const Obras: React.FC = () => {
   return (
     <>
       <NavVertical />
-      <NavHorizontal title={'Obras'} />
+      <NavHorizontal title={"Obras"} />
 
       <div className="w-100 h-100 margin-top-60">
         <div className="pageContainer p-4 shadow-sm">
@@ -35,14 +35,14 @@ const Obras: React.FC = () => {
               <div className="constructionSecondLine mt-2 d-flex flex-column justify-content-end align-items-end">
                 <div className="constructionSubtitle">
                   <FcHome className="mb-1 mr-1" />
-                  {''}
+                  {""}
                   Campina Grande
                 </div>
 
                 <div className="mt-1 changeConstruction">
                   <a href={ScreenType.OBRAS}>
                     <HiOutlineSwitchHorizontal className="mb-1 mr-1" />
-                    {''}
+                    {""}
                     Trocar de obra
                   </a>
                 </div>
@@ -88,7 +88,7 @@ const Obras: React.FC = () => {
                     className="margin-top-60"
                     hover
                     responsive
-                    autoCapitalize={'on'}
+                    autoCapitalize={"on"}
                   >
                     <thead>
                       <tr>

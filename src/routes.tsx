@@ -1,59 +1,88 @@
-import React, { lazy, Suspense } from 'react';
-import { Switch, Route } from 'react-router-dom';
-import Loading from './features/Loading/Loading';
-import LoadingPage from './features/LoadingPage/LoadingPage';
-import Welcome from './features/Welcome/Welcome';
-import { ScreenType } from './enums/ScreenType';
+import React, { lazy, Suspense } from "react";
+import { Switch, Route } from "react-router-dom";
+import Loading from "./components/Loading/Loading";
+import LoadingPage from "./pages/LoadingPage/LoadingPage";
+import Welcome from "./features/Welcome/Welcome";
+import { ScreenType } from "./enums/ScreenType";
 
 const FornecedoresFavoritos = lazy(
-  () => import('./features/FornecedoresFavoritos/FornecedoresFavoritos')
+  () => import("./features/FornecedoresFavoritos/FornecedoresFavoritos")
 );
 const PaginaInicialCompradores = lazy(
-  () => import('./features/PaginaInicialCompradores/PaginaInicialCompradores')
+  () => import("./features/PaginaInicialCompradores/PaginaInicialCompradores")
 );
 const PaginaInicialFornecedores = lazy(
-  () => import('./features/PaginaInicialFornecedores/PaginaInicialFornecedores')
+  () => import("./features/PaginaInicialFornecedores/PaginaInicialFornecedores")
 );
 const PrimeiraSessaoCadastro = lazy(
-  () => import('./features/PrimeiraSessaoCadastro/PrimeiraSessaoCadastro')
+  () =>
+    import("./features/Cadastros/PrimeiraSessaoCadastro/PrimeiraSessaoCadastro")
 );
 const SegundaSessaoCadastroComprador = lazy(
-  () => import('./features/SegundaSessaoCadastroComprador/SegundaSessaoCadastroComprador')
+  () =>
+    import(
+      "./features/Cadastros/SegundaSessaoCadastroComprador/SegundaSessaoCadastroComprador"
+    )
 );
 const PreCadastroEmpresaFornecedora = lazy(
-  () => import('./features/PreCadastroEmpresaFornecedora/PreCadastroEmpresaFornecedora')
+  () =>
+    import(
+      "./features/Cadastros/PreCadastroEmpresaFornecedora/PreCadastroEmpresaFornecedora"
+    )
 );
-const CadastrosFisica = lazy(() => import('./features/CadastrosFisica/CadastrosFisica'));
-const CadastrosJuridica = lazy(() => import('./features/CadastrosJuridica/CadastrosJuridica'));
+const CadastrosFisica = lazy(
+  () => import("./features/Cadastros/CadastrosFisica/CadastrosFisica")
+);
+const CadastrosJuridica = lazy(
+  () => import("./features/Cadastros/CadastrosJuridica/CadastrosJuridica")
+);
 const CadastroFuncionarioEmpresaCompradora = lazy(
-  () => import('./features/CadastroFuncionarioEmpresaCompradora/CadastroFuncionarioEmpresaCompradora')
+  () =>
+    import(
+      "./features/Cadastros/CadastroFuncionarioEmpresaCompradora/CadastroFuncionarioEmpresaCompradora"
+    )
 );
 const CadastroFuncionarioEmpresaFornecedora = lazy(
-  () => import('./features/CadastroFuncionarioEmpresaFornecedora/CadastroFuncionarioEmpresaFornecedora')
+  () =>
+    import(
+      "./features/Cadastros/CadastroFuncionarioEmpresaFornecedora/CadastroFuncionarioEmpresaFornecedora"
+    )
 );
 const CadastrosFornecedor = lazy(
-  () => import('./features/CadastrosFornecedor/CadastrosFornecedor')
+  () => import("./features/Cadastros/CadastrosFornecedor/CadastrosFornecedor")
 );
-const SelecaoDeProdutos = lazy(() => import('./features/SelecaoDeProdutos/SelecaoDeProdutos'));
+const SelecaoDeProdutos = lazy(
+  () => import("./features/SelecaoDeProdutos/SelecaoDeProdutos")
+);
 const SelecaoDeProdutosLista = lazy(
-  () => import('./features/SelecaoDeProdutosLista/SelecaoDeProdutosLista')
+  () => import("./features/SelecaoDeProdutosLista/SelecaoDeProdutosLista")
 );
-const TipoDePagamento = lazy(() => import('./features/TipoDePagamento/TipoDePagamento'));
-const PagamentoAVista = lazy(() => import('./features/PagamentoAVista/PagamentoAVista'));
-const PagamentoAPrazo = lazy(() => import('./features/PagamentoAPrazo/PagamentoAPrazo'));
-const PagamentoFrete = lazy(() => import('./features/PagamentoFrete/PagamentoFrete'));
-const ResponderCotacao = lazy(() => import('./features/ResponderCotacao/ResponderCotacao'));
+const TipoDePagamento = lazy(
+  () => import("./features/Pagamentos/TipoDePagamento/TipoDePagamento")
+);
+const PagamentoAVista = lazy(
+  () => import("./features/Pagamentos/PagamentoAVista/PagamentoAVista")
+);
+const PagamentoAPrazo = lazy(
+  () => import("./features/Pagamentos/PagamentoAPrazo/PagamentoAPrazo")
+);
+const PagamentoFrete = lazy(
+  () => import("./features/Pagamentos/PagamentoFrete/PagamentoFrete")
+);
+const ResponderCotacao = lazy(
+  () => import("./features/ResponderCotacao/ResponderCotacao")
+);
 const InformacoesAdicionais = lazy(
-  () => import('./features/InformacoesAdicionais/InformacoesAdicionais')
+  () => import("./features/InformacoesAdicionais/InformacoesAdicionais")
 );
-const Obras = lazy(() => import('./features/Obras/Obras'));
-const MapaDePrecos = lazy(() => import('./features/MapaDePrecos/MapaDePrecos'));
+const Obras = lazy(() => import("./features/Obras/Obras"));
+const MapaDePrecos = lazy(() => import("./features/MapaDePrecos/MapaDePrecos"));
 
 const Routes: React.FC = () => {
   return (
     <Suspense fallback={<Loading />}>
       <Switch>
-        <Route path={'/'} exact component={Welcome} />
+        <Route path={"/"} exact component={Welcome} />
         <Route path={ScreenType.LOADING} exact component={LoadingPage} />
         <Route
           path={ScreenType.PAGINAINICIALCOMPRADORES}

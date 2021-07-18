@@ -1,9 +1,7 @@
 import React, { ReactNode } from "react";
-import {
-  Table,
-} from "reactstrap";
-import NavHorizontal from "../NavHorizontal/NavHorizontal";
-import NavVertical from "../NavVertical/NavVertical";
+import { Table } from "reactstrap";
+import NavHorizontal from "../../components/NavHorizontal/NavHorizontal";
+import NavVertical from "../../components/NavVertical/NavVertical";
 import { fakeUsers } from "../../mock/fakeUsers";
 import { ParseUserQuotationExpirationDate } from "../../helpers/ParseUserQuotationExpirationDate";
 import MUIDataTable from "mui-datatables";

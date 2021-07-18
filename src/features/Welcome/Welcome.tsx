@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Button, Input } from "reactstrap";
 import { motion } from "framer-motion";
 import { useHistory } from "react-router-dom";
-import LoadingPage from "../LoadingPage/LoadingPage";
+import LoadingPage from "../../pages/LoadingPage/LoadingPage";
 import ScreenType from "../../enums/ScreenType";
 import { useLoading } from "../../contexts/LoadingContext";
 

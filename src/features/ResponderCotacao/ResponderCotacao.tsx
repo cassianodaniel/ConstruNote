@@ -1,8 +1,8 @@
 import React from "react";
 
-import NavVertical from "../NavVertical/NavVertical";
-import NavHorizontal from "../NavHorizontal/NavHorizontal";
-import Line from "../Line/Line";
+import NavVertical from "../../components/NavVertical/NavVertical";
+import NavHorizontal from "../../components/NavHorizontal/NavHorizontal";
+import Line from "../../components/Line/Line";
 
 import {
   Button,

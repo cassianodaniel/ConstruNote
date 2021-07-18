@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import NavHorizontal from '../NavHorizontal/NavHorizontal';
-import NavVertical from '../NavVertical/NavVertical';
-import ScreenType from '../../enums/ScreenType';
-import Line from '../Line/Line';
+import NavHorizontal from "../../components/NavHorizontal/NavHorizontal";
+import NavVertical from "../../components/NavVertical/NavVertical";
+import ScreenType from "../../enums/ScreenType";
+import Line from "../../components/Line/Line";
 
 import {
   Card,
@@ -16,13 +16,13 @@ import {
   Collapse,
   ListGroup,
   ListGroupItem,
-} from 'reactstrap';
+} from "reactstrap";
 
-import ProfilePicture from '../../assets/images/emblems/emblem.png';
-import { IoChatbox } from 'react-icons/io5';
-import { RiAddCircleLine } from 'react-icons/ri';
-import { Link } from 'react-router-dom';
-import { IoIosArrowForward } from 'react-icons/io';
+import ProfilePicture from "../../assets/images/emblems/emblem.png";
+import { IoChatbox } from "react-icons/io5";
+import { RiAddCircleLine } from "react-icons/ri";
+import { Link } from "react-router-dom";
+import { IoIosArrowForward } from "react-icons/io";
 
 const MapaDePrecos: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,7 +32,7 @@ const MapaDePrecos: React.FC = () => {
   return (
     <>
       <NavVertical />
-      <NavHorizontal title={'Mapa de Preços'} />
+      <NavHorizontal title={"Mapa de Preços"} />
 
       <div className="w-100 h-100 margin-top-60">
         <div className="pageContainer p-4 shadow-sm">
@@ -152,7 +152,7 @@ const MapaDePrecos: React.FC = () => {
                       <Button
                         color="primary"
                         onClick={toggle}
-                        style={{ marginBottom: '1rem' }}
+                        style={{ marginBottom: "1rem" }}
                       >
                         <IoIosArrowForward className="mr-1 mb-1" />
                         Outros vendedores
@@ -227,7 +227,7 @@ const MapaDePrecos: React.FC = () => {
                   <Table
                     hover
                     responsive
-                    autoCapitalize={'on'}
+                    autoCapitalize={"on"}
                     className="d-flex align-items-center"
                   >
                     <div className="d-flex flex-column">

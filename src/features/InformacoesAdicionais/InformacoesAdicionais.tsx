@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
 
-import NavVertical from '../NavVertical/NavVertical';
-import NavHorizontal from '../NavHorizontal/NavHorizontal';
-import ScreenType from '../../enums/ScreenType';
+import NavVertical from "../../components/NavVertical/NavVertical";
+import NavHorizontal from "../../components/NavHorizontal/NavHorizontal";
+import ScreenType from "../../enums/ScreenType";
 
-import { ImLocation } from 'react-icons/im';
-import { FcHome } from 'react-icons/fc';
-import { HiOutlineSwitchHorizontal } from 'react-icons/hi';
+import { ImLocation } from "react-icons/im";
+import { FcHome } from "react-icons/fc";
+import { HiOutlineSwitchHorizontal } from "react-icons/hi";
 
 import {
   Input,
@@ -16,13 +16,13 @@ import {
   FormGroup,
   Label,
   Button,
-} from 'reactstrap';
+} from "reactstrap";
 
 const InformacoesAdicionais: React.FC = () => {
   return (
     <>
       <NavVertical />
-      <NavHorizontal title={'Informações Adicionais'} />
+      <NavHorizontal title={"Informações Adicionais"} />
 
       <div className="w-100 h-100 margin-top-60">
         <div className="pageContainer p-4 shadow-sm">
@@ -38,14 +38,14 @@ const InformacoesAdicionais: React.FC = () => {
               <div className="constructionSecondLine mt-2 d-flex flex-column justify-content-end align-items-end">
                 <div className="constructionSubtitle">
                   <FcHome className="mb-1 mr-1" />
-                  {''}
+                  {""}
                   Campina Grande
                 </div>
 
                 <div className="mt-1 changeConstruction">
                   <a href={ScreenType.INFORMACOESADICIONAIS}>
                     <HiOutlineSwitchHorizontal className="mb-1 mr-1" />
-                    {''}
+                    {""}
                     Trocar de obra
                   </a>
                 </div>
