@@ -1,24 +1,42 @@
 .mainContainerConvidados {
-  width: 33%;
+  width: 50%;
   height: 50vh;
   background-color: blue;
   color: white;
 }
+
 .mainContainerFavoritos {
-  width: 40%;
+  width: 55%;
   height: 66vh;
   overflow-y: auto;
   color: black;
-  &.transmissao{
+
+  &.transmissao {
     width: 55%;
+
+    @media (max-width: 800px) {
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 800px) {
+    width: 100%;
+    margin: 0 auto;
   }
 }
+
 .mainContainerSugeridos {
   width: 33%;
   height: 50vh;
   background-color: green;
   color: white;
+
+  @media (max-width: 800px) {
+    padding-bottom: 200px;
+  }
 }
+
 .productCard {
   width: 100%;
   height: 45vh;
@@ -40,6 +58,10 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+
+  &:last-child {
+    margin-bottom: 50px;
+  }
 }
 .ticketCardContainer {
   display: flex;
