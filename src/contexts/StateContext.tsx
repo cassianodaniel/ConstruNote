@@ -61,6 +61,8 @@ interface IStateContextData {
   setSelectedStatesArray(value: string[]): void;
   moreOptions: boolean;
   setMoreOptions(value: boolean): void;
+  estados: any[];
+  setEstados(value: any[]): void;
 }
 
 export const StateContext = createContext<IStateContextData>(
@@ -118,6 +120,7 @@ export const StateProvider: React.FC = ({ children }) => {
     string[]
   >([]);
   const [moreOptions, setMoreOptions] = React.useState<boolean>(false);
+  const [estados, setEstados] = useState<any[]>([]);
 
   return (
     <StateContext.Provider
@@ -182,6 +185,8 @@ export const StateProvider: React.FC = ({ children }) => {
         setSelectedStatesArray,
         moreOptions,
         setMoreOptions,
+        estados,
+        setEstados,
       }}
     >
       {children}

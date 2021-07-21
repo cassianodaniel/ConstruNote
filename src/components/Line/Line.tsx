@@ -1,7 +1,7 @@
 import React from "react";
 
 const Line = () => {
-  return <div className="line" />;
+  return <div className="fineline" />;
 };
 
 export default Line;

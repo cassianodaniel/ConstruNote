@@ -3,15 +3,18 @@ import React from "react";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { Input, Label } from "reactstrap";
 import { useStateContext } from "../../contexts/StateContext";
+import { Microrregioes } from "../../types/MicrorregioesType";
+import { Estado } from "../../types/EstadoTypes";
+import Microrregiao from "../Microrregiao/Microrregiao";
 
 interface IEstadoDeSelecaoGenerico {
-  nomeDoEstado: string;
-  microrregioes: string;
+  nomeDoEstado: Estado;
+  microrregioes: Microrregioes;
 }
 
 export const EstadoDeSelecaoGenerico: React.FC<IEstadoDeSelecaoGenerico> = ({
   nomeDoEstado,
-  microrregioes, //microrregioesParaiba
+  microrregioes,
 }) => {
   const {
     microrregioesParaiba,
@@ -59,6 +62,49 @@ export const EstadoDeSelecaoGenerico: React.FC<IEstadoDeSelecaoGenerico> = ({
   const toggleShow = () => {
     setShowStates(!showStates);
   };
+
+  const showAcre = openDropdown && microrregioes === "microrregioesAcre";
+  const showRondonia =
+    openDropdown && microrregioes === "microrregioesRondonia";
+  const showAmazonas =
+    openDropdown && microrregioes === "microrregioesAmazonas";
+  const showRoraima = openDropdown && microrregioes === "microrregioesRoraima";
+  const showPara = openDropdown && microrregioes === "microrregioesPara";
+  const showAmapa = openDropdown && microrregioes === "microrregioesAmapa";
+  const showTocantins =
+    openDropdown && microrregioes === "microrregioesTocantins";
+  const showMaranhao =
+    openDropdown && microrregioes === "microrregioesMaranhao";
+  const showPiaui = openDropdown && microrregioes === "microrregioesPiaui";
+  const showCeara = openDropdown && microrregioes === "microrregioesCeara";
+  const showRioGrandeDoNorte =
+    openDropdown && microrregioes === "microrregioesRio Grande do Norte";
+  const showParaiba = openDropdown && microrregioes === "microrregioesParaiba";
+  const showPernambuco =
+    openDropdown && microrregioes === "microrregioesPernambuco";
+  const showAlagoas = openDropdown && microrregioes === "microrregioesAlagoas";
+  const showSergipe = openDropdown && microrregioes === "microrregioesSergipe";
+  const showBahia = openDropdown && microrregioes === "microrregioesBahia";
+  const showMinasGerais =
+    openDropdown && microrregioes === "microrregioesMinas Gerais";
+  const showEspiritoSanto =
+    openDropdown && microrregioes === "microrregioesEspirito Santo";
+  const showRioDeJaneiro =
+    openDropdown && microrregioes === "microrregioesRio de Janeiro";
+  const showSaoPaulo =
+    openDropdown && microrregioes === "microrregioesSao Paulo";
+  const showParana = openDropdown && microrregioes === "microrregioesParana";
+  const showSantaCatarina =
+    openDropdown && microrregioes === "microrregioesSanta Catarina";
+  const showRioGrandeDoSul =
+    openDropdown && microrregioes === "microrregioesRio Grande do Sul";
+  const showMatoGrossoDoSul =
+    openDropdown && microrregioes === "microrregioesMato Grosso do Sul";
+  const showMatoGrosso =
+    openDropdown && microrregioes === "microrregioesMato Grosso";
+  const showGoias = openDropdown && microrregioes === "microrregioesGoias";
+  const showDistritoFederal =
+    openDropdown && microrregioes === "microrregioesDistrito Federal";
   return (
     <motion.li
       variants={{
@@ -106,583 +152,256 @@ export const EstadoDeSelecaoGenerico: React.FC<IEstadoDeSelecaoGenerico> = ({
                     value={microrregioesRondonia}
                     id={nomeDoEstado}
                   ></Input>
-                  <Label
+                  {/* V2 <Label
                     className="form-check-input-box"
                     htmlFor={nomeDoEstado}
                   >
-                    {"Todo o estado"}{" "}
-                  </Label>
-                  <hr className="fineline" />
+                    {"Selecionar todo o estado"}{" "}
+                  </Label> */}
                 </>
               )}
-              {openDropdown &&
-                !showStates &&
+              {showRondonia &&
                 microrregioesRondonia.map((microrregiao) => {
                   return (
-                    <li>
-                      <Input
-                        onChange={(e: React.FormEvent<HTMLInputElement>) =>
-                          pushData(e.currentTarget.value)
-                        }
-                        type="checkbox"
-                        value={microrregiao}
-                        id={nomeDoEstado}
-                      >
-                        {microrregiao}
-                      </Input>
-                      <Label
-                        className="form-check-input-box"
-                        htmlFor={microrregiao}
-                      >
-                        {microrregiao}{" "}
-                      </Label>
-                    </li>
+                    <Microrregiao
+                      microrregiao={microrregiao}
+                      pushData={pushData}
+                      id={nomeDoEstado}
+                    />
                   );
                 })}
-              {openDropdown &&
-                microrregioes === "microrregioesAcre" &&
+              {showAcre &&
                 microrregioesAcre.map((microrregiao) => {
                   return (
-                    <li>
-                      <Input
-                        onChange={(e: React.FormEvent<HTMLInputElement>) =>
-                          pushData(e.currentTarget.value)
-                        }
-                        type="checkbox"
-                        value={microrregiao}
-                      />
-                      <Label
-                        className="form-check-input-box"
-                        htmlFor={microrregiao}
-                      >
-                        {microrregiao}{" "}
-                      </Label>
-                    </li>
+                    <Microrregiao
+                      microrregiao={microrregiao}
+                      pushData={pushData}
+                    />
                   );
                 })}
-              {openDropdown &&
-                microrregioes === "microrregioesAmazonas" &&
+              {showAmazonas &&
                 microrregioesAmazonas.map((microrregiao) => {
                   return (
-                    <li>
-                      <Input
-                        onChange={(e: React.FormEvent<HTMLInputElement>) =>
-                          pushData(e.currentTarget.value)
-                        }
-                        type="checkbox"
-                        value={microrregiao}
-                      />
-                      <Label
-                        className="form-check-input-box"
-                        htmlFor={microrregiao}
-                      >
-                        {microrregiao}{" "}
-                      </Label>
-                    </li>
+                    <Microrregiao
+                      microrregiao={microrregiao}
+                      pushData={pushData}
+                    />
                   );
                 })}
-              {openDropdown &&
-                microrregioes === "microrregioesRoraima" &&
+              {showRoraima &&
                 microrregioesRoraima.map((microrregiao) => {
                   return (
-                    <li>
-                      <Input
-                        onChange={(e: React.FormEvent<HTMLInputElement>) =>
-                          pushData(e.currentTarget.value)
-                        }
-                        type="checkbox"
-                        value={microrregiao}
-                      />
-                      <Label
-                        className="form-check-input-box"
-                        htmlFor={microrregiao}
-                      >
-                        {microrregiao}{" "}
-                      </Label>
-                    </li>
+                    <Microrregiao
+                      microrregiao={microrregiao}
+                      pushData={pushData}
+                    />
                   );
                 })}
-              {openDropdown &&
-                microrregioes === "microrregioesPara" &&
+              {showPara &&
                 microrregioesPara.map((microrregiao) => {
                   return (
-                    <li>
-                      <Input
-                        onChange={(e: React.FormEvent<HTMLInputElement>) =>
-                          pushData(e.currentTarget.value)
-                        }
-                        type="checkbox"
-                        value={microrregiao}
-                      />
-                      <Label
-                        className="form-check-input-box"
-                        htmlFor={microrregiao}
-                      >
-                        {microrregiao}{" "}
-                      </Label>
-                    </li>
+                    <Microrregiao
+                      microrregiao={microrregiao}
+                      pushData={pushData}
+                    />
                   );
                 })}
-              {openDropdown &&
-                microrregioes === "microrregioesAmapa" &&
+              {showAmapa &&
                 microrregioesAmapa.map((microrregiao) => {
                   return (
-                    <li>
-                      <Input
-                        onChange={(e: React.FormEvent<HTMLInputElement>) =>
-                          pushData(e.currentTarget.value)
-                        }
-                        type="checkbox"
-                        value={microrregiao}
-                      />
-                      <Label
-                        className="form-check-input-box"
-                        htmlFor={microrregiao}
-                      >
-                        {microrregiao}{" "}
-                      </Label>
-                    </li>
+                    <Microrregiao
+                      microrregiao={microrregiao}
+                      pushData={pushData}
+                    />
                   );
                 })}
-              {openDropdown &&
-                microrregioes === "microrregioesTocantins" &&
+              {showTocantins &&
                 microrregioesTocantins.map((microrregiao) => {
                   return (
-                    <li>
-                      <Input
-                        onChange={(e: React.FormEvent<HTMLInputElement>) =>
-                          pushData(e.currentTarget.value)
-                        }
-                        type="checkbox"
-                        value={microrregiao}
-                      />
-                      <Label
-                        className="form-check-input-box"
-                        htmlFor={microrregiao}
-                      >
-                        {microrregiao}{" "}
-                      </Label>
-                    </li>
+                    <Microrregiao
+                      microrregiao={microrregiao}
+                      pushData={pushData}
+                    />
                   );
                 })}
-              {openDropdown &&
-                microrregioes === "microrregioesMaranhao" &&
+              {showMaranhao &&
                 microrregioesMaranhao.map((microrregiao) => {
                   return (
-                    <li>
-                      <Input
-                        onChange={(e: React.FormEvent<HTMLInputElement>) =>
-                          pushData(e.currentTarget.value)
-                        }
-                        type="checkbox"
-                        value={microrregiao}
-                      />
-                      <Label
-                        className="form-check-input-box"
-                        htmlFor={microrregiao}
-                      >
-                        {microrregiao}{" "}
-                      </Label>
-                    </li>
+                    <Microrregiao
+                      microrregiao={microrregiao}
+                      pushData={pushData}
+                    />
                   );
                 })}
-              {openDropdown &&
-                microrregioes === "microrregioesPiaui" &&
+              {showPiaui &&
                 microrregioesPiaui.map((microrregiao) => {
                   return (
-                    <li>
-                      <Input
-                        onChange={(e: React.FormEvent<HTMLInputElement>) =>
-                          pushData(e.currentTarget.value)
-                        }
-                        type="checkbox"
-                        value={microrregiao}
-                      />
-                      <Label
-                        className="form-check-input-box"
-                        htmlFor={microrregiao}
-                      >
-                        {microrregiao}{" "}
-                      </Label>
-                    </li>
+                    <Microrregiao
+                      microrregiao={microrregiao}
+                      pushData={pushData}
+                    />
                   );
                 })}
-              {openDropdown &&
-                microrregioes === "microrregioesCeara" &&
+              {showCeara &&
                 microrregioesCeara.map((microrregiao) => {
                   return (
-                    <li>
-                      <Input
-                        onChange={(e: React.FormEvent<HTMLInputElement>) =>
-                          pushData(e.currentTarget.value)
-                        }
-                        type="checkbox"
-                        value={microrregiao}
-                      />
-                      <Label
-                        className="form-check-input-box"
-                        htmlFor={microrregiao}
-                      >
-                        {microrregiao}{" "}
-                      </Label>
-                    </li>
+                    <Microrregiao
+                      microrregiao={microrregiao}
+                      pushData={pushData}
+                    />
                   );
                 })}
-              {openDropdown &&
-                microrregioes === "microrregioesRio Grande do Norte" &&
+              {showRioGrandeDoNorte &&
                 microrregioesRioGrandeDoNorte.map((microrregiao) => {
                   return (
-                    <li>
-                      <Input
-                        onChange={(e: React.FormEvent<HTMLInputElement>) =>
-                          pushData(e.currentTarget.value)
-                        }
-                        type="checkbox"
-                        value={microrregiao}
-                      />
-                      <Label
-                        className="form-check-input-box"
-                        htmlFor={microrregiao}
-                      >
-                        {microrregiao}{" "}
-                      </Label>
-                    </li>
+                    <Microrregiao
+                      microrregiao={microrregiao}
+                      pushData={pushData}
+                    />
                   );
                 })}
-              {openDropdown &&
-                microrregioes === "microrregioesRio de Janeiro" &&
+              {showRioDeJaneiro &&
                 microrregioesRioDeJaneiro.map((microrregiao) => {
                   return (
-                    <li>
-                      <Input
-                        onChange={(e: React.FormEvent<HTMLInputElement>) =>
-                          pushData(e.currentTarget.value)
-                        }
-                        type="checkbox"
-                        value={microrregiao}
-                      />
-                      <Label
-                        className="form-check-input-box"
-                        htmlFor={microrregiao}
-                      >
-                        {microrregiao}{" "}
-                      </Label>
-                    </li>
+                    <Microrregiao
+                      microrregiao={microrregiao}
+                      pushData={pushData}
+                    />
                   );
                 })}
-              {openDropdown &&
-                microrregioes === "microrregioesParaiba" &&
+              {showParaiba &&
                 microrregioesParaiba.map((microrregiao) => {
                   return (
-                    <li>
-                      <Input
-                        onChange={(e: React.FormEvent<HTMLInputElement>) =>
-                          pushData(e.currentTarget.value)
-                        }
-                        type="checkbox"
-                        value={microrregiao}
-                      />
-                      <Label
-                        className="form-check-input-box"
-                        htmlFor={microrregiao}
-                      >
-                        {microrregiao}{" "}
-                      </Label>
-                    </li>
+                    <Microrregiao
+                      microrregiao={microrregiao}
+                      pushData={pushData}
+                    />
                   );
                 })}
-              {openDropdown &&
-                microrregioes === "microrregioesPernambuco" &&
+              {showPernambuco &&
                 microrregioesPernambuco.map((microrregiao) => {
                   return (
-                    <li>
-                      <Input
-                        onChange={(e: React.FormEvent<HTMLInputElement>) =>
-                          pushData(e.currentTarget.value)
-                        }
-                        type="checkbox"
-                        value={microrregiao}
-                      />
-                      <Label
-                        className="form-check-input-box"
-                        htmlFor={microrregiao}
-                      >
-                        {microrregiao}{" "}
-                      </Label>
-                    </li>
+                    <Microrregiao
+                      microrregiao={microrregiao}
+                      pushData={pushData}
+                    />
                   );
                 })}
-              {openDropdown &&
-                microrregioes === "microrregioesAlagoas" &&
+              {showAlagoas &&
                 microrregioesAlagoas.map((microrregiao) => {
                   return (
-                    <li>
-                      <Input
-                        onChange={(e: React.FormEvent<HTMLInputElement>) =>
-                          pushData(e.currentTarget.value)
-                        }
-                        type="checkbox"
-                        value={microrregiao}
-                      />
-                      <Label
-                        className="form-check-input-box"
-                        htmlFor={microrregiao}
-                      >
-                        {microrregiao}{" "}
-                      </Label>
-                    </li>
+                    <Microrregiao
+                      microrregiao={microrregiao}
+                      pushData={pushData}
+                    />
                   );
                 })}
-              {openDropdown &&
-                microrregioes === "microrregioesSergipe" &&
+              {showSergipe &&
                 microrregioesSergipe.map((microrregiao) => {
                   return (
-                    <li>
-                      <Input
-                        onChange={(e: React.FormEvent<HTMLInputElement>) =>
-                          pushData(e.currentTarget.value)
-                        }
-                        type="checkbox"
-                        value={microrregiao}
-                      />
-                      <Label
-                        className="form-check-input-box"
-                        htmlFor={microrregiao}
-                      >
-                        {microrregiao}{" "}
-                      </Label>
-                    </li>
+                    <Microrregiao
+                      microrregiao={microrregiao}
+                      pushData={pushData}
+                    />
                   );
                 })}
-              {openDropdown &&
-                microrregioes === "microrregioesBahia" &&
+              {showBahia &&
                 microrregioesBahia.map((microrregiao) => {
                   return (
-                    <li>
-                      <Input
-                        onChange={(e: React.FormEvent<HTMLInputElement>) =>
-                          pushData(e.currentTarget.value)
-                        }
-                        type="checkbox"
-                        value={microrregiao}
-                      />
-                      <Label
-                        className="form-check-input-box"
-                        htmlFor={microrregiao}
-                      >
-                        {microrregiao}{" "}
-                      </Label>
-                    </li>
+                    <Microrregiao
+                      microrregiao={microrregiao}
+                      pushData={pushData}
+                    />
                   );
                 })}
-              {openDropdown &&
-                microrregioes === "microrregioesMinas Gerais" &&
+              {showMinasGerais &&
                 microrregioesMinasGerais.map((microrregiao) => {
                   return (
-                    <li>
-                      <Input
-                        onChange={(e: React.FormEvent<HTMLInputElement>) =>
-                          pushData(e.currentTarget.value)
-                        }
-                        type="checkbox"
-                        value={microrregiao}
-                      />
-                      <Label
-                        className="form-check-input-box"
-                        htmlFor={microrregiao}
-                      >
-                        {microrregiao}{" "}
-                      </Label>
-                    </li>
+                    <Microrregiao
+                      microrregiao={microrregiao}
+                      pushData={pushData}
+                    />
                   );
                 })}
-              {openDropdown &&
-                microrregioes === "microrregioesEspirito Santo" &&
+              {showEspiritoSanto &&
                 microrregioesEspiritoSanto.map((microrregiao) => {
                   return (
-                    <li>
-                      <Input
-                        onChange={(e: React.FormEvent<HTMLInputElement>) =>
-                          pushData(e.currentTarget.value)
-                        }
-                        type="checkbox"
-                        value={microrregiao}
-                      />
-                      <Label
-                        className="form-check-input-box"
-                        htmlFor={microrregiao}
-                      >
-                        {microrregiao}{" "}
-                      </Label>
-                    </li>
+                    <Microrregiao
+                      microrregiao={microrregiao}
+                      pushData={pushData}
+                    />
                   );
                 })}
-              {openDropdown &&
-                microrregioes === "microrregioesSao Paulo" &&
+              {showSaoPaulo &&
                 microrregioesSaoPaulo.map((microrregiao) => {
                   return (
-                    <li>
-                      <Input
-                        onChange={(e: React.FormEvent<HTMLInputElement>) =>
-                          pushData(e.currentTarget.value)
-                        }
-                        type="checkbox"
-                        value={microrregiao}
-                      />
-                      <Label
-                        className="form-check-input-box"
-                        htmlFor={microrregiao}
-                      >
-                        {microrregiao}{" "}
-                      </Label>
-                    </li>
+                    <Microrregiao
+                      microrregiao={microrregiao}
+                      pushData={pushData}
+                    />
                   );
                 })}
-              {openDropdown &&
-                microrregioes === "microrregioesParana" &&
+              {showParana &&
                 microrregioesParana.map((microrregiao) => {
                   return (
-                    <li>
-                      <Input
-                        onChange={(e: React.FormEvent<HTMLInputElement>) =>
-                          pushData(e.currentTarget.value)
-                        }
-                        type="checkbox"
-                        value={microrregiao}
-                      />
-                      <Label
-                        className="form-check-input-box"
-                        htmlFor={microrregiao}
-                      >
-                        {microrregiao}{" "}
-                      </Label>
-                    </li>
+                    <Microrregiao
+                      microrregiao={microrregiao}
+                      pushData={pushData}
+                    />
                   );
                 })}
-              {openDropdown &&
-                microrregioes === "microrregioesSanta Catarina" &&
+              {showSantaCatarina &&
                 microrregioesSantaCatarina.map((microrregiao) => {
                   return (
-                    <li>
-                      <Input
-                        onChange={(e: React.FormEvent<HTMLInputElement>) =>
-                          pushData(e.currentTarget.value)
-                        }
-                        type="checkbox"
-                        value={microrregiao}
-                      />
-                      <Label
-                        className="form-check-input-box"
-                        htmlFor={microrregiao}
-                      >
-                        {microrregiao}{" "}
-                      </Label>
-                    </li>
+                    <Microrregiao
+                      microrregiao={microrregiao}
+                      pushData={pushData}
+                    />
                   );
                 })}
-              {openDropdown &&
-                microrregioes === "microrregioesRio Grande do Sul" &&
+              {showRioGrandeDoSul &&
                 microrregioesRioGrandeDoSul.map((microrregiao) => {
                   return (
-                    <li>
-                      <Input
-                        onChange={(e: React.FormEvent<HTMLInputElement>) =>
-                          pushData(e.currentTarget.value)
-                        }
-                        type="checkbox"
-                        value={microrregiao}
-                      />
-                      <Label
-                        className="form-check-input-box"
-                        htmlFor={microrregiao}
-                      >
-                        {microrregiao}{" "}
-                      </Label>
-                    </li>
+                    <Microrregiao
+                      microrregiao={microrregiao}
+                      pushData={pushData}
+                    />
                   );
                 })}
-              {openDropdown &&
-                microrregioes === "microrregioesMato Grosso do Sul" &&
+              {showMatoGrossoDoSul &&
                 microrregioesMatoGrossoDoSul.map((microrregiao) => {
                   return (
-                    <li>
-                      <Input
-                        onChange={(e: React.FormEvent<HTMLInputElement>) =>
-                          pushData(e.currentTarget.value)
-                        }
-                        type="checkbox"
-                        value={microrregiao}
-                      />
-                      <Label
-                        className="form-check-input-box"
-                        htmlFor={microrregiao}
-                      >
-                        {microrregiao}{" "}
-                      </Label>
-                    </li>
+                    <Microrregiao
+                      microrregiao={microrregiao}
+                      pushData={pushData}
+                    />
                   );
                 })}
-              {openDropdown &&
-                microrregioes === "microrregioesMato Grosso" &&
+              {showMatoGrosso &&
                 microrregioesMatoGrosso.map((microrregiao) => {
                   return (
-                    <li>
-                      <Input
-                        onChange={(e: React.FormEvent<HTMLInputElement>) =>
-                          pushData(e.currentTarget.value)
-                        }
-                        type="checkbox"
-                        value={microrregiao}
-                      />
-                      <Label
-                        className="form-check-input-box"
-                        htmlFor={microrregiao}
-                      >
-                        {microrregiao}{" "}
-                      </Label>
-                    </li>
+                    <Microrregiao
+                      microrregiao={microrregiao}
+                      pushData={pushData}
+                    />
                   );
                 })}
-              {openDropdown &&
-                microrregioes === "microrregioesGoias" &&
+              {showGoias &&
                 microrregioesGoias.map((microrregiao) => {
                   return (
-                    <li>
-                      <Input
-                        onChange={(e: React.FormEvent<HTMLInputElement>) =>
-                          pushData(e.currentTarget.value)
-                        }
-                        type="checkbox"
-                        value={microrregiao}
-                      />
-                      <Label
-                        className="form-check-input-box"
-                        htmlFor={microrregiao}
-                      >
-                        {microrregiao}{" "}
-                      </Label>
-                    </li>
+                    <Microrregiao
+                      microrregiao={microrregiao}
+                      pushData={pushData}
+                    />
                   );
                 })}
-              {openDropdown &&
-                microrregioes === "microrregioesDistrito Federal" &&
+              {showDistritoFederal &&
                 microrregioesDistritoFederal.map((microrregiao) => {
                   return (
-                    <li>
-                      <Input
-                        onChange={(e: React.FormEvent<HTMLInputElement>) =>
-                          pushData(e.currentTarget.value)
-                        }
-                        type="checkbox"
-                        value={microrregiao}
-                      />
-                      <Label
-                        className="form-check-input-box"
-                        htmlFor={microrregiao}
-                      >
-                        {microrregiao}{" "}
-                      </Label>
-                    </li>
+                    <Microrregiao
+                      microrregiao={microrregiao}
+                      pushData={pushData}
+                    />
                   );
                 })}
             </ul>

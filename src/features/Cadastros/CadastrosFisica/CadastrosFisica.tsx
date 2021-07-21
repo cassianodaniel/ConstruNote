@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
   Button,
   Form,
@@ -11,15 +11,12 @@ import {
   Label,
   Spinner,
 } from "reactstrap";
-import Swal from "sweetalert2";
 import { useAuth } from "../../../contexts/AuthContext";
-import ScreenType from "../../../enums/ScreenType";
 import { useForm, PFRole, PJRole } from "../../../hooks/useForm";
 const CadastrosFisica: React.FC = () => {
   const { form } = useAuth();
   const { onChange, onSubmit, onSelectType } = useForm();
   const [loading, setLoading] = useState<boolean>(false);
-  const history = useHistory();
 
   const toggleLoading = () => {
     setLoading(true);
@@ -179,7 +176,9 @@ const CadastrosFisica: React.FC = () => {
                   block
                   value={"Engenheiro/Tecnólogo" as PFRole | PJRole}
                   className="bg-primary buttom-login d-flex justify-content-center align-items-center"
-                  onClick={onSelectType}
+                  onClick={() => {
+                    alert("Cadastrado!");
+                  }}
                 >
                   {!loading ? "Cadastrar" : <Spinner size="md"></Spinner>}
                 </Button>

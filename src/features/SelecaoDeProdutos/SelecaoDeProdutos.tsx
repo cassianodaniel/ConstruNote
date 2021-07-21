@@ -42,8 +42,7 @@ const SelecaoDeProdutos: React.FC = () => {
               <Line />
             </div>
           </div>
-
-          <div className="productSelectionContainer mt-4">
+          <div className="productSelectionContainer">
             <CardOpcaoProdutos />
           </div>
         </div>

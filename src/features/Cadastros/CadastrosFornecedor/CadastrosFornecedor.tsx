@@ -18,16 +18,17 @@ import SimpleBar from "simplebar-react";
 import { useStateContext } from "../../../contexts/StateContext";
 import { EstadoDeSelecaoGenerico } from "../../../components/EstadoDeSelecaoGenerico/EstadoDeSelecaoGenerico";
 import { GenericInput } from "../../../components/GenericInput/GenericInput";
+import { Microrregioes } from "../../../types/MicrorregioesType";
 
 const CadastrosFornecedor: React.FC = () => {
   const history = useHistory();
   //eslint-disable-next-line
   const [login, setLogin] = useState<string>("");
   const [email] = useState<string>("");
+  const { estados, setEstados } = useStateContext();
   //eslint-disable-next-line
   const [localizacao, setLocalizacao] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
-  const [estados, setEstados] = useState<any[]>([]);
   const [isSecondSection, setIsSecondSection] = useState<boolean>(false);
   const [formValues, setFormValues] = useState<string[]>([]);
 
@@ -390,25 +391,12 @@ const CadastrosFornecedor: React.FC = () => {
     setLocalizacao(value);
   };
 
-  const getEstados = () => {
-    let newList: any[] = [];
-    axios
-      .get("https://servicodados.ibge.gov.br/api/v1/localidades/estados")
-      .then((result: any) => {
-        Object.values(result).forEach((rst: any) => {
-          Object.values(rst).forEach((rs: any) => {
-            if (rs) {
-              if (rs.nome) {
-                newList.push(rs.nome);
-              }
-            }
-          });
-        });
-      })
-      .then(() => {
-        setEstados(newList);
-      });
-  };
+  async function getEstados() {
+    const { data } = await axios.get(
+      "https://servicodados.ibge.gov.br/api/v1/localidades/estados"
+    );
+    return data.map((res: any) => res.nome);
+  }
 
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -418,9 +406,10 @@ const CadastrosFornecedor: React.FC = () => {
   };
 
   useEffect(() => {
-    getEstados();
+    getEstados().then((res) => {
+      setEstados(res);
+    });
     getMicrorregioes();
-    // eslint-disable-next-line
   }, []);
 
   return (
@@ -436,18 +425,6 @@ const CadastrosFornecedor: React.FC = () => {
             </div>
             <Form onSubmit={onSubmit}>
               <div className="mb-3 mt-1">
-                {/* <InputGroup>
-                  <Input
-                    value={login}
-                    type="email"
-                    placeholder="Nome completo"
-                    bsSize="lg"
-                    className="input-login"
-                  />
-                  <InputGroupAddon addonType="append">
-                    <InputGroupText className="input-group-text"></InputGroupText>
-                  </InputGroupAddon>
-                </InputGroup> */}
                 <GenericInput
                   value={login}
                   setValue={setLogin}
@@ -508,9 +485,14 @@ const CadastrosFornecedor: React.FC = () => {
                         return (
                           <EstadoDeSelecaoGenerico
                             nomeDoEstado={estado}
-                            microrregioes={`microrregioes${estado
-                              .normalize("NFD")
-                              .replace(/[\u0300-\u036f]/g, "")}`}
+                            microrregioes={
+                              `microrregioes${estado
+                                .normalize("NFD")
+                                .replace(
+                                  /[\u0300-\u036f]/g,
+                                  ""
+                                )}` as Microrregioes
+                            }
                           />
                         );
                       })}
