@@ -39,7 +39,7 @@
 
 .productCard {
   width: 100%;
-  height: 50vh;
+  height: auto;
   overflow-y: auto;
   color: black;
 }
@@ -82,6 +82,8 @@
   background-color: $white;
   margin-right: 10px;
   margin-bottom: 10px;
+
+  border-radius: 8px;
 
   @media (max-width: 800px) {
     width: 235px;
