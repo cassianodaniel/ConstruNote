@@ -133,14 +133,17 @@
   position: absolute;
   box-shadow: 0 2px 4px rgba(15, 34, 58, 0.12);
   top: 0;
+}
 
-  .navbar-brand-box {
-    text-align: center;
-
-    @media (max-width: 700.98px) {
-      display: none;
-    }
-  }
+.nav-progress-icon {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  right: 0;
+  margin-right: 40px;
+  font-size: 15px;
 }
 
 .margin-top-60 {

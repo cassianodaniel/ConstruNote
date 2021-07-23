@@ -17,12 +17,15 @@ import {
 } from "reactstrap";
 
 import ProfilePicture from "../../assets/images/emblems/emblem.png";
-import { FcShop } from "react-icons/fc";
+import { AiFillShop } from "react-icons/ai";
 import { IoChatbox } from "react-icons/io5";
 import { MdDelete } from "react-icons/md";
 import { RiAddCircleLine } from "react-icons/ri";
+import PrecificarButton from "./PrecificarButton";
 
 const ResponderCotacao: React.FC = () => {
+  const itensComplementaresTip =
+    "Opcionalmente ofereça até 5 itens que possam complementar um possível pedido do comprador (Exemplo: se estiver comprando tinta, ofereça o pincel).";
   return (
     <>
       <NavVertical />
@@ -34,7 +37,7 @@ const ResponderCotacao: React.FC = () => {
               <div className="d-flex justify-content-center align-items-center">
                 <div>
                   <h4>
-                    <FcShop className="mb-1 mr-1" />
+                    <AiFillShop className="mb-1 mr-1" />
                     Construtora Noberto Odebrecht S.A
                   </h4>
                   <div className="alert-comprador d-flex justify-content-center">
@@ -110,7 +113,7 @@ const ResponderCotacao: React.FC = () => {
                     tag="h5"
                     className="mb-2 text-body"
                   >
-                    Anexos:
+                    <h3>Anexos:</h3>
                   </CardTitle>
 
                   <CardText>
@@ -198,20 +201,15 @@ const ResponderCotacao: React.FC = () => {
                   >
                     1. Bloco cerâmico 8 furos na horizontal
                     <div className="ml-3 d-flex align-items-center">
-                      <Button
-                        outline
-                        color="primary"
-                        className="rounded-pill btn-sm"
-                      >
-                        Similares
+                      <Button color="primary" className="rounded-pill btn-sm">
+                        Similar
                       </Button>
 
                       <Button
-                        outline
                         color="primary"
                         className="rounded-pill btn-sm ml-5"
                       >
-                        Populares
+                        Popular
                       </Button>
                     </div>
                   </CardTitle>
@@ -239,6 +237,50 @@ const ResponderCotacao: React.FC = () => {
                         <div className="text-secondary d-flex justify-content-center align-items-center mt-3 ml-2">
                           Fabricante:
                           <div className="d-flex align-items-center">
+                            <Badge
+                              style={{ fontSize: 14 }}
+                              className="ml-2"
+                              color="info"
+                              pill
+                            >
+                              Shering Williams
+                            </Badge>
+                            <IoChatbox className="ml-2 cursor-pointer" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="priceTypesColumn  mt-3 ml-5">
+                      <div className="d-flex flex-column">
+                        <p className="text-secondary">Preço total:</p>
+                        <p className="text-secondary">Preço unitário:</p>
+                      </div>
+                    </div>
+                    <PrecificarButton />
+                  </div>
+
+                  <div className="d-flex align-items-center">
+                    <div className="profilePictureColumn d-flex justify-content-start align-items-center">
+                      <div className="mt-2 ml-4">
+                        <img
+                          src={ProfilePicture}
+                          alt="ProfilePicture"
+                          width="32px"
+                          height="32px"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="descriptionColumn ml-2">
+                      <div className="contentDescription">
+                        <div className="d-flex justify-content-center align-items-center">
+                          10000 vergalhão de 12 metros
+                        </div>
+
+                        <div className="text-secondary d-flex justify-content-center align-items-center mt-3 ml-2">
+                          Fabricante:
+                          <div className="d-flex align-items-center">
                             <Badge className="ml-2" color="info" pill>
                               Shering Williams
                             </Badge>
@@ -250,17 +292,25 @@ const ResponderCotacao: React.FC = () => {
 
                     <div className="priceTypesColumn  mt-3 ml-5">
                       <div className="d-flex flex-column">
-                        <p className="text-secondary">Preço total: R$ 100,00</p>
                         <p className="text-secondary">
+                          <input
+                            type="radio"
+                            name="group1"
+                            checked
+                            className="mr-1"
+                          />
+                          Preço total: R$ 100,00
+                        </p>
+                        <p className="text-secondary">
+                          <input
+                            type="radio"
+                            name="group1"
+                            checked
+                            className="mr-1"
+                          />{" "}
                           Preço unitário: R$ 10,00 / cada
                         </p>
                       </div>
-                    </div>
-
-                    <div className="buttonColumn ml-5 mb-4 mr-4 ">
-                      <Button outline color="primary" className="mt-2">
-                        Precificar
-                      </Button>
                     </div>
                   </div>
 
@@ -296,75 +346,32 @@ const ResponderCotacao: React.FC = () => {
 
                     <div className="priceTypesColumn  mt-3 ml-5">
                       <div className="d-flex flex-column">
-                        <p className="text-secondary">Preço total: R$ 100,00</p>
                         <p className="text-secondary">
+                          <input
+                            type="radio"
+                            name="group1"
+                            checked
+                            className="mr-1"
+                          />
+                          Preço total: R$ 100,00
+                        </p>
+                        <p className="text-secondary">
+                          <input type="radio" name="group1" className="mr-1" />
                           Preço unitário: R$ 10,00 / cada
                         </p>
                       </div>
-                    </div>
-
-                    <div className="buttonColumn ml-5 mb-4 mr-4">
-                      <Button outline color="primary" className="mt-2">
-                        Precificar
-                      </Button>
-                    </div>
-                  </div>
-
-                  <div className="d-flex align-items-center">
-                    <div className="profilePictureColumn d-flex justify-content-start align-items-center">
-                      <div className="mt-2 ml-4">
-                        <img
-                          src={ProfilePicture}
-                          alt="ProfilePicture"
-                          width="32px"
-                          height="32px"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="descriptionColumn ml-2">
-                      <div className="contentDescription">
-                        <div className="d-flex justify-content-center align-items-center">
-                          10000 vergalhão de 12 metros
-                        </div>
-
-                        <div className="text-secondary d-flex justify-content-center align-items-center mt-3 ml-2">
-                          Fabricante:
-                          <div className="d-flex align-items-center">
-                            <Badge className="ml-2" color="info" pill>
-                              Shering Williams
-                            </Badge>
-                            <IoChatbox className="ml-2 cursor-pointer" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="priceTypesColumn  mt-3 ml-5">
-                      <div className="d-flex flex-column">
-                        <p className="text-secondary">Preço total: R$ 100,00</p>
-                        <p className="text-secondary">
-                          Preço unitário: R$ 10,00 / cada
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="buttonColumn ml-5 mb-4 mr-4">
-                      <Button outline color="primary" className="mt-2">
-                        Precificar
-                      </Button>
                     </div>
                   </div>
 
                   <tbody>
                     <tr>
                       <div className="links-options mt-3 ml-2 mb-2">
-                        <Button color="info">
+                        <Button color="danger">
                           <RiAddCircleLine className="mr-1 mb-1" />
                           Fabricante
                         </Button>
 
-                        <Button color="info ml-1">
+                        <Button color="danger ml-1">
                           <RiAddCircleLine className="mr-1 mb-1" />
                           Produto alternativo
                         </Button>
@@ -383,20 +390,15 @@ const ResponderCotacao: React.FC = () => {
                   >
                     1. Bloco cerâmico 8 furos na horizontal
                     <div className="ml-3 d-flex align-items-center">
-                      <Button
-                        outline
-                        color="primary"
-                        className="rounded-pill btn-sm"
-                      >
-                        Similares
+                      <Button color="primary" className="rounded-pill btn-sm">
+                        Similar
                       </Button>
 
                       <Button
-                        outline
                         color="primary"
                         className="rounded-pill btn-sm ml-5"
                       >
-                        Populares
+                        Popular
                       </Button>
                     </div>
                   </CardTitle>
@@ -435,17 +437,20 @@ const ResponderCotacao: React.FC = () => {
 
                     <div className="priceTypesColumn  mt-3 ml-5">
                       <div className="d-flex flex-column">
-                        <p className="text-secondary">Preço total: R$ 100,00</p>
                         <p className="text-secondary">
+                          <input
+                            type="radio"
+                            name="group1"
+                            checked
+                            className="mr-1"
+                          />
+                          Preço total: R$ 100,00
+                        </p>
+                        <p className="text-secondary">
+                          <input type="radio" name="group1" className="mr-1" />
                           Preço unitário: R$ 10,00 / cada
                         </p>
                       </div>
-                    </div>
-
-                    <div className="buttonColumn ml-5 mb-4 mr-4">
-                      <Button outline color="primary" className="mt-2">
-                        Precificar
-                      </Button>
                     </div>
                   </div>
 
@@ -481,17 +486,20 @@ const ResponderCotacao: React.FC = () => {
 
                     <div className="priceTypesColumn  mt-3 ml-5">
                       <div className="d-flex flex-column">
-                        <p className="text-secondary">Preço total: R$ 100,00</p>
                         <p className="text-secondary">
+                          <input
+                            type="radio"
+                            name="group1"
+                            checked
+                            className="mr-1"
+                          />
+                          Preço total: R$ 100,00
+                        </p>
+                        <p className="text-secondary">
+                          <input type="radio" name="group1" className="mr-1" />
                           Preço unitário: R$ 10,00 / cada
                         </p>
                       </div>
-                    </div>
-
-                    <div className="buttonColumn ml-5 mb-4 mr-4">
-                      <Button outline color="primary" className="mt-2">
-                        Precificar
-                      </Button>
                     </div>
                   </div>
 
@@ -527,29 +535,32 @@ const ResponderCotacao: React.FC = () => {
 
                     <div className="priceTypesColumn  mt-3 ml-5">
                       <div className="d-flex flex-column">
-                        <p className="text-secondary">Preço total: R$ 100,00</p>
                         <p className="text-secondary">
+                          <input
+                            type="radio"
+                            name="group1"
+                            checked
+                            className="mr-1"
+                          />
+                          Preço total: R$ 100,00
+                        </p>
+                        <p className="text-secondary">
+                          <input type="radio" name="group1" className="mr-1" />
                           Preço unitário: R$ 10,00 / cada
                         </p>
                       </div>
-                    </div>
-
-                    <div className="buttonColumn ml-5 mb-4 mr-4">
-                      <Button outline color="primary" className="mt-2">
-                        Precificar
-                      </Button>
                     </div>
                   </div>
 
                   <tbody>
                     <tr>
                       <div className="links-options mt-3 ml-2 mb-2">
-                        <Button color="info">
+                        <Button color="danger">
                           <RiAddCircleLine className="mr-1 mb-1" />
                           Fabricante
                         </Button>
 
-                        <Button color="info ml-1">
+                        <Button color="danger ml-1">
                           <RiAddCircleLine className="mr-1 mb-1" />
                           Produto alternativo
                         </Button>
@@ -568,6 +579,9 @@ const ResponderCotacao: React.FC = () => {
                     className=" text-body"
                   ></CardTitle>
                   <h3>Itens complementares:</h3>
+                  <div style={{ width: "auto", maxWidth: "600px" }}>
+                    {itensComplementaresTip}
+                  </div>
                   <div className="text-primary cursor-pointer">
                     + Adicionar item
                   </div>
@@ -730,7 +744,7 @@ const ResponderCotacao: React.FC = () => {
 
                       <tbody>
                         <div className="mt-4">
-                          <Button className="submitSaleButton" color="primary">
+                          <Button className="submitSaleButton" color="danger">
                             Concluir precificação
                           </Button>
                         </div>

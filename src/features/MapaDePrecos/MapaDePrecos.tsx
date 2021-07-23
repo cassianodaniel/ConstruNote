@@ -209,7 +209,7 @@ const MapaDePrecos: React.FC = () => {
                         color="primary"
                         className="rounded-pill btn-sm"
                       >
-                        similares
+                        similar
                       </Button>
 
                       <Button
@@ -217,7 +217,7 @@ const MapaDePrecos: React.FC = () => {
                         color="primary"
                         className="rounded-pill btn-sm ml-5"
                       >
-                        populares
+                        popular
                       </Button>
                     </div>
                   </CardTitle>
