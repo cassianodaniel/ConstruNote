@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import useAutocomplete from "@material-ui/lab/useAutocomplete";
 import { makeStyles } from "@material-ui/core/styles";
 import { Input } from "reactstrap";
+import { useModal } from "../../contexts/ModalContext";
 
 const useStyles = makeStyles((theme) => ({
   label: {
@@ -75,6 +76,7 @@ const thirtyElementsWithP: Array<ItemType> = [
 */
 
 export default function UseAutocomplete() {
+  const { setModalDetalhesProduto } = useModal();
   const classes = useStyles();
   const {
     getRootProps,
@@ -115,7 +117,7 @@ export default function UseAutocomplete() {
         </div>
       </div>
       {inputValue.length > 0 && (
-        <ul className={classes.listbox} {...getListboxProps()}>
+        <ul onClick={() => setModalDetalhesProduto(true)} className={classes.listbox} {...getListboxProps()}>
           {groupedOptions.length > 0 ? (
             groupedOptions.map((option, index) => (
               <li {...getOptionProps({ option, index })}>

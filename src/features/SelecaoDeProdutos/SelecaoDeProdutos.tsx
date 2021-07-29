@@ -8,10 +8,12 @@ import { FcHome } from "react-icons/fc";
 import { HiOutlineSwitchHorizontal } from "react-icons/hi";
 
 import Line from "../../components/Line/Line";
+import ModalDetalhesProduto from "../../components/ModalDetalhesProduto/ModalDetalhesProduto";
 
 const SelecaoDeProdutos: React.FC = () => {
   return (
     <>
+      <ModalDetalhesProduto />
       <NavVertical />
       <NavHorizontal title={"Seleção de produtos"} />
       <div className="pre-defined-formatted-page">
