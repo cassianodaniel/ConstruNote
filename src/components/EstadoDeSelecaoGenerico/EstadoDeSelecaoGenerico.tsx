@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 import { RiArrowDropDownLine } from "react-icons/ri";
-import { Input, Label } from "reactstrap";
+import { Input } from "reactstrap";
 import { useStateContext } from "../../contexts/StateContext";
 import { Microrregioes } from "../../types/MicrorregioesType";
 import { Estado } from "../../types/EstadoTypes";

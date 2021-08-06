@@ -22,11 +22,9 @@ import { Microrregioes } from "../../../types/MicrorregioesType";
 
 const CadastrosFornecedor: React.FC = () => {
   const history = useHistory();
-  //eslint-disable-next-line
   const [login, setLogin] = useState<string>("");
   const [email] = useState<string>("");
   const { estados, setEstados } = useStateContext();
-  //eslint-disable-next-line
   const [localizacao, setLocalizacao] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
   const [isSecondSection, setIsSecondSection] = useState<boolean>(false);
@@ -428,8 +426,6 @@ const CadastrosFornecedor: React.FC = () => {
                 <GenericInput
                   value={login}
                   setValue={setLogin}
-                  formValues={formValues}
-                  setFormValues={setFormValues}
                   placeholder={"Login"}
                 />
               </div>

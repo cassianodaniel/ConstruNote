@@ -11,12 +11,14 @@ import {
   /*   Label, */
   Spinner,
 } from "reactstrap";
+import { GenericInput } from "../../../components/GenericInput/GenericInput";
 /* import Swal from "sweetalert2";
 import ScreenType from "../enums/ScreenType"; */
 
 const CadastroFuncionarioEmpresaCompradora: React.FC = () => {
   const [login] = useState("");
   const [loading, setLoading] = useState<boolean>(false);
+  const [nomeCompleto, setNomeCompleto] = useState<string>("");
   /* const history = useHistory(); */
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -40,16 +42,12 @@ const CadastroFuncionarioEmpresaCompradora: React.FC = () => {
             <Form onSubmit={onSubmit}>
               <div className="mb-3">
                 <InputGroup>
-                  <Input
-                    value={login}
-                    type="email"
+                  <GenericInput
+                    value={nomeCompleto}
+                    setValue={setNomeCompleto}
                     placeholder="Nome completo"
-                    bsSize="lg"
-                    className="input-login"
+                    label={"Nome completo"}
                   />
-                  <InputGroupAddon addonType="append">
-                    <InputGroupText className="input-group-text"></InputGroupText>
-                  </InputGroupAddon>
                 </InputGroup>
               </div>
 

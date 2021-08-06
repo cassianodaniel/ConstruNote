@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Autocomplete from "./../AutoComplete/AutoComplete";
 import { IoFilter } from "react-icons/io5";
 import ContainerCards from "../ContainerCards/ContainerCards";
@@ -8,6 +8,8 @@ const CardOpcaoProdutos: React.FC = () => {
   return (
     <div className="containerSelecaoProdutos">
       <div className="d-flex flex-row justify-content-start align-items-center">
+        <Autocomplete />
+
         <Button
           style={{
             height: 30,
@@ -16,13 +18,11 @@ const CardOpcaoProdutos: React.FC = () => {
             flexDirection: "row",
             alignItems: "center",
           }}
-          outline
           color="primary"
         >
           <IoFilter className="mr-2" />
           Filtrar
         </Button>
-        <Autocomplete />
       </div>
       <div className="productCard mt-4">
         <ContainerCards />

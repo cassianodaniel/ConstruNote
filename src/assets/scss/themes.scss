@@ -281,19 +281,26 @@
   width: 10px !important;
 }
 
-.autoComplete{
+.autoComplete {
   width: 90%;
 }
 
-.alert-at{
-    color: red;
+.alert-at {
+  color: red;
 }
 
-.autoComplete{
+.autoComplete {
   width: 100px;
 }
 
-.autoCompleteBotao{
+.autoCompleteBotao {
   width: 300px;
   padding: 8px;
+}
+
+.generic-input-label {
+  position: "absolute";
+  top: -10;
+  color: #7a7f9a;
+  font-size: 14px;
 }

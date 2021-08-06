@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { GoLocation, GoMail, GoSync } from "react-icons/go";
 import ScreenType from "../../enums/ScreenType";
 import CardOpcaoFornecedoresListaDeTransmissao from "../../components/CardOpcaoFornecedoresListaDeTransmissao/CardOpcaoFornecedoresListaDeTransmissao";
