@@ -1,0 +1,19 @@
+.containerInsertPhoto{
+  background-color: #fff;
+  height: calc( 1.5em + 1rem + 6px);
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  border: 1px solid #e6ebf5;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.insertPhotoButton{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-decoration: underline;
+}

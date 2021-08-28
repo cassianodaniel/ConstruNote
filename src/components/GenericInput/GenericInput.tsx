@@ -7,6 +7,10 @@ interface IGenericInput {
   value?: string;
   setValue(value: string): void;
   maxLength?: number;
+  width?: number | string;
+  parentsWidth?: string; 
+  height?: number | string;
+  style?: object;
 }
 
 export const GenericInput: React.FC<IGenericInput> = ({
@@ -15,17 +19,25 @@ export const GenericInput: React.FC<IGenericInput> = ({
   setValue,
   maxLength,
   label,
+  width,
+  parentsWidth,
+  height,
+  style,
 }) => {
   const empty = value?.length === 0;
   const [isInputActive, setIsInputActive] = React.useState<boolean>(false);
   return (
-    <div className="d-flex flex-column w-100">
-      {(!empty || isInputActive) && (
+    <div className={`mt-2 mb-1 d-flex flex-column ${parentsWidth ? parentsWidth : "w-100"}`}>
+      {!empty && isInputActive && (
         <div className="generic-input-label">{label}</div>
       )}
       <Input
         value={value}
         placeholder={placeholder}
+        style={{
+          width: width && width,
+          ...style
+        }}
         bsSize="lg"
         className="input-value"
         onChange={(e) => setValue(e.target.value)}
