@@ -1,5 +1,6 @@
 import React from "react";
 import { Input } from "reactstrap";
+import { InputType } from "reactstrap/es/Input";
 
 interface IGenericInput {
   label?: string;
@@ -9,8 +10,8 @@ interface IGenericInput {
   maxLength?: number;
   width?: number | string;
   parentsWidth?: string; 
-  height?: number | string;
   style?: object;
+  type?: InputType;
 }
 
 export const GenericInput: React.FC<IGenericInput> = ({
@@ -18,35 +19,32 @@ export const GenericInput: React.FC<IGenericInput> = ({
   value,
   setValue,
   maxLength,
-  label,
   width,
   parentsWidth,
-  height,
   style,
+  type="text",
+  label
 }) => {
   const empty = value?.length === 0;
-  const [isInputActive, setIsInputActive] = React.useState<boolean>(false);
+  const [isInputActive] = React.useState<boolean>(true);
   return (
-    <div className={`mt-2 mb-1 d-flex flex-column ${parentsWidth ? parentsWidth : "w-100"}`}>
-      {!empty && isInputActive && (
+    <div className={`d-flex flex-column ${parentsWidth ? parentsWidth : "w-100"}`}>
+      {(!empty || isInputActive) && label && (
         <div className="generic-input-label">{label}</div>
       )}
       <Input
+        type={type}
         value={value}
         placeholder={placeholder}
         style={{
           width: width && width,
+          marginTop: 5,
+          marginBottom: 5,
           ...style
         }}
         bsSize="lg"
         className="input-value"
         onChange={(e) => setValue(e.target.value)}
-        onFocus={() => {
-          setIsInputActive(true);
-        }}
-        onBlur={() => {
-          setIsInputActive(false);
-        }}
         maxLength={maxLength}
       />
     </div>

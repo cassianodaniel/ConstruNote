@@ -46,7 +46,6 @@ const CadastroFuncionarioEmpresaCompradora: React.FC = () => {
                     value={nomeCompleto}
                     setValue={setNomeCompleto}
                     placeholder="Nome completo"
-                    label={"Nome completo"}
                   />
                 </InputGroup>
               </div>
