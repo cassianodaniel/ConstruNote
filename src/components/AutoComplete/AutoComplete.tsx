@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import useAutocomplete from "@material-ui/lab/useAutocomplete";
 import { makeStyles } from "@material-ui/core/styles";
-import { Input } from "reactstrap";
 import { useModal } from "../../contexts/ModalContext";
 
 const useStyles = makeStyles((theme) => ({
@@ -74,9 +73,8 @@ const thirtyElementsWithP: Array<ItemType> = [
     renderInput={(params) => <TextField {...params} label="With categories" variant="outlined" />}
   />
 */
-
 export default function UseAutocomplete() {
-  const { setModalDetalhesProduto } = useModal();
+  const { setModalDetalhesProduto, setModalDetalhesProdutoPersonalizado, isProdutoPersonalizado } = useModal();
   const classes = useStyles();
   const {
     getRootProps,
@@ -87,7 +85,7 @@ export default function UseAutocomplete() {
     inputValue,
   } = useAutocomplete({
     id: "use-autocomplete-demo",
-    options: thirtyElementsWithP,
+    options: isProdutoPersonalizado ? [] as Array<ItemType> : thirtyElementsWithP,
     getOptionLabel: (option) => option.name,
   });
 
@@ -117,7 +115,7 @@ export default function UseAutocomplete() {
         </div>
       </div>
       {inputValue.length > 0 && (
-        <ul onClick={() => setModalDetalhesProduto(true)} className={classes.listbox} {...getListboxProps()}>
+        <ul onClick={() => isProdutoPersonalizado ? setModalDetalhesProdutoPersonalizado(true) : setModalDetalhesProduto(true)} className={classes.listbox} {...getListboxProps()}>
           {groupedOptions.length > 0 ? (
             groupedOptions.map((option, index) => (
               <li {...getOptionProps({ option, index })}>

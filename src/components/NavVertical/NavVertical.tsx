@@ -112,8 +112,8 @@ const NavVertical: React.FC = () => {
                     setMoreOptions(!moreOptions);
                   }}
                 >
-              <i className="ri-more-2-line hoverColorGray"/>
-            </NavLink>
+                  <i className="ri-more-2-line hoverColorGray"/>
+                </NavLink>
               </DropdownToggle>
               <DropdownMenu className="customAlignDropdown">
                 <DropdownItem
