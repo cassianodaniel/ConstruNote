@@ -1,5 +1,4 @@
-import React from "react";
-
+import React, { useEffect } from "react";
 import NavVertical from "../../../components/NavVertical/NavVertical";
 import NavHorizontal from "../../../components/NavHorizontal/NavHorizontal";
 import {
@@ -11,14 +10,20 @@ import {
   InputGroup,
   InputGroupText,
 } from "reactstrap";
+import PassosDePagamento from "../../../components/PassosDePagamento/PassosDePagamento";
+import { useLayout } from "../../../contexts/LayoutContext";
 
 const PagamentoFrete: React.FC = () => {
+  const { setPassos } = useLayout();
+  useEffect(() => {
+    setPassos(3);
+  }, []);
   return (
     <>
       <NavVertical />
       <NavHorizontal title={"Fretes disponíveis"} />
-
       <div className="pre-defined-formatted-page p-5 shadow-sm">
+        <PassosDePagamento />
         <div className="d-flex flex-column align-items-center justify-content-center">
           <div className="firstLine-cards d-flex align-items-center justify-content-center w-100">
             <div className="card-CIF w-50 mr-4">

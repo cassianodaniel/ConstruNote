@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import NavVertical from "../../../components/NavVertical/NavVertical";
 import NavHorizontal from "../../../components/NavHorizontal/NavHorizontal";
@@ -11,8 +11,23 @@ import {
   InputGroup,
   InputGroupText,
 } from "reactstrap";
+import { useLayout } from "../../../contexts/LayoutContext";
+import PassosDePagamento from "../../../components/PassosDePagamento/PassosDePagamento";
+import { useHistory } from "react-router";
+import ScreenType from "../../../enums/ScreenType";
 
 const PagamentoAVista: React.FC = () => {
+  const { passos, setPassos } = useLayout();
+  const history = useHistory();
+  const handleConfirmOptions = () => {
+    history.push(ScreenType.PAGAMENTOFRETE);
+    if (passos === 1 || passos === 2) {
+      setPassos(passos + 1);
+    }
+  };
+  useEffect(() => {
+    setPassos(2);
+  }, []);
   return (
     <>
       <NavVertical />
@@ -21,7 +36,8 @@ const PagamentoAVista: React.FC = () => {
       />
 
       <div className="pre-defined-formatted-page p-4 shadow-sm">
-        <div className="d-flex flex-row mt-3">
+        <PassosDePagamento />
+        <div className="d-flex flex-row">
           <div className="firstLine-cards d-flex flex-row">
             <Card body outline className="mr-4">
               <InputGroup>
@@ -148,7 +164,9 @@ const PagamentoAVista: React.FC = () => {
         </div>
 
         <div className="d-flex align-items-center justify-content-center align-self-center mt-3">
-          <Button className="bg-primary w-25">Confirmar opções</Button>
+          <Button onClick={handleConfirmOptions} className="bg-primary w-25">
+            Confirmar opções
+          </Button>
         </div>
       </div>
     </>

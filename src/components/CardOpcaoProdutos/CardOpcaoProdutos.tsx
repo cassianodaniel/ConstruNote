@@ -6,12 +6,11 @@ import { Button } from "reactstrap";
 import ProjetoPersonalizadoCheckbox from "../ProjetoPersonalizadoCheckbox/ProjetoPersonalizadoCheckbox";
 import { useModal } from "../../contexts/ModalContext";
 
-
 const CardOpcaoProdutos: React.FC = () => {
   return (
     <div className="containerSelecaoProdutos">
       <div className="d-flex flex-row justify-content-start align-items-center">
-        <Autocomplete/>
+        <Autocomplete />
         <Button
           style={{
             height: 30,

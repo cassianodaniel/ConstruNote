@@ -21,6 +21,7 @@ export enum ScreenType {
   PAGAMENTOFRETE = "/pagamentofrete",
   PAGAMENTOBOLETO = "/pagamentoavista",
   PAGAMENTOCARTAO = "/pagamentoaprazo",
+  CADASTROSFORNECEDOR = "/cadastrosfornecedor",
 
   //To fix - 3 pages
   INFORMACOESADICIONAIS = "/informacoesadicionais",
@@ -33,8 +34,6 @@ export enum ScreenType {
   FIRSTLANDINGPAGE = "/firstlandingpage",
   SECONDLANDINGPAGE = "/secondlandingpage",
 
-  //Bug fix feature - 1 page
-  CADASTROSFORNECEDOR = "/cadastrosfornecedor",
 }
 
 export default ScreenType;
