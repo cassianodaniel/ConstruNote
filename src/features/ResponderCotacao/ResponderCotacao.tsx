@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./styles.scss";
 import NavVertical from "../../components/NavVertical/NavVertical";
 import NavHorizontal from "../../components/NavHorizontal/NavHorizontal";
 import Line from "../../components/Line/Line";

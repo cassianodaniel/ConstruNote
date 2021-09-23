@@ -4,9 +4,9 @@ import { IDate } from "./IDate";
 export interface IUser {
   name: string;
   userType: UserType;
-  location: string;
-  quotation: string;
+  location: string; // Localização da obra
+  quotation: string; // Cotação da obra
   quotationExpirationDate: IDate;
   quotationProgress: number;
-  classification: IClassification;
+  classification: IClassification; // Classificação do usuário
 }

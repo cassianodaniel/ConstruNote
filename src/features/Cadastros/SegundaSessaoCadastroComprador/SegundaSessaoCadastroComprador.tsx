@@ -1,4 +1,5 @@
 import React from "react";
+import "./styles.scss";
 import { useHistory } from "react-router";
 import { Button } from "reactstrap";
 import ScreenType from "../../../enums/ScreenType";

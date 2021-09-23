@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import "./styles.scss";
 import { Button, Input } from "reactstrap";
 import { motion } from "framer-motion";
 import { useHistory } from "react-router-dom";

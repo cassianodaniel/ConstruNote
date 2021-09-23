@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-
+import "./styles.scss";
 import NavVertical from "../../../components/NavVertical/NavVertical";
 import NavHorizontal from "../../../components/NavHorizontal/NavHorizontal";
 import {
@@ -35,10 +35,10 @@ const PagamentoAVista: React.FC = () => {
       <NavHorizontal
         title={"Selecione as opções aceitas para pagamento à prazo  "}
       />
-      <div className="pre-defined-formatted-page w-100 p-4 shadow-sm">
+      <div className="pre-defined-formatted-page w-100 p-0 shadow-sm">
         <PassosDePagamento />
         <div className="d-flex flex-row justify-content-center">
-          <div className="firstLine-cards d-flex flex-row justify-content-center">
+          <div className="firstLine-cards-prazo d-flex flex-row justify-content-center w-100">
             <Card body outline>
               <InputGroup>
                 <InputGroupText className="bg-white ">
@@ -68,11 +68,11 @@ const PagamentoAVista: React.FC = () => {
               <div className="mt-4 mb-3">
                 <Line />
               </div>
-              <CardText className="mt-4">Primeira parcela em dias:</CardText>
+              <CardText className="mt-4">Primeira parcela em:</CardText>
 
               <FormGroup>
                 <Input
-                  placeholder="15"
+                  placeholder="dia(s)"
                   type="number"
                   name="number"
                   id="percentNumber"
@@ -89,7 +89,7 @@ const PagamentoAVista: React.FC = () => {
                     className="mr-2"
                     aria-label="Checkbox"
                   />
-                  Cheque predatado
+                  Cheque
                 </InputGroupText>
               </InputGroup>
 
@@ -108,11 +108,11 @@ const PagamentoAVista: React.FC = () => {
               <div className="mt-4 mb-3">
                 <Line />
               </div>
-              <CardText className="mt-4">Primeira parcela em dias:</CardText>
+              <CardText className="mt-4">Primeira parcela em:</CardText>
 
               <FormGroup>
                 <Input
-                  placeholder="15"
+                  placeholder="dia(s)"
                   type="number"
                   name="number"
                   id="percentNumber"
@@ -146,11 +146,11 @@ const PagamentoAVista: React.FC = () => {
                 <Line />
               </div>
               <InputGroup>
-                <CardText className="mt-4">Primeira parcela em dias:</CardText>
+                <CardText className="mt-4">Primeira parcela em:</CardText>
 
                 <FormGroup>
                   <Input
-                    placeholder="15"
+                    placeholder="dia(s)"
                     type="number"
                     name="number"
                     id="percentNumber"
@@ -167,7 +167,7 @@ const PagamentoAVista: React.FC = () => {
                     className="mr-2"
                     aria-label="Checkbox"
                   />
-                  Cartão de crédito
+                  Cartão (crédito)
                 </InputGroupText>
               </InputGroup>
 

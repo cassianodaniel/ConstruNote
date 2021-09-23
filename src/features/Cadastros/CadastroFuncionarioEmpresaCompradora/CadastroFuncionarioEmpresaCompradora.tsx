@@ -1,4 +1,5 @@
 import React, { FormEvent, useState } from "react";
+import "./styles.scss";
 import { useHistory } from "react-router";
 import {
   Button,
@@ -13,6 +14,7 @@ import {
 } from "reactstrap";
 import Swal from "sweetalert2";
 import ScreenType from "../../../enums/ScreenType";
+
 
 const CadastroFuncionarioEmpresaCompradora: React.FC = () => {
   const [login] = useState("");

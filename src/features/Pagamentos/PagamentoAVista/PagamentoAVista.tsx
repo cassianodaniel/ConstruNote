@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-
+import "./styles.scss";
 import NavVertical from "../../../components/NavVertical/NavVertical";
 import NavHorizontal from "../../../components/NavHorizontal/NavHorizontal";
 import {
@@ -35,10 +35,10 @@ const PagamentoAVista: React.FC = () => {
         title={"Selecione as opções aceitas para pagamento à vista"}
       />
 
-      <div className="pre-defined-formatted-page p-4 shadow-sm">
+      <div className="pre-defined-formatted-page p-0 shadow-sm">
         <PassosDePagamento />
         <div className="d-flex flex-row">
-          <div className="firstLine-cards d-flex flex-row">
+          <div className="firstLine-cards-vista d-flex flex-row w-100">
             <Card body outline className="mr-4">
               <InputGroup>
                 <InputGroupText className="bg-white">

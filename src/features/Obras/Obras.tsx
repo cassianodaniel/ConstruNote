@@ -1,10 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import "./styles.scss";
 import NavVertical from "../../components/NavVertical/NavVertical";
 import NavHorizontal from "../../components/NavHorizontal/NavHorizontal";
 import ScreenType from "../../enums/ScreenType";
-
 import { RiAddCircleLine } from "react-icons/ri";
 import { ImLocation } from "react-icons/im";
 import { FcHome } from "react-icons/fc";

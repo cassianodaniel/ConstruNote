@@ -6,6 +6,7 @@ import { fakeUsers } from "../../mock/fakeUsers";
 import { ParseUserQuotationExpirationDate } from "../../helpers/ParseUserQuotationExpirationDate";
 import MUIDataTable from "mui-datatables";
 import { RiArrowDropDownLine } from "react-icons/ri";
+import "./styles.scss";
 
 const PaginaInicialCompradores: React.FC = () => {
   const columns = [

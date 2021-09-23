@@ -1,0 +1,12 @@
+@mixin container {
+  background-color: rgb(228, 227, 227);
+  padding: 30px;
+}
+
+.container-CIF {
+  @include container;
+}
+
+.container-FOB {
+  @include container;
+}

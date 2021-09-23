@@ -1,4 +1,5 @@
 import React, { ReactNode } from "react";
+import "./styles.scss";
 import { Button, Table } from "reactstrap";
 import NavHorizontal from "../../components/NavHorizontal/NavHorizontal";
 import NavVertical from "../../components/NavVertical/NavVertical";

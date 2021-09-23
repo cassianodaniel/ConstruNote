@@ -1,4 +1,5 @@
 import React from "react";
+import "./styles.scss";
 import NavHorizontal from "../../components/NavHorizontal/NavHorizontal";
 import NavVertical from "../../components/NavVertical/NavVertical";
 import ScreenType from "../../enums/ScreenType";
