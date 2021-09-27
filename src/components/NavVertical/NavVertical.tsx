@@ -1,9 +1,18 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
-import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle, Nav, NavItem, NavLink } from "reactstrap";
+import {
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
+  Nav,
+  NavItem,
+  NavLink,
+} from "reactstrap";
 import emblem from "./../../assets/images/emblems/emblem.png";
 import ScreenType from "../../enums/ScreenType";
 import { useStateContext } from "../../contexts/StateContext";
+import "./styles.scss";
 
 const NavVertical: React.FC = () => {
   const { setMoreOptions, moreOptions } = useStateContext();
@@ -100,11 +109,11 @@ const NavVertical: React.FC = () => {
               nav
               isOpen={moreOptions}
               direction={"right"}
-              onClick={
-                () => setMoreOptions(!moreOptions)
-              }
+              onClick={() => setMoreOptions(!moreOptions)}
               className="btn-group dropup profile-user-dropdown"
-              toggle={() => {setMoreOptions(!moreOptions)}}
+              toggle={() => {
+                setMoreOptions(!moreOptions);
+              }}
             >
               <DropdownToggle nav>
                 <NavLink
@@ -112,14 +121,11 @@ const NavVertical: React.FC = () => {
                     setMoreOptions(!moreOptions);
                   }}
                 >
-                  <i className="ri-more-2-line hoverColorGray"/>
+                  <i className="ri-more-2-line hoverColorGray" />
                 </NavLink>
               </DropdownToggle>
               <DropdownMenu className="customAlignDropdown">
-                <DropdownItem
-                  onClick={() => {
-                  }}
-                >
+                <DropdownItem onClick={() => {}}>
                   <div
                     style={{
                       display: "flex",
@@ -128,7 +134,7 @@ const NavVertical: React.FC = () => {
                     }}
                   >
                     <i className="ri-settings-3-line mr-2 text-muted"></i>
-                    {("Configurações")}{" "}
+                    {"Configurações"}{" "}
                   </div>
                 </DropdownItem>
 
@@ -142,12 +148,12 @@ const NavVertical: React.FC = () => {
                     }}
                   >
                     <i className="ri-logout-circle-r-line mr-2 text-muted"></i>
-                    {("Sair")}{" "}
+                    {"Sair"}{" "}
                   </div>
                 </DropdownItem>
               </DropdownMenu>
             </Dropdown>
-            
+
             {/* “Obras”, “Equipe” e “Fornecedores" */}
           </NavItem>
         </Nav>

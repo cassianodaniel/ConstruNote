@@ -1,5 +1,6 @@
 import React from "react";
 import { RiCheckLine, RiFileList2Line } from "react-icons/ri";
+import "./styles.scss";
 
 interface INavHorizontal {
   title: string;

@@ -237,15 +237,6 @@
 .cursor-pointer {
   cursor: pointer;
 }
-.fineline {
-  height: 5px;
-  color: gray;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-.limitedWidth {
-  width: 400px;
-}
 .pre-defined-formatted-page {
   margin-top: 60px;
   width: 100%;
@@ -296,11 +287,4 @@
 .autoCompleteBotao {
   width: 300px;
   padding: 8px;
-}
-
-.generic-input-label {
-  position: "absolute";
-  top: -10;
-  color: #7a7f9a;
-  font-size: 14px;
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import ReactImageFallback from "react-image-fallback";
 import logo from "./../../assets/images/emblems/logo.png";
+import "./styles.scss";
 interface IProps {
   title: string;
   description: string;
@@ -11,7 +12,7 @@ const ProductTicket: React.FC<IProps> = ({ title, description, price }) => {
   return (
     <>
       <div className="ticketCardContainer p-4">
-        <div className="productPictureContainer">
+        <div>
           <ReactImageFallback
             fallbackImage={logo}
             className="productCardImage cursor-pointer"

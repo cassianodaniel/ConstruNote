@@ -1,7 +1,6 @@
 import React from "react";
-import ContainerFornecedoresListaTransmissao from "../ContainerFornecedoresListaTransmissao/ContainerFornecedoresListaTransmissao";
-import ContainerFornecedoresFavoritos from "../ContainerFornecedoresListaTransmissao/ContainerFornecedoresListaTransmissao";
 import Line from "../Line/Line";
+import "./styles.scss";
 
 const CardOpcaoFornecedoresFavoritos = () => {
   return (

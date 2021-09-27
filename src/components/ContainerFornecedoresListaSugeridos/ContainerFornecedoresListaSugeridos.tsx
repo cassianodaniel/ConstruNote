@@ -1,5 +1,6 @@
 import React from "react";
 import CharTicket from "../CharTicket/CharTicket";
+import "./styles.scss";
 
 const ContainerFornecedoresListaSugeridos = () => {
   return (

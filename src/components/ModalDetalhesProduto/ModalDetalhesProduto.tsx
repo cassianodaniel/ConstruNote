@@ -1,15 +1,10 @@
 import React, { useState } from "react";
-import {
-  Button,
-  Input,
-  Modal,
-  ModalBody,
-  ModalFooter,
-} from "reactstrap";
+import { Button, Input, Modal, ModalBody, ModalFooter } from "reactstrap";
 import { useModal } from "../../contexts/ModalContext";
 import { GenericInput } from "../GenericInput/GenericInput";
 import InsertPhoto from "../InsertPhoto/InsertPhoto";
 import Title from "../Title/Title";
+import "./styles.scss";
 
 type specificItem = {
   availableToEdit?: ["quantidade", "similar", "padraoDeQualidade", "sugestao"];
@@ -33,8 +28,8 @@ const ModalDetalhesProduto: React.FC<IProps> = ({}) => {
     unidadeDeMedida: {
       embalagem: "embalagem",
       quantidade: "1",
-      medida: "litro"
-    }
+      medida: "litro",
+    },
   });
   const toggleModal = () => {
     setModalDetalhesProduto(!modalDetalhesProduto);
@@ -44,14 +39,19 @@ const ModalDetalhesProduto: React.FC<IProps> = ({}) => {
       <ModalBody>
         <InsertPhoto />
         <div className="generic-input-label mt-4">{"Descrição:"}</div>
-        <Title customStyle={{marginBottom: 20}} label={"Fechadura cromada padrão médio com máquina de 55mm cromada de alavanca"}/>
+        <Title
+          customStyle={{ marginBottom: 20 }}
+          label={
+            "Fechadura cromada padrão médio com máquina de 55mm cromada de alavanca"
+          }
+        />
         <div className="d-flex mb-1">
           <GenericInput
             value={data.complemento}
             setValue={(e) => setData({ ...data, complemento: e })}
             placeholder={"Cor, referência, nome comercial, uso, etc..."}
             label={"Complemento (se necessário):"}
-            />
+          />
         </div>
         <div className="d-flex flex-row  mt-1 mb-1">
           <GenericInput
@@ -83,7 +83,7 @@ const ModalDetalhesProduto: React.FC<IProps> = ({}) => {
                 fontSize: 13,
                 marginTop: 16,
                 marginRight: 3,
-                width: "auto"
+                width: "auto",
               }}
               htmlFor="flexCheckDefault"
             >
@@ -91,7 +91,7 @@ const ModalDetalhesProduto: React.FC<IProps> = ({}) => {
             </label>
           </div>
         </div>
-        
+
         <div className="generic-input-label">{"Unidade de medida:"}</div>
         <div className="d-flex flex-row align-items-center mt-1 mb-1">
           <Input type={"select"}>
@@ -101,16 +101,25 @@ const ModalDetalhesProduto: React.FC<IProps> = ({}) => {
           </Input>
           <GenericInput
             value={data.unidadeDeMedida.quantidade}
-            setValue={(e) => setData({ ...data, unidadeDeMedida: { ...data.unidadeDeMedida, embalagem: e } })}
+            setValue={(e) =>
+              setData({
+                ...data,
+                unidadeDeMedida: { ...data.unidadeDeMedida, embalagem: e },
+              })
+            }
             width={"90%"}
             parentsWidth={"w-25"}
             style={{ marginLeft: 2.8 }}
           />
-          <Input /* setValue={(e) => setData({ ...data, unidadeDeMedida: { ...data.unidadeDeMedida, medida: e } })} */ type={"select"}>
-          <option value="" disabled selected>
-            Litro
-          </option>
-        </Input>
+          <Input
+            /* setValue={(e) => setData({ ...data, unidadeDeMedida: { ...data.unidadeDeMedida, medida: e } })} */ type={
+              "select"
+            }
+          >
+            <option value="" disabled selected>
+              Litro
+            </option>
+          </Input>
         </div>
         <div className="d-flex flex-row">
           <GenericInput
@@ -120,19 +129,22 @@ const ModalDetalhesProduto: React.FC<IProps> = ({}) => {
             placeholder={"Quantidade"}
             parentsWidth={"20%"}
             style={{
-              width: '90%',
-              height: '40px',
+              width: "90%",
+              height: "40px",
             }}
           />
-          <Input style={{
-            marginTop:26,
-          }} type={"select"}>
+          <Input
+            style={{
+              marginTop: 26,
+            }}
+            type={"select"}
+          >
             <option value="" disabled selected>
               Selecione a categoria do produto*
             </option>
           </Input>
         </div>
-        </ModalBody>
+      </ModalBody>
       <ModalFooter>
         <Button type="button" color="primary" onClick={toggleModal}>
           {"Adicionar"}

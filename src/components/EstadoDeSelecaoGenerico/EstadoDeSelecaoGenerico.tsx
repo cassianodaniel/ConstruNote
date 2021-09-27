@@ -6,6 +6,7 @@ import { useStateContext } from "../../contexts/StateContext";
 import { Microrregioes } from "../../types/MicrorregioesType";
 import { Estado } from "../../types/EstadoTypes";
 import Microrregiao from "../Microrregiao/Microrregiao";
+import "./styles.scss";
 
 interface IEstadoDeSelecaoGenerico {
   nomeDoEstado: Estado;

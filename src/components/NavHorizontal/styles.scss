@@ -1,0 +1,27 @@
+.nav-horizontal {
+  height: 60px;
+  min-width: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 24px;
+  background-color: white;
+  height: 60px;
+  position: absolute;
+  box-shadow: 0 2px 4px rgba(15, 34, 58, 0.12);
+  top: 0;
+}
+
+.nav-progress-icon {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  right: 0;
+  margin-right: 40px;
+  font-size: 15px;
+}

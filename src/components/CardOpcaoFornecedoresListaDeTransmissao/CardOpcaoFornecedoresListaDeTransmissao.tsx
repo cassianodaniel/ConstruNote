@@ -2,6 +2,7 @@ import React from "react";
 import { Input } from "reactstrap";
 import ContainerFornecedoresListaTransmissao from "../ContainerFornecedoresListaTransmissao/ContainerFornecedoresListaTransmissao";
 import Line from "../Line/Line";
+import "./styles.scss";
 
 const CardOpcaoFornecedoresListaDeTransmissao = () => {
   return (

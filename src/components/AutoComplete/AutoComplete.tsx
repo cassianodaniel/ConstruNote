@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import useAutocomplete from "@material-ui/lab/useAutocomplete";
 import { makeStyles } from "@material-ui/core/styles";
 import { useModal } from "../../contexts/ModalContext";
+import "./styles.scss";
 
 const useStyles = makeStyles((theme) => ({
   label: {
@@ -74,7 +75,11 @@ const thirtyElementsWithP: Array<ItemType> = [
   />
 */
 export default function UseAutocomplete() {
-  const { setModalDetalhesProduto, setModalDetalhesProdutoPersonalizado, isProdutoPersonalizado } = useModal();
+  const {
+    setModalDetalhesProduto,
+    setModalDetalhesProdutoPersonalizado,
+    isProdutoPersonalizado,
+  } = useModal();
   const classes = useStyles();
   const {
     getRootProps,
@@ -85,7 +90,9 @@ export default function UseAutocomplete() {
     inputValue,
   } = useAutocomplete({
     id: "use-autocomplete-demo",
-    options: isProdutoPersonalizado ? [] as Array<ItemType> : thirtyElementsWithP,
+    options: isProdutoPersonalizado
+      ? ([] as Array<ItemType>)
+      : thirtyElementsWithP,
     getOptionLabel: (option) => option.name,
   });
 
@@ -115,7 +122,15 @@ export default function UseAutocomplete() {
         </div>
       </div>
       {inputValue.length > 0 && (
-        <ul onClick={() => isProdutoPersonalizado ? setModalDetalhesProdutoPersonalizado(true) : setModalDetalhesProduto(true)} className={classes.listbox} {...getListboxProps()}>
+        <ul
+          onClick={() =>
+            isProdutoPersonalizado
+              ? setModalDetalhesProdutoPersonalizado(true)
+              : setModalDetalhesProduto(true)
+          }
+          className={classes.listbox}
+          {...getListboxProps()}
+        >
           {groupedOptions.length > 0 ? (
             groupedOptions.map((option, index) => (
               <li {...getOptionProps({ option, index })}>

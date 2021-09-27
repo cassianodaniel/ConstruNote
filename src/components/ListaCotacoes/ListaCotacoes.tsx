@@ -1,11 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 import { Table, Button } from "reactstrap";
 import ProfilePicture from "../../assets/images/emblems/emblem.png";
-
 import { fakeUsers } from "../../mock/fakeUsers";
 import ScreenType from "../../enums/ScreenType";
+import "styles.scss";
 
 const ListaCotacoes: React.FC = () => {
   return (

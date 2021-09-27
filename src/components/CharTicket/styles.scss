@@ -1,0 +1,20 @@
+.ticketContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  &:last-child {
+    margin-bottom: 50px;
+  }
+}
+
+.charPic {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+}
+
+.charDescription {
+  display: flex;
+  flex-direction: column;
+}

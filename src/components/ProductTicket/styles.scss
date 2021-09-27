@@ -1,0 +1,26 @@
+.ticketCardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 18%;
+
+  height: 100%;
+  background-color: $white;
+  margin-right: 10px;
+  margin-bottom: 10px;
+
+  border-radius: 8px;
+
+  @media (max-width: 800px) {
+    width: 235px;
+
+    margin: 0 auto;
+  }
+}
+
+.productDescription {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,25 @@
+.mainContainerFavoritos {
+  width: 55%;
+  height: 66vh;
+  overflow-y: auto;
+  color: black;
+
+  &.transmissao {
+    width: 55%;
+
+    @media (max-width: 800px) {
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 800px) {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+
+.headerContainer {
+  padding: 4%;
+}

@@ -1,6 +1,7 @@
 import React from "react";
 import { Input } from "reactstrap";
 import { InputType } from "reactstrap/es/Input";
+import "./styles.scss";
 
 interface IGenericInput {
   label?: string;
@@ -9,7 +10,7 @@ interface IGenericInput {
   setValue(value: string): void;
   maxLength?: number;
   width?: number | string;
-  parentsWidth?: string; 
+  parentsWidth?: string;
   style?: object;
   type?: InputType;
 }
@@ -22,13 +23,15 @@ export const GenericInput: React.FC<IGenericInput> = ({
   width,
   parentsWidth,
   style,
-  type="text",
-  label
+  type = "text",
+  label,
 }) => {
   const empty = value?.length === 0;
   const [isInputActive] = React.useState<boolean>(true);
   return (
-    <div className={`d-flex flex-column ${parentsWidth ? parentsWidth : "w-100"}`}>
+    <div
+      className={`d-flex flex-column ${parentsWidth ? parentsWidth : "w-100"}`}
+    >
       {(!empty || isInputActive) && label && (
         <div className="generic-input-label">{label}</div>
       )}
@@ -40,7 +43,7 @@ export const GenericInput: React.FC<IGenericInput> = ({
           width: width && width,
           marginTop: 5,
           marginBottom: 5,
-          ...style
+          ...style,
         }}
         bsSize="lg"
         className="input-value"
