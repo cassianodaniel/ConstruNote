@@ -4,7 +4,7 @@ import { Table, Button } from "reactstrap";
 import ProfilePicture from "../../assets/images/emblems/emblem.png";
 import { fakeUsers } from "../../mock/fakeUsers";
 import ScreenType from "../../enums/ScreenType";
-import "styles.scss";
+import "./styles.scss";
 
 const ListaCotacoes: React.FC = () => {
   return (
