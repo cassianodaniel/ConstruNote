@@ -3,8 +3,9 @@ import ReactImageFallback from "react-image-fallback";
 import { Button } from "reactstrap";
 import ScreenType from "../../enums/ScreenType";
 import avatar from "./../../assets/images/users/avatar-1.jpg";
+import "./styles.scss";
 
-type ButtonCharTicket = 'Favoritar' | 'Favorito' | 'Incluir'
+type ButtonCharTicket = "Favoritar" | "Favorito" | "Incluir";
 interface IProps {
   name: string;
   classification: string;
@@ -12,23 +13,29 @@ interface IProps {
   button: ButtonCharTicket;
 }
 
-const returnClickableElement = ( button: ButtonCharTicket ) => {
-  switch(button){
-    case 'Favoritar': return (<Button color={"primary"}>
-      {button}
-    </Button>);
-    case 'Favorito': return (<Button color={"light"}>
-      {button}
-    </Button>);
-    case 'Incluir': return (<a href="./">
-      {'+'} {button}
-    </a>
-    );
-    default: return <Button>{button}</Button>
+const returnClickableElement = (button: ButtonCharTicket) => {
+  switch (button) {
+    case "Favoritar":
+      return <Button color={"primary"}>{button}</Button>;
+    case "Favorito":
+      return <Button color={"light"}>{button}</Button>;
+    case "Incluir":
+      return (
+        <a href="./">
+          {"+"} {button}
+        </a>
+      );
+    default:
+      return <Button>{button}</Button>;
   }
-}
+};
 
-const CharTicket: React.FC<IProps> = ({ name, classification, description, button }) => {
+const CharTicket: React.FC<IProps> = ({
+  name,
+  classification,
+  description,
+  button,
+}) => {
   return (
     <>
       <div className="ticketContainer mt-2">
@@ -49,9 +56,7 @@ const CharTicket: React.FC<IProps> = ({ name, classification, description, butto
             </a>
           </div>
         </div>
-        <div className="ml-5">
-          {returnClickableElement(button)}
-        </div>
+        <div className="ml-5">{returnClickableElement(button)}</div>
       </div>
     </>
   );
